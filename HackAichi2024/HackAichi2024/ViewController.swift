@@ -8,13 +8,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var stackView: UIStackView!
-    var characterImageView: CharacterImageView!
-    var characterMessageTextView: MessageTextView!
-    var myMessageTextView: MessageTextView!
-    var goodButton: ReactionButton!
-    var badButton: ReactionButton!
-    var questionSendView: QuestionSendView!
+    private var stackView: UIStackView!
+    private var characterImageView: CharacterImageView!
+    private var characterMessageTextView: MessageTextView!
+    private var myMessageTextView: MessageTextView!
+    private var goodButton: ReactionButton!
+    private var badButton: ReactionButton!
+    private var questionSendView: QuestionSendView!
     
 
     override func viewDidLoad() {

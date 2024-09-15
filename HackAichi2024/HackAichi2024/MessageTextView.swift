@@ -13,8 +13,8 @@ enum MessageSender {
 }
 
 class MessageTextView: UITextView {
-    var messageSender: MessageSender
-    var textViewBackgroundColor: UIColor {
+    private var messageSender: MessageSender
+    private var textViewBackgroundColor: UIColor {
         switch messageSender {
         case .myself:
             return .systemGreen
@@ -33,7 +33,7 @@ class MessageTextView: UITextView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setUpTextView() {
+    private func setUpTextView() {
         self.backgroundColor = textViewBackgroundColor
         self.layer.cornerRadius = 20
         self.translatesAutoresizingMaskIntoConstraints = false

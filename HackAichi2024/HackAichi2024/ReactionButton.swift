@@ -7,14 +7,14 @@
 
 import UIKit
 
-enum ReactionType: String {
+enum ReactionType {
     case good
     case bad
 }
 
 class ReactionButton: UIButton {
-    var reactionType: ReactionType
-    var imageSystemName: String {
+    private var reactionType: ReactionType
+    private var imageSystemName: String {
         switch reactionType {
         case .good:
             return "hand.thumbsup"
@@ -33,7 +33,7 @@ class ReactionButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setUpButton() {
+    private func setUpButton() {
         self.backgroundColor = .systemBlue
         self.setImage(UIImage(systemName: imageSystemName), for: .normal)
         self.tintColor = .white

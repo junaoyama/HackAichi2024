@@ -18,7 +18,7 @@ class CharacterImageView: UIImageView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setUpImageView() {
+    private func setUpImageView() {
         self.contentMode = .scaleAspectFit
         self.translatesAutoresizingMaskIntoConstraints = false
     }

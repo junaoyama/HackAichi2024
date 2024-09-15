@@ -8,8 +8,8 @@
 import UIKit
 
 class QuestionSendView: UIView {
-    var questionTextView: UITextView!
-    var sendButton: UIButton!
+    private var questionTextView: UITextView!
+    private var sendButton: UIButton!
     
     init() {
         super.init(frame: .zero)
@@ -20,7 +20,7 @@ class QuestionSendView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setUpView() {
+    private func setUpView() {
         self.backgroundColor = .systemGray4
         self.translatesAutoresizingMaskIntoConstraints = false
         self.layer.cornerRadius = 10
