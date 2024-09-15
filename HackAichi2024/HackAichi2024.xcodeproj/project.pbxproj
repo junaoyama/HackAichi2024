@@ -17,6 +17,8 @@
 		BF2958BE2C94349D00413B2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2958BC2C94349D00413B2A /* LaunchScreen.storyboard */; };
 		BF2958CE2C969B1700413B2A /* QuestionSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2958CD2C969B1700413B2A /* QuestionSendView.swift */; };
 		BFC1EE752C96C1D8007E3A9B /* ReactionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE742C96C1D8007E3A9B /* ReactionButton.swift */; };
+		BFC1EE7B2C96CD9D007E3A9B /* CharacterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE7A2C96CD9D007E3A9B /* CharacterImageView.swift */; };
+		BFC1EE7D2C96D25B007E3A9B /* MessageTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE7C2C96D25B007E3A9B /* MessageTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		BF2958BF2C94349D00413B2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF2958CD2C969B1700413B2A /* QuestionSendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSendView.swift; sourceTree = "<group>"; };
 		BFC1EE742C96C1D8007E3A9B /* ReactionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactionButton.swift; sourceTree = "<group>"; };
+		BFC1EE7A2C96CD9D007E3A9B /* CharacterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterImageView.swift; sourceTree = "<group>"; };
+		BFC1EE7C2C96D25B007E3A9B /* MessageTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,8 @@
 				BF2958AE2C94349B00413B2A /* AppDelegate.swift */,
 				BF2958B02C94349B00413B2A /* SceneDelegate.swift */,
 				BF2958B22C94349B00413B2A /* ViewController.swift */,
+				BFC1EE7A2C96CD9D007E3A9B /* CharacterImageView.swift */,
+				BFC1EE7C2C96D25B007E3A9B /* MessageTextView.swift */,
 				BF2958CD2C969B1700413B2A /* QuestionSendView.swift */,
 				BFC1EE742C96C1D8007E3A9B /* ReactionButton.swift */,
 				BF2958BA2C94349D00413B2A /* Assets.xcassets */,
@@ -159,7 +165,9 @@
 				BFC1EE752C96C1D8007E3A9B /* ReactionButton.swift in Sources */,
 				BF2958AF2C94349B00413B2A /* AppDelegate.swift in Sources */,
 				BF2958B12C94349B00413B2A /* SceneDelegate.swift in Sources */,
+				BFC1EE7D2C96D25B007E3A9B /* MessageTextView.swift in Sources */,
 				BF2958B92C94349B00413B2A /* HackAichi2024.xcdatamodeld in Sources */,
+				BFC1EE7B2C96CD9D007E3A9B /* CharacterImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

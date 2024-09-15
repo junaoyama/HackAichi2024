@@ -8,15 +8,35 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    var questionSendView: QuestionSendView!
+    var stackView: UIStackView!
+    var characterImageView: CharacterImageView!
+    var characterMessageTextView: MessageTextView!
+    var myMessageTextView: MessageTextView!
     var goodButton: ReactionButton!
     var badButton: ReactionButton!
+    var questionSendView: QuestionSendView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         self.view.backgroundColor = .systemBackground
+        
+        stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.spacing = 15
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        characterImageView = CharacterImageView(image: UIImage(named: "chatbot_charactor_1"))
+        stackView.addArrangedSubview(characterImageView)
+        
+        characterMessageTextView = MessageTextView(sender: .character)
+        stackView.addArrangedSubview(characterMessageTextView)
+        
+        myMessageTextView = MessageTextView(sender: .myself)
+        stackView.addArrangedSubview(myMessageTextView)
+        
+        self.view.addSubview(stackView)
         
         goodButton = ReactionButton(type: .good)
         self.view.addSubview(goodButton)
@@ -27,6 +47,11 @@ class ViewController: UIViewController {
         self.view.addSubview(questionSendView)
         
         NSLayoutConstraint.activate([
+            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            stackView.bottomAnchor.constraint(equalTo: goodButton.topAnchor, constant: -15),
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            
             goodButton.widthAnchor.constraint(equalToConstant: 70),
             goodButton.heightAnchor.constraint(equalToConstant: 40),
             goodButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -20),
@@ -41,11 +66,7 @@ class ViewController: UIViewController {
             questionSendView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
             questionSendView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             questionSendView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-        
         ])
-        
     }
-
-
 }
 
