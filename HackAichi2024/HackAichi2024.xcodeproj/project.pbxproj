@@ -18,8 +18,9 @@
 		BF2958CE2C969B1700413B2A /* QuestionSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2958CD2C969B1700413B2A /* QuestionSendView.swift */; };
 		BFC1EE752C96C1D8007E3A9B /* GoodBadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE742C96C1D8007E3A9B /* GoodBadButton.swift */; };
 		BFC1EE7B2C96CD9D007E3A9B /* CharacterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE7A2C96CD9D007E3A9B /* CharacterImageView.swift */; };
-		BFC1EE7D2C96D25B007E3A9B /* MessageTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE7C2C96D25B007E3A9B /* MessageTextView.swift */; };
+		BFC1EE7D2C96D25B007E3A9B /* UserMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE7C2C96D25B007E3A9B /* UserMessageView.swift */; };
 		BFC1EE7F2C9715CC007E3A9B /* TelMailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE7E2C9715CC007E3A9B /* TelMailButton.swift */; };
+		BFC1EE812C972460007E3A9B /* CharacterMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE802C97245F007E3A9B /* CharacterMessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +35,9 @@
 		BF2958CD2C969B1700413B2A /* QuestionSendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSendView.swift; sourceTree = "<group>"; };
 		BFC1EE742C96C1D8007E3A9B /* GoodBadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodBadButton.swift; sourceTree = "<group>"; };
 		BFC1EE7A2C96CD9D007E3A9B /* CharacterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterImageView.swift; sourceTree = "<group>"; };
-		BFC1EE7C2C96D25B007E3A9B /* MessageTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTextView.swift; sourceTree = "<group>"; };
+		BFC1EE7C2C96D25B007E3A9B /* UserMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMessageView.swift; sourceTree = "<group>"; };
 		BFC1EE7E2C9715CC007E3A9B /* TelMailButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelMailButton.swift; sourceTree = "<group>"; };
+		BFC1EE802C97245F007E3A9B /* CharacterMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterMessageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +76,8 @@
 				BF2958B02C94349B00413B2A /* SceneDelegate.swift */,
 				BF2958B22C94349B00413B2A /* ViewController.swift */,
 				BFC1EE7A2C96CD9D007E3A9B /* CharacterImageView.swift */,
-				BFC1EE7C2C96D25B007E3A9B /* MessageTextView.swift */,
+				BFC1EE7C2C96D25B007E3A9B /* UserMessageView.swift */,
+				BFC1EE802C97245F007E3A9B /* CharacterMessageView.swift */,
 				BF2958CD2C969B1700413B2A /* QuestionSendView.swift */,
 				BFC1EE742C96C1D8007E3A9B /* GoodBadButton.swift */,
 				BFC1EE7E2C9715CC007E3A9B /* TelMailButton.swift */,
@@ -168,10 +171,11 @@
 				BFC1EE752C96C1D8007E3A9B /* GoodBadButton.swift in Sources */,
 				BF2958AF2C94349B00413B2A /* AppDelegate.swift in Sources */,
 				BF2958B12C94349B00413B2A /* SceneDelegate.swift in Sources */,
-				BFC1EE7D2C96D25B007E3A9B /* MessageTextView.swift in Sources */,
+				BFC1EE7D2C96D25B007E3A9B /* UserMessageView.swift in Sources */,
 				BFC1EE7F2C9715CC007E3A9B /* TelMailButton.swift in Sources */,
 				BF2958B92C94349B00413B2A /* HackAichi2024.xcdatamodeld in Sources */,
 				BFC1EE7B2C96CD9D007E3A9B /* CharacterImageView.swift in Sources */,
+				BFC1EE812C972460007E3A9B /* CharacterMessageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

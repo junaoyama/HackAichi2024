@@ -10,8 +10,8 @@ import UIKit
 class ViewController: UIViewController {
     private var stackView: UIStackView!
     private var characterImageView: CharacterImageView!
-    private var characterMessageTextView: MessageTextView!
-    private var myMessageTextView: MessageTextView!
+    private var characterMessageView: CharacterMessageView!
+    private var userMessageView: UserMessageView!
     private var telMailButton: TelMailButton!
     private var goodBadButton: GoodBadButton!
     private var questionSendView: QuestionSendView!
@@ -30,11 +30,11 @@ class ViewController: UIViewController {
         characterImageView = CharacterImageView(image: UIImage(named: "chatbot_charactor_1"))
         stackView.addArrangedSubview(characterImageView)
         
-        characterMessageTextView = MessageTextView(sender: .character)
-        stackView.addArrangedSubview(characterMessageTextView)
+        characterMessageView = CharacterMessageView()
+        stackView.addArrangedSubview(characterMessageView)
         
-        myMessageTextView = MessageTextView(sender: .myself)
-        stackView.addArrangedSubview(myMessageTextView)
+        userMessageView = UserMessageView()
+        stackView.addArrangedSubview(userMessageView)
         
         self.view.addSubview(stackView)
         
