@@ -19,7 +19,7 @@ class MessageTextView: UITextView {
         case .myself:
             return .systemGreen
         case .character:
-            return .systemGray6
+            return .systemGray5
         }
     }
 
