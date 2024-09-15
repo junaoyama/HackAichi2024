@@ -12,8 +12,8 @@ class ViewController: UIViewController {
     private var characterImageView: CharacterImageView!
     private var characterMessageTextView: MessageTextView!
     private var myMessageTextView: MessageTextView!
-    private var goodButton: ReactionButton!
-    private var badButton: ReactionButton!
+    private var telMailButton: TelMailButton!
+    private var goodBadButton: GoodBadButton!
     private var questionSendView: QuestionSendView!
     
 
@@ -38,29 +38,33 @@ class ViewController: UIViewController {
         
         self.view.addSubview(stackView)
         
-        goodButton = ReactionButton(type: .good)
-        self.view.addSubview(goodButton)
-        badButton = ReactionButton(type: .bad)
-        self.view.addSubview(badButton)
+        
+        goodBadButton = GoodBadButton()
+        self.view.addSubview(goodBadButton)
         
         questionSendView = QuestionSendView()
         self.view.addSubview(questionSendView)
         
+        //telMailButtonは一旦ゴリ押しで置いてます
+        telMailButton = TelMailButton()
+        self.view.addSubview(telMailButton)
+        
         NSLayoutConstraint.activate([
+            //telMailButtonは一旦ゴリ押しで置いてます
+            telMailButton.heightAnchor.constraint(equalToConstant: 30),
+            telMailButton.leadingAnchor.constraint(equalTo: questionSendView.leadingAnchor, constant: 15),
+            telMailButton.trailingAnchor.constraint(equalTo: questionSendView.trailingAnchor, constant: -15),
+            telMailButton.bottomAnchor.constraint(equalTo: goodBadButton.topAnchor, constant: -200),
+            
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            stackView.bottomAnchor.constraint(equalTo: goodButton.topAnchor, constant: -15),
+            stackView.bottomAnchor.constraint(equalTo: goodBadButton.topAnchor, constant: -15),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             
-            goodButton.widthAnchor.constraint(equalToConstant: 70),
-            goodButton.heightAnchor.constraint(equalToConstant: 40),
-            goodButton.trailingAnchor.constraint(equalTo: view.centerXAnchor, constant: -20),
-            goodButton.bottomAnchor.constraint(equalTo: questionSendView.topAnchor, constant: -15),
-            
-            badButton.widthAnchor.constraint(equalTo: goodButton.widthAnchor),
-            badButton.heightAnchor.constraint(equalTo: goodButton.heightAnchor),
-            badButton.leadingAnchor.constraint(equalTo: view.centerXAnchor, constant: 20),
-            badButton.bottomAnchor.constraint(equalTo: goodButton.bottomAnchor),
+            goodBadButton.widthAnchor.constraint(equalToConstant: 160),
+            goodBadButton.heightAnchor.constraint(equalToConstant: 40),
+            goodBadButton.trailingAnchor.constraint(equalTo: questionSendView.trailingAnchor),
+            goodBadButton.bottomAnchor.constraint(equalTo: questionSendView.topAnchor, constant: -15),
             
             questionSendView.heightAnchor.constraint(equalToConstant: 45),
             questionSendView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
