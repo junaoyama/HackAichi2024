@@ -15,6 +15,7 @@
 		BF2958B92C94349B00413B2A /* HackAichi2024.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF2958B72C94349B00413B2A /* HackAichi2024.xcdatamodeld */; };
 		BF2958BB2C94349D00413B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2958BA2C94349D00413B2A /* Assets.xcassets */; };
 		BF2958BE2C94349D00413B2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2958BC2C94349D00413B2A /* LaunchScreen.storyboard */; };
+		BF2958CE2C969B1700413B2A /* QuestionSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2958CD2C969B1700413B2A /* QuestionSendView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		BF2958BA2C94349D00413B2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF2958BD2C94349D00413B2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF2958BF2C94349D00413B2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF2958CD2C969B1700413B2A /* QuestionSendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSendView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				BF2958AE2C94349B00413B2A /* AppDelegate.swift */,
 				BF2958B02C94349B00413B2A /* SceneDelegate.swift */,
 				BF2958B22C94349B00413B2A /* ViewController.swift */,
+				BF2958CD2C969B1700413B2A /* QuestionSendView.swift */,
 				BF2958BA2C94349D00413B2A /* Assets.xcassets */,
 				BF2958BC2C94349D00413B2A /* LaunchScreen.storyboard */,
 				BF2958BF2C94349D00413B2A /* Info.plist */,
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF2958B32C94349B00413B2A /* ViewController.swift in Sources */,
+				BF2958CE2C969B1700413B2A /* QuestionSendView.swift in Sources */,
 				BF2958AF2C94349B00413B2A /* AppDelegate.swift in Sources */,
 				BF2958B12C94349B00413B2A /* SceneDelegate.swift in Sources */,
 				BF2958B92C94349B00413B2A /* HackAichi2024.xcdatamodeld in Sources */,

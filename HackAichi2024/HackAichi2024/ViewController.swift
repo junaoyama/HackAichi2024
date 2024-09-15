@@ -8,11 +8,25 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var questionSendView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = .blue
+        self.view.backgroundColor = .systemBackground
+        
+        questionSendView = QuestionSendView()
+        self.view.addSubview(questionSendView)
+        
+        NSLayoutConstraint.activate([
+            questionSendView.heightAnchor.constraint(equalToConstant: 45),
+            questionSendView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            questionSendView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            questionSendView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+        
+        ])
+        
     }
 
 
