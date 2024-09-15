@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     private var characterImageView: CharacterImageView!
     private var characterMessageView: CharacterMessageView!
     private var userMessageView: UserMessageView!
-    private var telMailButton: TelMailButton!
+//    private var telMailButton: TelMailButton!
     private var goodBadButton: GoodBadButton!
     private var questionSendView: QuestionSendView!
     
@@ -46,15 +46,15 @@ class ViewController: UIViewController {
         self.view.addSubview(questionSendView)
         
         //telMailButtonは一旦ゴリ押しで置いてます
-        telMailButton = TelMailButton()
-        self.view.addSubview(telMailButton)
+//        telMailButton = TelMailButton()
+//        self.view.addSubview(telMailButton)
         
         NSLayoutConstraint.activate([
             //telMailButtonは一旦ゴリ押しで置いてます
-            telMailButton.heightAnchor.constraint(equalToConstant: 30),
-            telMailButton.leadingAnchor.constraint(equalTo: questionSendView.leadingAnchor, constant: 15),
-            telMailButton.trailingAnchor.constraint(equalTo: questionSendView.trailingAnchor, constant: -15),
-            telMailButton.bottomAnchor.constraint(equalTo: goodBadButton.topAnchor, constant: -200),
+//            telMailButton.heightAnchor.constraint(equalToConstant: 30),
+//            telMailButton.leadingAnchor.constraint(equalTo: questionSendView.leadingAnchor, constant: 15),
+//            telMailButton.trailingAnchor.constraint(equalTo: questionSendView.trailingAnchor, constant: -15),
+//            telMailButton.bottomAnchor.constraint(equalTo: goodBadButton.topAnchor, constant: -200),
             
             stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             stackView.bottomAnchor.constraint(equalTo: goodBadButton.topAnchor, constant: -15),
