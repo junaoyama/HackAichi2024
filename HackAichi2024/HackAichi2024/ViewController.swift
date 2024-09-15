@@ -67,7 +67,7 @@ class ViewController: UIViewController {
             goodBadButton.bottomAnchor.constraint(equalTo: questionSendView.topAnchor, constant: -15),
             
             questionSendView.heightAnchor.constraint(equalToConstant: 45),
-            questionSendView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            questionSendView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -10),
             questionSendView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             questionSendView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
         ])
