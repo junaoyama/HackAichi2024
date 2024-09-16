@@ -49,6 +49,9 @@ class ViewController: UIViewController {
 //        telMailButton = TelMailButton()
 //        self.view.addSubview(telMailButton)
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
+        
         NSLayoutConstraint.activate([
             //telMailButtonは一旦ゴリ押しで置いてます
 //            telMailButton.heightAnchor.constraint(equalToConstant: 30),
@@ -71,6 +74,10 @@ class ViewController: UIViewController {
             questionSendView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             questionSendView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
         ])
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)  
     }
 }
 
