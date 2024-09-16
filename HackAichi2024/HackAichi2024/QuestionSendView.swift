@@ -10,6 +10,10 @@ import UIKit
 class QuestionSendView: UIView {
     private var questionTextView: UITextView!
     private var sendButton: UIButton!
+    private var keyboardHiddenEmptyTextConstraints: [NSLayoutConstraint]!
+    private var keyboardHiddenWithTextConstraints: [NSLayoutConstraint]!
+    private var keyboardVisibleLayoutConstraints: [NSLayoutConstraint]!
+    
     
     init() {
         super.init(frame: .zero)
@@ -41,7 +45,14 @@ class QuestionSendView: UIView {
         sendButton.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(sendButton)
         
-        NSLayoutConstraint.activate([
+        keyboardHiddenEmptyTextConstraints = [
+            questionTextView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
+            questionTextView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5),
+            questionTextView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
+            questionTextView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
+        ]
+        
+        keyboardHiddenWithTextConstraints = [
             questionTextView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
             questionTextView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5),
             questionTextView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
@@ -52,7 +63,43 @@ class QuestionSendView: UIView {
             sendButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5),
             sendButton.widthAnchor.constraint(equalToConstant: 60),
             sendButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
-        ])
+        ]
+        
+        keyboardVisibleLayoutConstraints = [
+            questionTextView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
+            questionTextView.bottomAnchor.constraint(equalTo: sendButton.topAnchor, constant: -5),
+            questionTextView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
+            questionTextView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
+            
+            sendButton.heightAnchor.constraint(equalToConstant: 35),
+            sendButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5),
+            sendButton.widthAnchor.constraint(equalToConstant: 60),
+            sendButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
+        ]
+        
+        setKeyboardHiddenLayout()
+    }
+    
+    func setKeyboardHiddenLayout() {
+        NSLayoutConstraint.deactivate(keyboardVisibleLayoutConstraints)
+        if questionTextView.text == "" {
+            sendButton.isHidden = true
+            NSLayoutConstraint.activate(keyboardHiddenEmptyTextConstraints)
+        } else {
+            NSLayoutConstraint.activate(keyboardHiddenWithTextConstraints)
+            sendButton.isHidden = false
+        }
+    }
+
+    
+    func setKeyboardVisibleLayout() {
+        if questionTextView.text == "" {
+            NSLayoutConstraint.deactivate(keyboardHiddenEmptyTextConstraints)
+        } else {
+            NSLayoutConstraint.deactivate(keyboardHiddenWithTextConstraints)
+        }
+        NSLayoutConstraint.activate(keyboardVisibleLayoutConstraints)
+        sendButton.isHidden = false
     }
 
 }

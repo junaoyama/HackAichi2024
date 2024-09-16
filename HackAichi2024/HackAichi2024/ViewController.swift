@@ -16,8 +16,8 @@ class ViewController: UIViewController {
     private var goodBadButton: GoodBadButton!
     private var questionSendView: QuestionSendView!
     
-    private var questionSendViewNoKeyboardLayout: [NSLayoutConstraint]!
-    private var questionSendViewExsistKeyboardLayout: [NSLayoutConstraint]!
+    private var questionSendViewKeyboardHiddenLayout: [NSLayoutConstraint]!
+    private var questionSendViewKeyboardVisibleLayout: [NSLayoutConstraint]!
     
 
     override func viewDidLoad() {
@@ -75,21 +75,21 @@ class ViewController: UIViewController {
             goodBadButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -70),
         ])
         
-        questionSendViewNoKeyboardLayout = [
+        questionSendViewKeyboardHiddenLayout = [
             questionSendView.heightAnchor.constraint(equalToConstant: 45),
             questionSendView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -10),
             questionSendView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             questionSendView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
         ]
         
-        questionSendViewExsistKeyboardLayout = [
+        questionSendViewKeyboardVisibleLayout = [
             questionSendView.topAnchor.constraint(equalTo: characterImageView.bottomAnchor, constant: 10),
             questionSendView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -10),
             questionSendView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             questionSendView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
         ]
         
-        NSLayoutConstraint.activate(questionSendViewNoKeyboardLayout)
+        NSLayoutConstraint.activate(questionSendViewKeyboardHiddenLayout)
         
     }
     
@@ -103,13 +103,15 @@ class ViewController: UIViewController {
     }
     
     @objc private func keyboardWillShow(_ sender: NSNotification) {
-        NSLayoutConstraint.deactivate(questionSendViewNoKeyboardLayout)
-        NSLayoutConstraint.activate(questionSendViewExsistKeyboardLayout)
+        NSLayoutConstraint.deactivate(questionSendViewKeyboardHiddenLayout)
+        questionSendView.setKeyboardVisibleLayout()
+        NSLayoutConstraint.activate(questionSendViewKeyboardVisibleLayout)
     }
     
     @objc private func keyboardWillHide(_ sender: NSNotification) {
-        NSLayoutConstraint.deactivate(questionSendViewExsistKeyboardLayout)
-        NSLayoutConstraint.activate(questionSendViewNoKeyboardLayout)
+        NSLayoutConstraint.deactivate(questionSendViewKeyboardVisibleLayout)
+        questionSendView.setKeyboardHiddenLayout()
+        NSLayoutConstraint.activate(questionSendViewKeyboardHiddenLayout)
     }
 }
 
