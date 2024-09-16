@@ -16,6 +16,9 @@ class ViewController: UIViewController {
     private var goodBadButton: GoodBadButton!
     private var questionSendView: QuestionSendView!
     
+    private var questionSendViewNoKeyboardLayout: [NSLayoutConstraint]!
+    private var questionSendViewExsistKeyboardLayout: [NSLayoutConstraint]!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +55,8 @@ class ViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
         
+        setUpNotification()
+        
         NSLayoutConstraint.activate([
             //telMailButtonは一旦ゴリ押しで置いてます
 //            telMailButton.heightAnchor.constraint(equalToConstant: 30),
@@ -66,18 +71,45 @@ class ViewController: UIViewController {
             
             goodBadButton.widthAnchor.constraint(equalToConstant: 160),
             goodBadButton.heightAnchor.constraint(equalToConstant: 40),
-            goodBadButton.trailingAnchor.constraint(equalTo: questionSendView.trailingAnchor),
-            goodBadButton.bottomAnchor.constraint(equalTo: questionSendView.topAnchor, constant: -15),
-            
+            goodBadButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            goodBadButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -70),
+        ])
+        
+        questionSendViewNoKeyboardLayout = [
             questionSendView.heightAnchor.constraint(equalToConstant: 45),
             questionSendView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -10),
             questionSendView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
             questionSendView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
-        ])
+        ]
+        
+        questionSendViewExsistKeyboardLayout = [
+            questionSendView.topAnchor.constraint(equalTo: characterImageView.bottomAnchor, constant: 10),
+            questionSendView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -10),
+            questionSendView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            questionSendView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+        ]
+        
+        NSLayoutConstraint.activate(questionSendViewNoKeyboardLayout)
+        
     }
     
-    @objc func dismissKeyboard() {
-        view.endEditing(true)  
+    private func setUpNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    @objc private func keyboardWillShow(_ sender: NSNotification) {
+        NSLayoutConstraint.deactivate(questionSendViewNoKeyboardLayout)
+        NSLayoutConstraint.activate(questionSendViewExsistKeyboardLayout)
+    }
+    
+    @objc private func keyboardWillHide(_ sender: NSNotification) {
+        NSLayoutConstraint.deactivate(questionSendViewExsistKeyboardLayout)
+        NSLayoutConstraint.activate(questionSendViewNoKeyboardLayout)
     }
 }
 

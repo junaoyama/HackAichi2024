@@ -47,8 +47,9 @@ class QuestionSendView: UIView {
             questionTextView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
             questionTextView.trailingAnchor.constraint(equalTo: sendButton.leadingAnchor, constant: -8),
             
-            sendButton.topAnchor.constraint(equalTo: questionTextView.topAnchor),
-            sendButton.bottomAnchor.constraint(equalTo: questionTextView.bottomAnchor),
+//            sendButton.topAnchor.constraint(equalTo: questionTextView.topAnchor),
+            sendButton.heightAnchor.constraint(equalToConstant: 35),
+            sendButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -5),
             sendButton.widthAnchor.constraint(equalToConstant: 60),
             sendButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
         ])
