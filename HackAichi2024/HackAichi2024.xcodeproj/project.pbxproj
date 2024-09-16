@@ -18,6 +18,7 @@
 		34E670462C97CB2D00BD8DA8 /* EmbeddingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E670452C97CB2D00BD8DA8 /* EmbeddingService.swift */; };
 		34E670482C97CB4500BD8DA8 /* AppleEmbeddingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E670472C97CB4500BD8DA8 /* AppleEmbeddingService.swift */; };
 		34E6704A2C97DA2A00BD8DA8 /* LoadQAEntriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E670492C97DA2A00BD8DA8 /* LoadQAEntriesUseCase.swift */; };
+		34E670502C9816A000BD8DA8 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = 34E6704F2C9816A000BD8DA8 /* Yams */; };
 		BF2958AF2C94349B00413B2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2958AE2C94349B00413B2A /* AppDelegate.swift */; };
 		BF2958B12C94349B00413B2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2958B02C94349B00413B2A /* SceneDelegate.swift */; };
 		BF2958B32C94349B00413B2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2958B22C94349B00413B2A /* ViewController.swift */; };
@@ -52,6 +53,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34BFBDF32C96841900F6B1BA /* CSQLiteVec in Frameworks */,
+				34E670502C9816A000BD8DA8 /* Yams in Frameworks */,
 				34BFBDF52C96841900F6B1BA /* SQLiteVec in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,6 +207,7 @@
 			packageProductDependencies = (
 				34BFBDF22C96841900F6B1BA /* CSQLiteVec */,
 				34BFBDF42C96841900F6B1BA /* SQLiteVec */,
+				34E6704F2C9816A000BD8DA8 /* Yams */,
 			);
 			productName = HackAichi2024;
 			productReference = BF2958AB2C94349B00413B2A /* HackAichi2024.app */;
@@ -236,6 +239,7 @@
 			mainGroup = BF2958A22C94349B00413B2A;
 			packageReferences = (
 				34BFBDF12C96841900F6B1BA /* XCRemoteSwiftPackageReference "SQLiteVec" */,
+				34E6704E2C9816A000BD8DA8 /* XCRemoteSwiftPackageReference "Yams" */,
 			);
 			productRefGroup = BF2958AC2C94349B00413B2A /* Products */;
 			projectDirPath = "";
@@ -498,6 +502,14 @@
 				version = 0.0.7;
 			};
 		};
+		34E6704E2C9816A000BD8DA8 /* XCRemoteSwiftPackageReference "Yams" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jpsim/Yams.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -510,6 +522,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 34BFBDF12C96841900F6B1BA /* XCRemoteSwiftPackageReference "SQLiteVec" */;
 			productName = SQLiteVec;
+		};
+		34E6704F2C9816A000BD8DA8 /* Yams */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34E6704E2C9816A000BD8DA8 /* XCRemoteSwiftPackageReference "Yams" */;
+			productName = Yams;
 		};
 /* End XCSwiftPackageProductDependency section */
 
