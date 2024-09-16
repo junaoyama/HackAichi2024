@@ -19,6 +19,7 @@ class UserMessageView: UITextView {
     
     private func setUpTextView() {
         self.backgroundColor = .systemGreen
+        self.isEditable = false
         self.layer.cornerRadius = 20
         self.translatesAutoresizingMaskIntoConstraints = false
     }

@@ -19,6 +19,7 @@ class CharacterMessageView: UITextView {
     
     private func setUpTextView() {
         self.backgroundColor = .systemGray5
+        self.isEditable = false
         self.layer.cornerRadius = 20
         self.translatesAutoresizingMaskIntoConstraints = false
     }
