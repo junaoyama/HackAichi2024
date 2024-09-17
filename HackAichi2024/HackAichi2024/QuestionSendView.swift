@@ -8,8 +8,8 @@
 import UIKit
 
 class QuestionSendView: UIView {
-    private var questionTextView: UITextView!
-    private var sendButton: UIButton!
+    var questionTextView: UITextView!
+    var sendButton: UIButton!
     private var keyboardHiddenEmptyTextConstraints: [NSLayoutConstraint]!
     private var keyboardHiddenWithTextConstraints: [NSLayoutConstraint]!
     private var keyboardVisibleLayoutConstraints: [NSLayoutConstraint]!

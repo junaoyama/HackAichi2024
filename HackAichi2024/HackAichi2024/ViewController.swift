@@ -8,19 +8,39 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var state: ViewControllerState! {
+        willSet {
+            state.tearDown()
+        }
+        didSet {
+            state.setUp()
+        }
+    }
+    var userViewModel: UserViewModel!
     private var userMessageViewLayoutGuide: UILayoutGuide!
     private var characterImageView: CharacterImageView!
     private var characterMessageView: CharacterMessageView!
-    private var userMessageView: UserMessageView!
-    private var goodBadButton: GoodBadButton!
-    private var questionSendView: QuestionSendView!
+    var userMessageView: UserMessageView!
+    var goodBadButton: GoodBadButton!
+    var questionSendView: QuestionSendView!
     
     private var questionSendViewKeyboardHiddenLayout: [NSLayoutConstraint]!
     private var questionSendViewKeyboardVisibleLayout: [NSLayoutConstraint]!
-
+    
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        state = WelcomeVCState(viewController: self)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
+        
+        userViewModel = UserViewModel()
         
         userMessageViewLayoutGuide = UILayoutGuide()
         self.view.addLayoutGuide(userMessageViewLayoutGuide)
@@ -38,6 +58,7 @@ class ViewController: UIViewController {
         self.view.addSubview(goodBadButton)
         
         questionSendView = QuestionSendView()
+        questionSendView.sendButton.addTarget(self, action: #selector(didTapSendButton(_:)), for: .touchUpInside)
         self.view.addSubview(questionSendView)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
@@ -87,6 +108,8 @@ class ViewController: UIViewController {
         ]
         
         NSLayoutConstraint.activate(questionSendViewKeyboardHiddenLayout)
+        
+        state = WelcomeVCState(viewController: self)
     }
     
     private func setUpNotification() {
@@ -96,6 +119,10 @@ class ViewController: UIViewController {
     
     @objc private func dismissKeyboard() {
         view.endEditing(true)
+    }
+    
+    @objc private func didTapSendButton(_ sender: UIButton) {
+        state.goNextState()
     }
     
     @objc private func keyboardWillShow(_ sender: NSNotification) {

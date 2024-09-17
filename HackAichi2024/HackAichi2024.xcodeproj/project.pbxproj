@@ -21,6 +21,10 @@
 		BFC1EE7D2C96D25B007E3A9B /* UserMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE7C2C96D25B007E3A9B /* UserMessageView.swift */; };
 		BFC1EE7F2C9715CC007E3A9B /* TelMailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE7E2C9715CC007E3A9B /* TelMailButton.swift */; };
 		BFC1EE812C972460007E3A9B /* CharacterMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE802C97245F007E3A9B /* CharacterMessageView.swift */; };
+		BFC1EE8F2C99C010007E3A9B /* ViewControllerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE8E2C99C010007E3A9B /* ViewControllerState.swift */; };
+		BFC1EE912C99C064007E3A9B /* WelcomeVCState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE902C99C064007E3A9B /* WelcomeVCState.swift */; };
+		BFC1EE932C99C0D1007E3A9B /* ThinkingVCState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE922C99C0D1007E3A9B /* ThinkingVCState.swift */; };
+		BFC1EE952C99C16E007E3A9B /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE942C99C16E007E3A9B /* UserViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		BFC1EE7C2C96D25B007E3A9B /* UserMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMessageView.swift; sourceTree = "<group>"; };
 		BFC1EE7E2C9715CC007E3A9B /* TelMailButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelMailButton.swift; sourceTree = "<group>"; };
 		BFC1EE802C97245F007E3A9B /* CharacterMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterMessageView.swift; sourceTree = "<group>"; };
+		BFC1EE8E2C99C010007E3A9B /* ViewControllerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerState.swift; sourceTree = "<group>"; };
+		BFC1EE902C99C064007E3A9B /* WelcomeVCState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVCState.swift; sourceTree = "<group>"; };
+		BFC1EE922C99C0D1007E3A9B /* ThinkingVCState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThinkingVCState.swift; sourceTree = "<group>"; };
+		BFC1EE942C99C16E007E3A9B /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +83,10 @@
 				BF2958AE2C94349B00413B2A /* AppDelegate.swift */,
 				BF2958B02C94349B00413B2A /* SceneDelegate.swift */,
 				BF2958B22C94349B00413B2A /* ViewController.swift */,
+				BFC1EE8E2C99C010007E3A9B /* ViewControllerState.swift */,
+				BFC1EE902C99C064007E3A9B /* WelcomeVCState.swift */,
+				BFC1EE922C99C0D1007E3A9B /* ThinkingVCState.swift */,
+				BFC1EE942C99C16E007E3A9B /* UserViewModel.swift */,
 				BFC1EE7A2C96CD9D007E3A9B /* CharacterImageView.swift */,
 				BFC1EE7C2C96D25B007E3A9B /* UserMessageView.swift */,
 				BFC1EE802C97245F007E3A9B /* CharacterMessageView.swift */,
@@ -167,10 +179,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF2958B32C94349B00413B2A /* ViewController.swift in Sources */,
+				BFC1EE912C99C064007E3A9B /* WelcomeVCState.swift in Sources */,
+				BFC1EE8F2C99C010007E3A9B /* ViewControllerState.swift in Sources */,
 				BF2958CE2C969B1700413B2A /* QuestionSendView.swift in Sources */,
 				BFC1EE752C96C1D8007E3A9B /* GoodBadButton.swift in Sources */,
+				BFC1EE952C99C16E007E3A9B /* UserViewModel.swift in Sources */,
 				BF2958AF2C94349B00413B2A /* AppDelegate.swift in Sources */,
 				BF2958B12C94349B00413B2A /* SceneDelegate.swift in Sources */,
+				BFC1EE932C99C0D1007E3A9B /* ThinkingVCState.swift in Sources */,
 				BFC1EE7D2C96D25B007E3A9B /* UserMessageView.swift in Sources */,
 				BFC1EE7F2C9715CC007E3A9B /* TelMailButton.swift in Sources */,
 				BF2958B92C94349B00413B2A /* HackAichi2024.xcdatamodeld in Sources */,
