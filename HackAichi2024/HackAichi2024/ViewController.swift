@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    private var stackView: UIStackView!
+    private var userMessageViewLayoutGuide: UILayoutGuide!
     private var characterImageView: CharacterImageView!
     private var characterMessageView: CharacterMessageView!
     private var userMessageView: UserMessageView!
@@ -17,29 +17,22 @@ class ViewController: UIViewController {
     
     private var questionSendViewKeyboardHiddenLayout: [NSLayoutConstraint]!
     private var questionSendViewKeyboardVisibleLayout: [NSLayoutConstraint]!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
         
-        stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.distribution = .fillEqually
-        stackView.spacing = 15
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+        userMessageViewLayoutGuide = UILayoutGuide()
+        self.view.addLayoutGuide(userMessageViewLayoutGuide)
         
         characterImageView = CharacterImageView(image: UIImage(named: "chatbot_charactor_1"))
-        stackView.addArrangedSubview(characterImageView)
+        view.addSubview(characterImageView)
         
         characterMessageView = CharacterMessageView()
-        stackView.addArrangedSubview(characterMessageView)
+        view.addSubview(characterMessageView)
         
         userMessageView = UserMessageView()
-        stackView.addArrangedSubview(userMessageView)
-        
-        self.view.addSubview(stackView)
-        
+        view.addSubview(userMessageView)
         
         goodBadButton = GoodBadButton()
         self.view.addSubview(goodBadButton)
@@ -53,10 +46,25 @@ class ViewController: UIViewController {
         setUpNotification()
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            stackView.bottomAnchor.constraint(equalTo: goodBadButton.topAnchor, constant: -15),
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            characterImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
+            characterImageView.bottomAnchor.constraint(equalTo: characterMessageView.topAnchor, constant: -15),
+            characterImageView.leadingAnchor.constraint(equalTo: userMessageViewLayoutGuide.leadingAnchor),
+            characterImageView.trailingAnchor.constraint(equalTo: userMessageViewLayoutGuide.trailingAnchor),
+            
+            characterMessageView.heightAnchor.constraint(equalTo: characterImageView.heightAnchor),
+            characterMessageView.bottomAnchor.constraint(equalTo: userMessageView.topAnchor, constant: -15),
+            characterMessageView.leadingAnchor.constraint(equalTo: userMessageViewLayoutGuide.leadingAnchor),
+            characterMessageView.trailingAnchor.constraint(equalTo: userMessageViewLayoutGuide.trailingAnchor),
+            
+            userMessageViewLayoutGuide.heightAnchor.constraint(equalTo: characterImageView.heightAnchor),
+            userMessageViewLayoutGuide.bottomAnchor.constraint(equalTo: goodBadButton.topAnchor, constant: -15),
+            userMessageViewLayoutGuide.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            userMessageViewLayoutGuide.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            
+            userMessageView.topAnchor.constraint(equalTo: userMessageViewLayoutGuide.topAnchor),
+            userMessageView.bottomAnchor.constraint(equalTo: userMessageViewLayoutGuide.bottomAnchor),
+            userMessageView.leadingAnchor.constraint(equalTo: userMessageViewLayoutGuide.leadingAnchor),
+            userMessageView.trailingAnchor.constraint(equalTo: userMessageViewLayoutGuide.trailingAnchor),
             
             goodBadButton.widthAnchor.constraint(equalToConstant: 160),
             goodBadButton.heightAnchor.constraint(equalToConstant: 40),
@@ -79,7 +87,6 @@ class ViewController: UIViewController {
         ]
         
         NSLayoutConstraint.activate(questionSendViewKeyboardHiddenLayout)
-        
     }
     
     private func setUpNotification() {
