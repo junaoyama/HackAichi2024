@@ -14,7 +14,6 @@ protocol EmbeddingProvider {
 
 extension NLEmbedding: EmbeddingProvider {}
 
-
 protocol EmbeddingService {
     /// テキストをベクトル化（埋め込み）するメソッド
     /// - Parameters:

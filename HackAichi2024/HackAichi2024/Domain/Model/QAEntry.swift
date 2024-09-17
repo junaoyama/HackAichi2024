@@ -9,23 +9,19 @@ import Foundation
 
 //質問と回答、およびそのベクトル表現を保持する。
 struct QAEntry: Codable {
-    let id: Int
     let question: String
-    let answer: String
+    let answer: String //もっと構造を持たせるのもあり
 }
 
 extension QAEntry {
     init?(_ result: [String: Any]) {
-        guard let id = result["id"] as? Int else {
-            return nil
-        }
         guard let question = result["question"] as? String else {
             return nil
         }
         guard let answer = result["answer"] as? String else {
             return nil
         }
-        self.init(id: id, question: question, answer: answer)
+        self.init(question: question, answer: answer)
     }
 }
 

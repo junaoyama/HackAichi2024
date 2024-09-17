@@ -19,6 +19,9 @@
 		34E670482C97CB4500BD8DA8 /* AppleEmbeddingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E670472C97CB4500BD8DA8 /* AppleEmbeddingService.swift */; };
 		34E6704A2C97DA2A00BD8DA8 /* LoadQAEntriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E670492C97DA2A00BD8DA8 /* LoadQAEntriesUseCase.swift */; };
 		34E670502C9816A000BD8DA8 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = 34E6704F2C9816A000BD8DA8 /* Yams */; };
+		34E670522C98175600BD8DA8 /* demo.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 34E670512C98175600BD8DA8 /* demo.yaml */; };
+		34E670552C981D7A00BD8DA8 /* LoadFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E670542C981D7A00BD8DA8 /* LoadFileService.swift */; };
+		34E670572C981DF300BD8DA8 /* YamlLoadFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E670562C981DF300BD8DA8 /* YamlLoadFileService.swift */; };
 		BF2958AF2C94349B00413B2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2958AE2C94349B00413B2A /* AppDelegate.swift */; };
 		BF2958B12C94349B00413B2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2958B02C94349B00413B2A /* SceneDelegate.swift */; };
 		BF2958B32C94349B00413B2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2958B22C94349B00413B2A /* ViewController.swift */; };
@@ -43,6 +46,9 @@
 		34E670452C97CB2D00BD8DA8 /* EmbeddingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddingService.swift; sourceTree = "<group>"; };
 		34E670472C97CB4500BD8DA8 /* AppleEmbeddingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleEmbeddingService.swift; sourceTree = "<group>"; };
 		34E670492C97DA2A00BD8DA8 /* LoadQAEntriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadQAEntriesUseCase.swift; sourceTree = "<group>"; };
+		34E670512C98175600BD8DA8 /* demo.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = demo.yaml; sourceTree = "<group>"; };
+		34E670542C981D7A00BD8DA8 /* LoadFileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFileService.swift; sourceTree = "<group>"; };
+		34E670562C981DF300BD8DA8 /* YamlLoadFileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YamlLoadFileService.swift; sourceTree = "<group>"; };
 		BF2958AB2C94349B00413B2A /* HackAichi2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackAichi2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2958AE2C94349B00413B2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF2958B02C94349B00413B2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				34E670472C97CB4500BD8DA8 /* AppleEmbeddingService.swift */,
+				34E670562C981DF300BD8DA8 /* YamlLoadFileService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -147,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				34E670452C97CB2D00BD8DA8 /* EmbeddingService.swift */,
+				34E670542C981D7A00BD8DA8 /* LoadFileService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -163,6 +171,7 @@
 		34E6704B2C97FF3200BD8DA8 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
+				34E670512C98175600BD8DA8 /* demo.yaml */,
 			);
 			path = Sample;
 			sourceTree = "<group>";
@@ -274,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF2958BE2C94349D00413B2A /* LaunchScreen.storyboard in Resources */,
+				34E670522C98175600BD8DA8 /* demo.yaml in Resources */,
 				BF2958BB2C94349D00413B2A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,11 +298,13 @@
 				34E670482C97CB4500BD8DA8 /* AppleEmbeddingService.swift in Sources */,
 				34E6701C2C97188F00BD8DA8 /* QAEntryRepository.swift in Sources */,
 				34E6704A2C97DA2A00BD8DA8 /* LoadQAEntriesUseCase.swift in Sources */,
+				34E670552C981D7A00BD8DA8 /* LoadFileService.swift in Sources */,
 				34E670272C972EC700BD8DA8 /* GetBotResponseUsecase.swift in Sources */,
 				BF2958B32C94349B00413B2A /* ViewController.swift in Sources */,
 				BF2958CE2C969B1700413B2A /* QuestionSendView.swift in Sources */,
 				BFC1EE752C96C1D8007E3A9B /* GoodBadButton.swift in Sources */,
 				BF2958AF2C94349B00413B2A /* AppDelegate.swift in Sources */,
+				34E670572C981DF300BD8DA8 /* YamlLoadFileService.swift in Sources */,
 				BF2958B12C94349B00413B2A /* SceneDelegate.swift in Sources */,
 				34E670422C97C66D00BD8DA8 /* LocalQAEntryRepository.swift in Sources */,
 				34E670462C97CB2D00BD8DA8 /* EmbeddingService.swift in Sources */,
