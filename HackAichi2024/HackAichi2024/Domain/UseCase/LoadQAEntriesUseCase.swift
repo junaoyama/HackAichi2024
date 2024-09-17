@@ -34,6 +34,7 @@ class LocalLoadQAEntriesUseCase: LoadQAEntriesUseCase {
                 let embedding = try await self.embeddingService.embed(text: qaEntry.question)
                 try await self.qaEntryRepository.save(qaEntry: qaEntry, embedding: embedding)
             }
+            UserDefaults.standard.setValue(true, forKey: "alreadyLaunched")
         }
     }
 }
