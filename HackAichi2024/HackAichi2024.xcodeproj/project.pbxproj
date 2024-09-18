@@ -9,6 +9,19 @@
 /* Begin PBXBuildFile section */
 		34BFBDF32C96841900F6B1BA /* CSQLiteVec in Frameworks */ = {isa = PBXBuildFile; productRef = 34BFBDF22C96841900F6B1BA /* CSQLiteVec */; };
 		34BFBDF52C96841900F6B1BA /* SQLiteVec in Frameworks */ = {isa = PBXBuildFile; productRef = 34BFBDF42C96841900F6B1BA /* SQLiteVec */; };
+		34E6701C2C97188F00BD8DA8 /* QAEntryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E6701B2C97188F00BD8DA8 /* QAEntryRepository.swift */; };
+		34E6701E2C9718EA00BD8DA8 /* QAEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E6701D2C9718EA00BD8DA8 /* QAEntry.swift */; };
+		34E670222C971A5C00BD8DA8 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E670212C971A5C00BD8DA8 /* Message.swift */; };
+		34E670272C972EC700BD8DA8 /* GetBotResponseUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E670262C972EC700BD8DA8 /* GetBotResponseUsecase.swift */; };
+		34E670422C97C66D00BD8DA8 /* LocalQAEntryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E670412C97C66D00BD8DA8 /* LocalQAEntryRepository.swift */; };
+		34E670442C97C81F00BD8DA8 /* Embedding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E670432C97C81F00BD8DA8 /* Embedding.swift */; };
+		34E670462C97CB2D00BD8DA8 /* EmbeddingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E670452C97CB2D00BD8DA8 /* EmbeddingService.swift */; };
+		34E670482C97CB4500BD8DA8 /* AppleEmbeddingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E670472C97CB4500BD8DA8 /* AppleEmbeddingService.swift */; };
+		34E6704A2C97DA2A00BD8DA8 /* LoadQAEntriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E670492C97DA2A00BD8DA8 /* LoadQAEntriesUseCase.swift */; };
+		34E670502C9816A000BD8DA8 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = 34E6704F2C9816A000BD8DA8 /* Yams */; };
+		34E670522C98175600BD8DA8 /* demo.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 34E670512C98175600BD8DA8 /* demo.yaml */; };
+		34E670552C981D7A00BD8DA8 /* LoadFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E670542C981D7A00BD8DA8 /* LoadFileService.swift */; };
+		34E670572C981DF300BD8DA8 /* YamlLoadFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E670562C981DF300BD8DA8 /* YamlLoadFileService.swift */; };
 		BF2958AF2C94349B00413B2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2958AE2C94349B00413B2A /* AppDelegate.swift */; };
 		BF2958B12C94349B00413B2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2958B02C94349B00413B2A /* SceneDelegate.swift */; };
 		BF2958B32C94349B00413B2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2958B22C94349B00413B2A /* ViewController.swift */; };
@@ -28,6 +41,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		34E6701B2C97188F00BD8DA8 /* QAEntryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAEntryRepository.swift; sourceTree = "<group>"; };
+		34E6701D2C9718EA00BD8DA8 /* QAEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAEntry.swift; sourceTree = "<group>"; };
+		34E670212C971A5C00BD8DA8 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		34E670262C972EC700BD8DA8 /* GetBotResponseUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBotResponseUsecase.swift; sourceTree = "<group>"; };
+		34E670412C97C66D00BD8DA8 /* LocalQAEntryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalQAEntryRepository.swift; sourceTree = "<group>"; };
+		34E670432C97C81F00BD8DA8 /* Embedding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Embedding.swift; sourceTree = "<group>"; };
+		34E670452C97CB2D00BD8DA8 /* EmbeddingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddingService.swift; sourceTree = "<group>"; };
+		34E670472C97CB4500BD8DA8 /* AppleEmbeddingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleEmbeddingService.swift; sourceTree = "<group>"; };
+		34E670492C97DA2A00BD8DA8 /* LoadQAEntriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadQAEntriesUseCase.swift; sourceTree = "<group>"; };
+		34E670512C98175600BD8DA8 /* demo.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = demo.yaml; sourceTree = "<group>"; };
+		34E670542C981D7A00BD8DA8 /* LoadFileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFileService.swift; sourceTree = "<group>"; };
+		34E670562C981DF300BD8DA8 /* YamlLoadFileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YamlLoadFileService.swift; sourceTree = "<group>"; };
 		BF2958AB2C94349B00413B2A /* HackAichi2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackAichi2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2958AE2C94349B00413B2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF2958B02C94349B00413B2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +79,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34BFBDF32C96841900F6B1BA /* CSQLiteVec in Frameworks */,
+				34E670502C9816A000BD8DA8 /* Yams in Frameworks */,
 				34BFBDF52C96841900F6B1BA /* SQLiteVec in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,6 +87,103 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		34E6700F2C96C66100BD8DA8 /* Infra */ = {
+			isa = PBXGroup;
+			children = (
+				34E670142C96DAD200BD8DA8 /* Api */,
+				34E670102C96DA6F00BD8DA8 /* Domain */,
+			);
+			path = Infra;
+			sourceTree = "<group>";
+		};
+		34E670102C96DA6F00BD8DA8 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				34E670122C96DAA900BD8DA8 /* Service */,
+				34E670112C96DA9C00BD8DA8 /* Repository */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		34E670112C96DA9C00BD8DA8 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				34E670412C97C66D00BD8DA8 /* LocalQAEntryRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		34E670122C96DAA900BD8DA8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				34E670472C97CB4500BD8DA8 /* AppleEmbeddingService.swift */,
+				34E670562C981DF300BD8DA8 /* YamlLoadFileService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		34E670142C96DAD200BD8DA8 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		34E670152C96DAEE00BD8DA8 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				34E670252C971C6A00BD8DA8 /* UseCase */,
+				34E670182C96DB1C00BD8DA8 /* Service */,
+				34E670172C96DB0D00BD8DA8 /* Repository */,
+				34E670162C96DAFE00BD8DA8 /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		34E670162C96DAFE00BD8DA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				34E6701D2C9718EA00BD8DA8 /* QAEntry.swift */,
+				34E670212C971A5C00BD8DA8 /* Message.swift */,
+				34E670432C97C81F00BD8DA8 /* Embedding.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		34E670172C96DB0D00BD8DA8 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				34E6701B2C97188F00BD8DA8 /* QAEntryRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		34E670182C96DB1C00BD8DA8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				34E670452C97CB2D00BD8DA8 /* EmbeddingService.swift */,
+				34E670542C981D7A00BD8DA8 /* LoadFileService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		34E670252C971C6A00BD8DA8 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				34E670262C972EC700BD8DA8 /* GetBotResponseUsecase.swift */,
+				34E670492C97DA2A00BD8DA8 /* LoadQAEntriesUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		34E6704B2C97FF3200BD8DA8 /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				34E670512C98175600BD8DA8 /* demo.yaml */,
+			);
+			path = Sample;
+			sourceTree = "<group>";
+		};
 		BF2958A22C94349B00413B2A = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +203,9 @@
 		BF2958AD2C94349B00413B2A /* HackAichi2024 */ = {
 			isa = PBXGroup;
 			children = (
+				34E6704B2C97FF3200BD8DA8 /* Sample */,
+				34E670152C96DAEE00BD8DA8 /* Domain */,
+				34E6700F2C96C66100BD8DA8 /* Infra */,
 				BF2958AE2C94349B00413B2A /* AppDelegate.swift */,
 				BF2958B02C94349B00413B2A /* SceneDelegate.swift */,
 				BF2958B22C94349B00413B2A /* ViewController.swift */,
@@ -120,6 +246,7 @@
 			packageProductDependencies = (
 				34BFBDF22C96841900F6B1BA /* CSQLiteVec */,
 				34BFBDF42C96841900F6B1BA /* SQLiteVec */,
+				34E6704F2C9816A000BD8DA8 /* Yams */,
 			);
 			productName = HackAichi2024;
 			productReference = BF2958AB2C94349B00413B2A /* HackAichi2024.app */;
@@ -151,6 +278,7 @@
 			mainGroup = BF2958A22C94349B00413B2A;
 			packageReferences = (
 				34BFBDF12C96841900F6B1BA /* XCRemoteSwiftPackageReference "SQLiteVec" */,
+				34E6704E2C9816A000BD8DA8 /* XCRemoteSwiftPackageReference "Yams" */,
 			);
 			productRefGroup = BF2958AC2C94349B00413B2A /* Products */;
 			projectDirPath = "";
@@ -167,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF2958BE2C94349D00413B2A /* LaunchScreen.storyboard in Resources */,
+				34E670522C98175600BD8DA8 /* demo.yaml in Resources */,
 				BF2958BB2C94349D00413B2A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,6 +307,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34E670482C97CB4500BD8DA8 /* AppleEmbeddingService.swift in Sources */,
+				34E6701C2C97188F00BD8DA8 /* QAEntryRepository.swift in Sources */,
+				34E6704A2C97DA2A00BD8DA8 /* LoadQAEntriesUseCase.swift in Sources */,
+				34E670552C981D7A00BD8DA8 /* LoadFileService.swift in Sources */,
+				34E670272C972EC700BD8DA8 /* GetBotResponseUsecase.swift in Sources */,
 				BF2958B32C94349B00413B2A /* ViewController.swift in Sources */,
 				BFC1EE912C99C064007E3A9B /* WelcomeVCState.swift in Sources */,
 				BFC1EE8F2C99C010007E3A9B /* ViewControllerState.swift in Sources */,
@@ -185,8 +319,15 @@
 				BFC1EE752C96C1D8007E3A9B /* GoodBadButton.swift in Sources */,
 				BFC1EE952C99C16E007E3A9B /* UserViewModel.swift in Sources */,
 				BF2958AF2C94349B00413B2A /* AppDelegate.swift in Sources */,
+				34E670572C981DF300BD8DA8 /* YamlLoadFileService.swift in Sources */,
 				BF2958B12C94349B00413B2A /* SceneDelegate.swift in Sources */,
 				BFC1EE932C99C0D1007E3A9B /* ThinkingVCState.swift in Sources */,
+				34E670422C97C66D00BD8DA8 /* LocalQAEntryRepository.swift in Sources */,
+				34E670462C97CB2D00BD8DA8 /* EmbeddingService.swift in Sources */,
+				34E670442C97C81F00BD8DA8 /* Embedding.swift in Sources */,
+				34E670222C971A5C00BD8DA8 /* Message.swift in Sources */,
+				BF2958B92C94349B00413B2A /* HackAichi2024.xcdatamodeld in Sources */,
+				34E6701E2C9718EA00BD8DA8 /* QAEntry.swift in Sources */,
 				BFC1EE7D2C96D25B007E3A9B /* UserMessageView.swift in Sources */,
 				BFC1EE7F2C9715CC007E3A9B /* TelMailButton.swift in Sources */,
 				BF2958B92C94349B00413B2A /* HackAichi2024.xcdatamodeld in Sources */,
@@ -414,6 +555,14 @@
 				version = 0.0.7;
 			};
 		};
+		34E6704E2C9816A000BD8DA8 /* XCRemoteSwiftPackageReference "Yams" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jpsim/Yams.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -426,6 +575,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 34BFBDF12C96841900F6B1BA /* XCRemoteSwiftPackageReference "SQLiteVec" */;
 			productName = SQLiteVec;
+		};
+		34E6704F2C9816A000BD8DA8 /* Yams */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34E6704E2C9816A000BD8DA8 /* XCRemoteSwiftPackageReference "Yams" */;
+			productName = Yams;
 		};
 /* End XCSwiftPackageProductDependency section */
 
