@@ -8,7 +8,7 @@
 import UIKit
 
 class ThinkingState: ChatBotState {
-    var viewController: ChatBotViewController!
+    weak var viewController: ChatBotViewController!
     
     init(viewController: ChatBotViewController!) {
         self.viewController = viewController
