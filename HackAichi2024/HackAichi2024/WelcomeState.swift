@@ -14,12 +14,12 @@ class WelcomeState: ChatBotState {
         self.viewController = viewController
     }
     
-    func setUp() {
+    func activate() {
         viewController.userMessageView.isHidden = true
         viewController.goodBadButton.isHidden = true
     }
     
-    func tearDown() {
+    func deactivate() {
         viewController.userViewModel.inputText = viewController.questionSendView.questionTextView.text
         viewController.view.endEditing(true)
     }

@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ChatBotState {
-    func setUp()
-    func tearDown()
+    func activate()
+    func deactivate()
     func goNextState()
 }

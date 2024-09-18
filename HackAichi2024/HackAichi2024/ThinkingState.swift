@@ -14,14 +14,14 @@ class ThinkingState: ChatBotState {
         self.viewController = viewController
     }
     
-    func setUp() {
+    func activate() {
         viewController.userMessageView.text = viewController.userViewModel.inputText
         viewController.userMessageView.isHidden = false
         viewController.goodBadButton.isHidden = true
         viewController.questionSendView.isHidden = true
     }
     
-    func tearDown() {
+    func deactivate() {
         print("ThinkingVCState tearDowm（未実装）")
     }
     

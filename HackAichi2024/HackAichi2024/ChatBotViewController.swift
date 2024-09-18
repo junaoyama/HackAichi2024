@@ -10,10 +10,10 @@ import UIKit
 class ChatBotViewController: UIViewController {
     var state: ChatBotState! {
         willSet {
-            state.tearDown()
+            state.deactivate()
         }
         didSet {
-            state.setUp()
+            state.activate()
         }
     }
     var userViewModel: UserMessageViewModel!
