@@ -7,6 +7,6 @@
 
 import Foundation
 
-class UserViewModel {
+class UserMessageViewModel {
     var inputText: String = ""
 }

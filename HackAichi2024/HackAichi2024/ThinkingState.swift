@@ -7,10 +7,10 @@
 
 import UIKit
 
-class ThinkingVCState: ViewControllerState {
-    var viewController: ViewController!
+class ThinkingState: ChatBotState {
+    var viewController: ChatBotViewController!
     
-    init(viewController: ViewController!) {
+    init(viewController: ChatBotViewController!) {
         self.viewController = viewController
     }
     

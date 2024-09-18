@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ViewControllerState {
+protocol ChatBotState {
     func setUp()
     func tearDown()
     func goNextState()

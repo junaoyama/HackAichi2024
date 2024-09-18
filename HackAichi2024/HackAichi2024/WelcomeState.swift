@@ -7,10 +7,10 @@
 
 import UIKit
 
-class WelcomeVCState: ViewControllerState {
-    var viewController: ViewController!
+class WelcomeState: ChatBotState {
+    var viewController: ChatBotViewController!
     
-    init(viewController: ViewController!) {
+    init(viewController: ChatBotViewController!) {
         self.viewController = viewController
     }
     
@@ -25,7 +25,7 @@ class WelcomeVCState: ViewControllerState {
     }
     
     func goNextState() {
-        viewController.state = ThinkingVCState(viewController: viewController)
+        viewController.state = ThinkingState(viewController: viewController)
     }
     
     

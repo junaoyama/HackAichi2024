@@ -7,8 +7,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    var state: ViewControllerState! {
+class ChatBotViewController: UIViewController {
+    var state: ChatBotState! {
         willSet {
             state.tearDown()
         }
@@ -16,7 +16,7 @@ class ViewController: UIViewController {
             state.setUp()
         }
     }
-    var userViewModel: UserViewModel!
+    var userViewModel: UserMessageViewModel!
     private var userMessageViewLayoutGuide: UILayoutGuide!
     private var characterImageView: CharacterImageView!
     private var characterMessageView: CharacterMessageView!
@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     
     init() {
         super.init(nibName: nil, bundle: nil)
-        state = WelcomeVCState(viewController: self)
+        state = WelcomeState(viewController: self)
     }
     
     required init?(coder: NSCoder) {
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
         
-        userViewModel = UserViewModel()
+        userViewModel = UserMessageViewModel()
         
         userMessageViewLayoutGuide = UILayoutGuide()
         self.view.addLayoutGuide(userMessageViewLayoutGuide)
@@ -109,7 +109,7 @@ class ViewController: UIViewController {
         
         NSLayoutConstraint.activate(questionSendViewKeyboardHiddenLayout)
         
-        state = WelcomeVCState(viewController: self)
+        state = WelcomeState(viewController: self)
     }
     
     private func setUpNotification() {
