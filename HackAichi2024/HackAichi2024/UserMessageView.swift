@@ -23,4 +23,24 @@ class UserMessageView: UITextView {
         self.layer.cornerRadius = 20
         self.translatesAutoresizingMaskIntoConstraints = false
     }
+    
+    func activateViewBy(viewModel: UserMessageViewModel) {
+        switch viewModel.stateType {
+        case .welcome:
+            self.isHidden = true
+        case .thinking:
+            self.text = viewModel.inputText
+            self.isHidden = false
+        }
+    }
+    
+    func deactivateViewBy(viewModel: UserMessageViewModel) {
+        switch viewModel.stateType {
+        case .welcome:
+            break
+        case .thinking:
+            print("deactivateUserMessageViewBy（未実装）")
+        }
+        viewModel.stateType.goNextStateType()
+    }
 }

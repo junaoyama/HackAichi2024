@@ -8,8 +8,8 @@
 import UIKit
 
 class QuestionSendView: UIView {
-    private var questionTextView: UITextView!
-    private var sendButton: UIButton!
+    var questionTextView: UITextView!
+    var sendButton: UIButton!
     private var keyboardHiddenEmptyTextConstraints: [NSLayoutConstraint]!
     private var keyboardHiddenWithTextConstraints: [NSLayoutConstraint]!
     private var keyboardVisibleLayoutConstraints: [NSLayoutConstraint]!
@@ -99,6 +99,25 @@ class QuestionSendView: UIView {
         }
         NSLayoutConstraint.activate(keyboardVisibleLayoutConstraints)
         sendButton.isHidden = false
+    }
+    
+    func activateViewBy(viewModel: QuestionSendViewModel) {
+        switch viewModel.stateType {
+        case .welcome:
+            return
+        case .thinking:
+            self.isHidden = true
+        }
+    }
+    
+    func deactivateViewBy(viewModel: QuestionSendViewModel) {
+        switch viewModel.stateType {
+        case .welcome:
+            viewModel.inputText = questionTextView.text
+        case .thinking:
+            print("deactivateUserMessageViewBy（未実装）")
+        }
+        viewModel.stateType.goNextStateType()
     }
 
 }

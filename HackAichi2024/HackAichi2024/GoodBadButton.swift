@@ -67,6 +67,25 @@ class GoodBadButton: UIStackView {
         badButton = SelectableButton(type: .bad)
         self.addArrangedSubview(badButton)
     }
+    
+    func activateViewBy(viewModel: GoodBadButtonViewModel) {
+        switch viewModel.stateType {
+        case .welcome:
+            self.isHidden = true
+        case .thinking:
+            self.isHidden = true
+        }
+    }
+    
+    func deactivateViewBy(viewModel: GoodBadButtonViewModel) {
+        switch viewModel.stateType {
+        case .welcome:
+            break
+        case .thinking:
+            break
+        }
+        viewModel.stateType.goNextStateType()
+    }
 }
 
 
