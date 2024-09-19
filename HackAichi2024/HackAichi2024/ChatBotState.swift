@@ -12,3 +12,17 @@ protocol ChatBotState {
     func deactivate()
     func goNextState()
 }
+
+enum ChatBotStateType {
+    case welcome
+    case thinking
+    
+    mutating func goNextStateType() {
+        switch self {
+        case .welcome:
+            self = .thinking
+        case .thinking:
+            return
+        }
+    }
+}

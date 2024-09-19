@@ -8,7 +8,19 @@
 import UIKit
 
 class ChatBotViewController: UIViewController {
-    var state: ChatBotState! {
+    var stateType: ChatBotStateType! {
+        didSet {
+            switch stateType {
+            case .welcome:
+                state = WelcomeState(viewController: self)
+            case .thinking:
+                state = ThinkingState(viewController: self)
+            case .none:
+                return
+            }
+        }
+    }
+    private var state: ChatBotState! {
         willSet {
             state.deactivate()
         }
@@ -16,7 +28,9 @@ class ChatBotViewController: UIViewController {
             state.activate()
         }
     }
-    var userViewModel: UserMessageViewModel!
+    var userMessageViewModel: UserMessageViewModel!
+    var questionSendViewModel: QuestionSendViewModel!
+    var goodBadButtonViewModel: GoodBadButtonViewModel!
     private var userMessageViewLayoutGuide: UILayoutGuide!
     private var characterImageView: CharacterImageView!
     private var characterMessageView: CharacterMessageView!
@@ -27,8 +41,12 @@ class ChatBotViewController: UIViewController {
     private var questionSendViewKeyboardHiddenLayout: [NSLayoutConstraint]!
     private var questionSendViewKeyboardVisibleLayout: [NSLayoutConstraint]!
     
-    init() {
+    init(stateType: ChatBotStateType) {
         super.init(nibName: nil, bundle: nil)
+        self.stateType = stateType
+        userMessageViewModel = UserMessageViewModel(stateType: self.stateType)
+        questionSendViewModel = QuestionSendViewModel(stateType: self.stateType)
+        goodBadButtonViewModel = GoodBadButtonViewModel(stateType: self.stateType)
         state = WelcomeState(viewController: self)
     }
     
@@ -39,8 +57,6 @@ class ChatBotViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .systemBackground
-        
-        userViewModel = UserMessageViewModel()
         
         userMessageViewLayoutGuide = UILayoutGuide()
         self.view.addLayoutGuide(userMessageViewLayoutGuide)
@@ -109,7 +125,11 @@ class ChatBotViewController: UIViewController {
         
         NSLayoutConstraint.activate(questionSendViewKeyboardHiddenLayout)
         
-        state = WelcomeState(viewController: self)
+        
+        
+        state.activate()
+        
+        
     }
     
     private func setUpNotification() {

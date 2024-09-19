@@ -1,13 +1,13 @@
 //
-//  UserViewModel.swift
+//  QuestionSendViewModel.swift
 //  HackAichi2024
 //
-//  Created by jun on 2024/09/17.
+//  Created by jun on 2024/09/19.
 //
 
 import Foundation
 
-class UserMessageViewModel {
+class QuestionSendViewModel {
     var stateType: ChatBotStateType
     var inputText: String?
     
@@ -16,3 +16,4 @@ class UserMessageViewModel {
         self.inputText = inputText
     }
 }
+

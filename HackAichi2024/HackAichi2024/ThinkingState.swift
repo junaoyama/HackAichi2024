@@ -15,10 +15,10 @@ class ThinkingState: ChatBotState {
     }
     
     func activate() {
-        viewController.userMessageView.text = viewController.userViewModel.inputText
-        viewController.userMessageView.isHidden = false
-        viewController.goodBadButton.isHidden = true
-        viewController.questionSendView.isHidden = true
+        viewController.userMessageViewModel.inputText = viewController.questionSendViewModel.inputText
+        viewController.userMessageView.activateViewBy(viewModel: viewController.userMessageViewModel)
+        viewController.goodBadButton.activateViewBy(viewModel: viewController.goodBadButtonViewModel)
+        viewController.questionSendView.activateViewBy(viewModel: viewController.questionSendViewModel)
     }
     
     func deactivate() {

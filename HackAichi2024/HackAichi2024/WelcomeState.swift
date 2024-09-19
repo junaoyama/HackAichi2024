@@ -15,18 +15,20 @@ class WelcomeState: ChatBotState {
     }
     
     func activate() {
-        viewController.userMessageView.isHidden = true
-        viewController.goodBadButton.isHidden = true
+        viewController.userMessageView.activateViewBy(viewModel: viewController.userMessageViewModel)
+        viewController.goodBadButton.activateViewBy(viewModel: viewController.goodBadButtonViewModel)
+        viewController.questionSendView.activateViewBy(viewModel: viewController.questionSendViewModel)
     }
     
     func deactivate() {
-        viewController.userViewModel.inputText = viewController.questionSendView.questionTextView.text
+        viewController.userMessageView.deactivateViewBy(viewModel: viewController.userMessageViewModel)
+        viewController.goodBadButton.deactivateViewBy(viewModel: viewController.goodBadButtonViewModel)
+        viewController.questionSendView.deactivateViewBy(viewModel: viewController.questionSendViewModel)
         viewController.view.endEditing(true)
     }
     
     func goNextState() {
-        viewController.state = ThinkingState(viewController: viewController)
+        viewController.stateType = .thinking
     }
-    
-    
+
 }
