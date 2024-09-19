@@ -34,6 +34,7 @@
 		BFC1EE7D2C96D25B007E3A9B /* UserMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE7C2C96D25B007E3A9B /* UserMessageView.swift */; };
 		BFC1EE7F2C9715CC007E3A9B /* TelMailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE7E2C9715CC007E3A9B /* TelMailButton.swift */; };
 		BFC1EE812C972460007E3A9B /* CharacterMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE802C97245F007E3A9B /* CharacterMessageView.swift */; };
+		BFC1EE9C2C9C1EB1007E3A9B /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = BFC1EE9B2C9C1EB1007E3A9B /* MessageKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 				34BFBDF32C96841900F6B1BA /* CSQLiteVec in Frameworks */,
 				34E670502C9816A000BD8DA8 /* Yams in Frameworks */,
 				34BFBDF52C96841900F6B1BA /* SQLiteVec in Frameworks */,
+				BFC1EE9C2C9C1EB1007E3A9B /* MessageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +237,7 @@
 				34BFBDF22C96841900F6B1BA /* CSQLiteVec */,
 				34BFBDF42C96841900F6B1BA /* SQLiteVec */,
 				34E6704F2C9816A000BD8DA8 /* Yams */,
+				BFC1EE9B2C9C1EB1007E3A9B /* MessageKit */,
 			);
 			productName = HackAichi2024;
 			productReference = BF2958AB2C94349B00413B2A /* HackAichi2024.app */;
@@ -267,6 +270,7 @@
 			packageReferences = (
 				34BFBDF12C96841900F6B1BA /* XCRemoteSwiftPackageReference "SQLiteVec" */,
 				34E6704E2C9816A000BD8DA8 /* XCRemoteSwiftPackageReference "Yams" */,
+				BFC1EE9A2C9C1EB1007E3A9B /* XCRemoteSwiftPackageReference "MessageKit" */,
 			);
 			productRefGroup = BF2958AC2C94349B00413B2A /* Products */;
 			projectDirPath = "";
@@ -547,6 +551,14 @@
 				minimumVersion = 5.1.3;
 			};
 		};
+		BFC1EE9A2C9C1EB1007E3A9B /* XCRemoteSwiftPackageReference "MessageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MessageKit/MessageKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -564,6 +576,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 34E6704E2C9816A000BD8DA8 /* XCRemoteSwiftPackageReference "Yams" */;
 			productName = Yams;
+		};
+		BFC1EE9B2C9C1EB1007E3A9B /* MessageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BFC1EE9A2C9C1EB1007E3A9B /* XCRemoteSwiftPackageReference "MessageKit" */;
+			productName = MessageKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 
