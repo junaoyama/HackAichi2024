@@ -196,16 +196,32 @@
 				34E6700F2C96C66100BD8DA8 /* Infra */,
 				BF2958AE2C94349B00413B2A /* AppDelegate.swift */,
 				BF2958B02C94349B00413B2A /* SceneDelegate.swift */,
-				BF2958B22C94349B00413B2A /* ViewController.swift */,
-				BFC1EE7A2C96CD9D007E3A9B /* CharacterImageView.swift */,
-				BFC1EE742C96C1D8007E3A9B /* GoodBadButton.swift */,
-				BFC1EE7E2C9715CC007E3A9B /* TelMailButton.swift */,
+				BFC1EE9D2C9C6732007E3A9B /* Controllers */,
+				BFC1EE9E2C9C673C007E3A9B /* Views */,
 				BF2958BA2C94349D00413B2A /* Assets.xcassets */,
 				BF2958BC2C94349D00413B2A /* LaunchScreen.storyboard */,
 				BF2958BF2C94349D00413B2A /* Info.plist */,
 				BF2958B72C94349B00413B2A /* HackAichi2024.xcdatamodeld */,
 			);
 			path = HackAichi2024;
+			sourceTree = "<group>";
+		};
+		BFC1EE9D2C9C6732007E3A9B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BF2958B22C94349B00413B2A /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BFC1EE9E2C9C673C007E3A9B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BFC1EE7A2C96CD9D007E3A9B /* CharacterImageView.swift */,
+				BFC1EE742C96C1D8007E3A9B /* GoodBadButton.swift */,
+				BFC1EE7E2C9715CC007E3A9B /* TelMailButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
