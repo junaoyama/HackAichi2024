@@ -24,7 +24,6 @@
 		34E670572C981DF300BD8DA8 /* YamlLoadFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E670562C981DF300BD8DA8 /* YamlLoadFileService.swift */; };
 		BF2958AF2C94349B00413B2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2958AE2C94349B00413B2A /* AppDelegate.swift */; };
 		BF2958B12C94349B00413B2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2958B02C94349B00413B2A /* SceneDelegate.swift */; };
-		BF2958B32C94349B00413B2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2958B22C94349B00413B2A /* ViewController.swift */; };
 		BF2958B92C94349B00413B2A /* HackAichi2024.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF2958B72C94349B00413B2A /* HackAichi2024.xcdatamodeld */; };
 		BF2958BB2C94349D00413B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2958BA2C94349D00413B2A /* Assets.xcassets */; };
 		BF2958BE2C94349D00413B2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2958BC2C94349D00413B2A /* LaunchScreen.storyboard */; };
@@ -32,6 +31,7 @@
 		BFC1EE7B2C96CD9D007E3A9B /* CharacterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE7A2C96CD9D007E3A9B /* CharacterImageView.swift */; };
 		BFC1EE7F2C9715CC007E3A9B /* TelMailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE7E2C9715CC007E3A9B /* TelMailButton.swift */; };
 		BFC1EE9C2C9C1EB1007E3A9B /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = BFC1EE9B2C9C1EB1007E3A9B /* MessageKit */; };
+		BFC1EEB42C9C7992007E3A9B /* ChatBotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EEB32C9C7992007E3A9B /* ChatBotViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +50,6 @@
 		BF2958AB2C94349B00413B2A /* HackAichi2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackAichi2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2958AE2C94349B00413B2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF2958B02C94349B00413B2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BF2958B22C94349B00413B2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BF2958B82C94349B00413B2A /* HackAichi2024.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HackAichi2024.xcdatamodel; sourceTree = "<group>"; };
 		BF2958BA2C94349D00413B2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF2958BD2C94349D00413B2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,6 +57,7 @@
 		BFC1EE742C96C1D8007E3A9B /* GoodBadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodBadButton.swift; sourceTree = "<group>"; };
 		BFC1EE7A2C96CD9D007E3A9B /* CharacterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterImageView.swift; sourceTree = "<group>"; };
 		BFC1EE7E2C9715CC007E3A9B /* TelMailButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelMailButton.swift; sourceTree = "<group>"; };
+		BFC1EEB32C9C7992007E3A9B /* ChatBotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,7 +209,7 @@
 		BFC1EE9D2C9C6732007E3A9B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BF2958B22C94349B00413B2A /* ViewController.swift */,
+				BFC1EEB32C9C7992007E3A9B /* ChatBotViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -308,10 +308,10 @@
 			files = (
 				34E670482C97CB4500BD8DA8 /* AppleEmbeddingService.swift in Sources */,
 				34E6701C2C97188F00BD8DA8 /* QAEntryRepository.swift in Sources */,
+				BFC1EEB42C9C7992007E3A9B /* ChatBotViewController.swift in Sources */,
 				34E6704A2C97DA2A00BD8DA8 /* LoadQAEntriesUseCase.swift in Sources */,
 				34E670552C981D7A00BD8DA8 /* LoadFileService.swift in Sources */,
 				34E670272C972EC700BD8DA8 /* GetBotResponseUsecase.swift in Sources */,
-				BF2958B32C94349B00413B2A /* ViewController.swift in Sources */,
 				BFC1EE752C96C1D8007E3A9B /* GoodBadButton.swift in Sources */,
 				BF2958AF2C94349B00413B2A /* AppDelegate.swift in Sources */,
 				34E670572C981DF300BD8DA8 /* YamlLoadFileService.swift in Sources */,
