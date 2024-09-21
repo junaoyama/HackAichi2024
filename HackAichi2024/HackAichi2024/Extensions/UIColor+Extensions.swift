@@ -16,6 +16,10 @@ extension UIColor {
         return UIColor(named: "messageCellBackground")!
     }
     
+    class var cellText: UIColor {
+        return UIColor(named: "messageCellText")!
+    }
+    
     class var userCellBorder: UIColor {
         return UIColor(named: "userMessageCellBorder")!
     }
