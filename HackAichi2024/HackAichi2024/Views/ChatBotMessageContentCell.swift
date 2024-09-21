@@ -1,0 +1,135 @@
+//
+//  ChatBotMessageContentCell.swift
+//  HackAichi2024
+//
+//  Created by wakita tomoshige on 2024/09/21.
+//
+
+import Foundation
+import UIKit
+import MessageKit
+
+//ChatBotの返答に関するセル
+class ChatBotMessageContentCell: MessageCollectionViewCell {
+    override init(frame: CGRect) {
+      super.init(frame: frame)
+      contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+      setupSubviews()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+      super.init(coder: aDecoder)
+      contentView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+      setupSubviews()
+    }
+
+    // MARK: Internal
+
+    /// The `MessageCellDelegate` for the cell.
+    weak var delegate: MessageCellDelegate?
+    
+    private var messageLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.font = UIFont.preferredFont(forTextStyle: .body)
+
+        return label
+    }()
+
+    /// 枠線部分
+    private var messageContainerView: UIView = {
+        let containerView = UIView()
+        containerView.clipsToBounds = true
+        containerView.layer.masksToBounds = true
+        containerView.layer.cornerRadius = 5
+        containerView.backgroundColor = .white
+        containerView.layer.borderColor = UIColor.black.cgColor
+        containerView.layer.borderWidth = 2.0
+        return containerView
+    }()
+
+    private var goodButton: UIImageView = {
+        let imageView = UIImageView(image: UIImage(systemName: "hand.thumbsup.fill"))
+        imageView.tintColor = .darkGray
+        return imageView
+    }()
+    
+    private var badButton: UIImageView = {
+        let imageView = UIImageView(image: UIImage(systemName: "hand.thumbsdown.fill"))
+        imageView.tintColor = .darkGray
+        return imageView
+    }()
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        messageLabel.attributedText = nil
+        messageLabel.text = nil
+        goodButton.isHidden = true
+        badButton.isHidden = true
+    }
+
+    /// Handle tap gesture on contentView and its subviews.
+    override func handleTapGesture(_ gesture: UIGestureRecognizer) {
+        let touchLocation = gesture.location(in: self)
+        switch true {
+            case messageContainerView.frame
+                .contains(touchLocation) && !cellContentView(canHandle: convert(touchLocation, to: messageContainerView)):
+            delegate?.didTapMessage(in: self)
+        case goodButton.frame.contains(touchLocation):
+            delegate?.didTapCellTopLabel(in: self)
+        case badButton.frame.contains(touchLocation):
+            delegate?.didTapMessageBottomLabel(in: self)
+        default:
+            delegate?.didTapBackground(in: self)
+      }
+    }
+
+    /// Handle long press gesture, return true when gestureRecognizer's touch point in `messageContainerView`'s frame
+    override func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return super.gestureRecognizerShouldBegin(gestureRecognizer)
+    }
+
+    func setupSubviews() {
+        contentView.addSubview(goodButton)
+        contentView.addSubview(badButton)
+        contentView.addSubview(messageContainerView)
+        messageContainerView.addSubview(messageLabel)
+    }
+
+    func configure(
+      with message: MessageType,
+      at indexPath: IndexPath,
+      in messagesCollectionView: MessagesCollectionView,
+      dataSource: MessagesDataSource,
+      and sizeCalculator: ChatBotMessageLayoutSizeCalculator)
+    {
+        guard let displayDelegate = messagesCollectionView.messagesDisplayDelegate else {
+            return
+        }
+        
+        messageContainerView.frame = sizeCalculator.messageContainerFrame(for: message, at: indexPath, fromCurrentSender: dataSource.isFromCurrentSender(message: message))
+        goodButton.frame = sizeCalculator.goodButtonFrame(for: message, at: indexPath, fromCurrentSender: dataSource.isFromCurrentSender(message: message))
+        badButton.frame = sizeCalculator.badButtonFrame(for: message, at: indexPath, fromCurrentSender: dataSource.isFromCurrentSender(message: message))
+        messageLabel.frame = sizeCalculator.messageLabelFrame(for: message, at: indexPath)
+        
+        if case .custom(let text) = message.kind, let text = text as? NSAttributedString {
+            messageLabel.attributedText = text
+        } else {
+            fatalError("非対応です")
+        }
+        
+//        自分が一番下に存在しているか？
+        if sizeCalculator.messagesLayout.lastMessage(indexPath) {
+            goodButton.isHidden = false
+            badButton.isHidden = false
+        } else {
+            goodButton.isHidden = true
+            badButton.isHidden = true
+        }
+    }
+
+    /// Handle `ContentView`'s tap gesture, return false when `ContentView` doesn't needs to handle gesture
+    func cellContentView(canHandle _: CGPoint) -> Bool {
+      false
+    }
+}

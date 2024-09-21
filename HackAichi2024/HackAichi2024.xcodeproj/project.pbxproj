@@ -16,6 +16,9 @@
 		346D783E2C9E5AED007EDD43 /* LocalRepositoryProviderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346D783D2C9E5AED007EDD43 /* LocalRepositoryProviderService.swift */; };
 		346D78402C9E5FAA007EDD43 /* LoadMessageHistoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346D783F2C9E5FAA007EDD43 /* LoadMessageHistoryUseCase.swift */; };
 		346D78422C9E5FF9007EDD43 /* LoadMessageHistoryUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346D78412C9E5FF9007EDD43 /* LoadMessageHistoryUseCaseImpl.swift */; };
+		346D78442C9EEFFA007EDD43 /* ChatBotMessageContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346D78432C9EEFFA007EDD43 /* ChatBotMessageContentCell.swift */; };
+		346D78462C9EF434007EDD43 /* ChatBotMessageLayoutSizeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346D78452C9EF434007EDD43 /* ChatBotMessageLayoutSizeCalculator.swift */; };
+		346D784B2C9F84F2007EDD43 /* Ex+MessagesCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346D784A2C9F84F2007EDD43 /* Ex+MessagesCollectionViewFlowLayout.swift */; };
 		34BFBDF32C96841900F6B1BA /* CSQLiteVec in Frameworks */ = {isa = PBXBuildFile; productRef = 34BFBDF22C96841900F6B1BA /* CSQLiteVec */; };
 		34BFBDF52C96841900F6B1BA /* SQLiteVec in Frameworks */ = {isa = PBXBuildFile; productRef = 34BFBDF42C96841900F6B1BA /* SQLiteVec */; };
 		34E6701C2C97188F00BD8DA8 /* QAEntryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E6701B2C97188F00BD8DA8 /* QAEntryRepository.swift */; };
@@ -56,6 +59,9 @@
 		346D783D2C9E5AED007EDD43 /* LocalRepositoryProviderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepositoryProviderService.swift; sourceTree = "<group>"; };
 		346D783F2C9E5FAA007EDD43 /* LoadMessageHistoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMessageHistoryUseCase.swift; sourceTree = "<group>"; };
 		346D78412C9E5FF9007EDD43 /* LoadMessageHistoryUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMessageHistoryUseCaseImpl.swift; sourceTree = "<group>"; };
+		346D78432C9EEFFA007EDD43 /* ChatBotMessageContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotMessageContentCell.swift; sourceTree = "<group>"; };
+		346D78452C9EF434007EDD43 /* ChatBotMessageLayoutSizeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotMessageLayoutSizeCalculator.swift; sourceTree = "<group>"; };
+		346D784A2C9F84F2007EDD43 /* Ex+MessagesCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ex+MessagesCollectionViewFlowLayout.swift"; sourceTree = "<group>"; };
 		34E6701B2C97188F00BD8DA8 /* QAEntryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAEntryRepository.swift; sourceTree = "<group>"; };
 		34E6701D2C9718EA00BD8DA8 /* QAEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAEntry.swift; sourceTree = "<group>"; };
 		34E670212C971A5C00BD8DA8 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -271,6 +277,9 @@
 				BFC1EE7A2C96CD9D007E3A9B /* CharacterImageView.swift */,
 				BFC1EE742C96C1D8007E3A9B /* GoodBadButton.swift */,
 				BFC1EE7E2C9715CC007E3A9B /* TelMailButton.swift */,
+				346D78432C9EEFFA007EDD43 /* ChatBotMessageContentCell.swift */,
+				346D78452C9EF434007EDD43 /* ChatBotMessageLayoutSizeCalculator.swift */,
+				346D784A2C9F84F2007EDD43 /* Ex+MessagesCollectionViewFlowLayout.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -368,18 +377,17 @@
 			files = (
 				346D78332C9E4CF0007EDD43 /* LocalMessageLogRepository.swift in Sources */,
 				346D783A2C9E5923007EDD43 /* LoadQAEntriesImpl.swift in Sources */,
+				346D78462C9EF434007EDD43 /* ChatBotMessageLayoutSizeCalculator.swift in Sources */,
 				34E670482C97CB4500BD8DA8 /* AppleEmbeddingService.swift in Sources */,
 				34E6701C2C97188F00BD8DA8 /* QAEntryRepository.swift in Sources */,
 				BFC1EEB42C9C7992007E3A9B /* ChatBotViewController.swift in Sources */,
 				34E6704A2C97DA2A00BD8DA8 /* LoadQAEntriesUseCase.swift in Sources */,
 				BFD3BD222C9E9C6400E88814 /* MessageSenderType.swift in Sources */,
 				34E670552C981D7A00BD8DA8 /* LoadFileService.swift in Sources */,
-				34E670272C972EC700BD8DA8 /* GetBotResponseUsecase.swift in Sources */,
 				34E670272C972EC700BD8DA8 /* GetBotResponseUsecaseImpl.swift in Sources */,
-				BF2958B32C94349B00413B2A /* ViewController.swift in Sources */,
+				34E670272C972EC700BD8DA8 /* GetBotResponseUsecaseImpl.swift in Sources */,
 				346D78382C9E58E1007EDD43 /* GetBotResponseUseCase.swift in Sources */,
 				346D783E2C9E5AED007EDD43 /* LocalRepositoryProviderService.swift in Sources */,
-				BF2958CE2C969B1700413B2A /* QuestionSendView.swift in Sources */,
 				BFC1EE752C96C1D8007E3A9B /* GoodBadButton.swift in Sources */,
 				BF2958AF2C94349B00413B2A /* AppDelegate.swift in Sources */,
 				346D782D2C9E4121007EDD43 /* SQLite3DataFormatter.swift in Sources */,
@@ -394,9 +402,10 @@
 				34E670222C971A5C00BD8DA8 /* Message.swift in Sources */,
 				BFD3BD242C9E9CBC00E88814 /* ChatMessageType.swift in Sources */,
 				BF2958B92C94349B00413B2A /* HackAichi2024.xcdatamodeld in Sources */,
+				346D78442C9EEFFA007EDD43 /* ChatBotMessageContentCell.swift in Sources */,
+				346D784B2C9F84F2007EDD43 /* Ex+MessagesCollectionViewFlowLayout.swift in Sources */,
 				34E6701E2C9718EA00BD8DA8 /* QAEntry.swift in Sources */,
 				346D78402C9E5FAA007EDD43 /* LoadMessageHistoryUseCase.swift in Sources */,
-				BFC1EE7D2C96D25B007E3A9B /* UserMessageView.swift in Sources */,
 				BFC1EE7F2C9715CC007E3A9B /* TelMailButton.swift in Sources */,
 				BF2958B92C94349B00413B2A /* HackAichi2024.xcdatamodeld in Sources */,
 				BFC1EE7B2C96CD9D007E3A9B /* CharacterImageView.swift in Sources */,
