@@ -11,4 +11,16 @@ extension UIColor {
     class var vcBackground: UIColor {
         return UIColor(named: "viewControllerBackground")!
     }
+    
+    class var cellBackground: UIColor {
+        return UIColor(named: "messageCellBackground")!
+    }
+    
+    class var userCellBorder: UIColor {
+        return UIColor(named: "userMessageCellBorder")!
+    }
+    
+    class var characterCellBorder: UIColor {
+        return UIColor(named: "characterMessageCellBorder")!
+    }
 }
