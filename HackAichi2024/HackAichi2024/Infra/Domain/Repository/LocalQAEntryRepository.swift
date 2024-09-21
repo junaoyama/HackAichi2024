@@ -14,50 +14,14 @@ import SQLiteVec
 import Accelerate
 
 actor LocalQAEntryRepository: QAEntryRepository {
-    private init() {}
-    static let shared: LocalQAEntryRepository = .init()
-//    遅延評価させないと落ちる(SQLiteVec.initialize()の前にDatabaseクラスを使用してはいけない)
-    private lazy var database: Database = {
-        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let dbPath = path.appendingPathComponent("myDatabase.sqlite").path
-        return try! Database(.uri(dbPath))
-    }()
+    private var database: Database
     
-    private var needSetUp: Bool = true
-
-    private func setUpIfNeed() async throws {
-        if !needSetUp {
-            return
-        }
-        
-        try SQLiteVec.initialize()
-        
-//        QAテーブルを作成
-        try await database.execute(
-            """
-                CREATE TABLE IF NOT EXISTS QnA(
-                  id INTEGER PRIMARY KEY,
-                  question TEXT,
-                  answer TEXT
-                );
-            """
-        )
-        
-//        ベクトルデータ保存用のテーブルを作成
-        try await database.execute(
-            """
-                CREATE VIRTUAL TABLE IF NOT EXISTS embeddings USING vec0(
-                  id INTEGER PRIMARY KEY,
-                  vector float[512]
-                );
-            """
-        )
-        
-        needSetUp = false
+    init(database: Database) {
+        self.database = database
     }
     
     func save(qaEntry: QAEntry, embedding: Embedding) async throws {
-        try await setUpIfNeed()
+        try await createTableIfNeed()
         
         try await database.execute(
             """
@@ -78,7 +42,7 @@ actor LocalQAEntryRepository: QAEntryRepository {
     }
     
     func vectorSimilar(to embedding: Embedding, k: Int = 1) async throws -> [QAEntry] {
-        try await setUpIfNeed()
+        try await createTableIfNeed()
         
         let vectorEmbeddings = embedding.vector
         let result = try await database.query(
@@ -94,5 +58,28 @@ actor LocalQAEntryRepository: QAEntryRepository {
         )
         
         return result.compactMap(QAEntry.init)
+    }
+    
+    private func createTableIfNeed() async throws {
+//        QAテーブルを作成
+        try await database.execute(
+            """
+                CREATE TABLE IF NOT EXISTS QnA(
+                  id INTEGER PRIMARY KEY,
+                  question TEXT,
+                  answer TEXT
+                );
+            """
+        )
+        
+//        ベクトルデータ保存用のテーブルを作成
+        try await database.execute(
+            """
+                CREATE VIRTUAL TABLE IF NOT EXISTS embeddings USING vec0(
+                  id INTEGER PRIMARY KEY,
+                  vector float[512]
+                );
+            """
+        )
     }
 }

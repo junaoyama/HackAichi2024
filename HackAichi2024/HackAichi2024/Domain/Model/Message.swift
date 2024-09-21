@@ -11,10 +11,10 @@ struct Message {
     let id: UUID
     let sender: Sender
     let content: String
-    let timestamp: Date
+    let sentAt: Date
 
-    enum Sender {
-        case user
-        case bot
+    enum Sender: Int {
+        case user //0
+        case bot //1
     }
 }

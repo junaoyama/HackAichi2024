@@ -9,5 +9,5 @@ import Foundation
 
 
 protocol LoadFileService {
-    func load() throws -> [QAEntry]
+    func load(path: URL) throws -> [QAEntry]
 }
