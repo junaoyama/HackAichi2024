@@ -42,6 +42,7 @@ final class ChatMessagesViewController: MessagesViewController {
         // messageInputBar
         messageInputBar.sendButton.title = nil
         messageInputBar.sendButton.image = UIImage(systemName: "paperplane")
+        messageInputBar.inputTextView.placeholder = "質問を入力してね！"
         
         if let layout = self.messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout {
             layout.setMessageIncomingAvatarSize(.zero)
