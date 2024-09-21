@@ -20,6 +20,10 @@ final class ChatMessagesViewController: MessagesViewController {
         }
     }
     
+    private lazy var chatBotMessageSizeCalculator = ChatBotMessageLayoutSizeCalculator(
+      layout: self.messagesCollectionView
+        .messagesCollectionViewFlowLayout)
+    
     init(messageList: [ChatMessageType]) {
         self.messageList = messageList
         super.init(nibName: nil, bundle: nil)
@@ -35,6 +39,7 @@ final class ChatMessagesViewController: MessagesViewController {
         
         // messagesCollectionView
         messagesCollectionView.backgroundColor = UIColor.secondarySystemBackground
+        messagesCollectionView.register(ChatBotMessageContentCell.self)
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
@@ -119,6 +124,16 @@ extension ChatMessagesViewController: MessagesLayoutDelegate {
     // headerViewのサイズ
     func headerViewSize(for section: Int, in messagesCollectionView: MessagesCollectionView) -> CGSize {
         return CGSize.zero
+    }
+    
+    func customCellSizeCalculator(for message: any MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CellSizeCalculator {
+        return chatBotMessageSizeCalculator
+    }
+    
+    func customCell(for message: any MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell {
+        let cell = messagesCollectionView.dequeueReusableCell(ChatBotMessageContentCell.self, for: indexPath)
+        cell.configure(with: message, at: indexPath, in: messagesCollectionView, dataSource: self, and: chatBotMessageSizeCalculator)
+        return cell
     }
 }
 
