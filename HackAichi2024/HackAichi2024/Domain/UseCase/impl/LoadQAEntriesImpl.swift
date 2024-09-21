@@ -22,7 +22,7 @@ class LocalLoadQAEntriesUseCaseImpl: LoadQAEntriesUseCase {
     func loadIfNeed() async throws {
 //        UserDefaultsのboolの初期値がfalseであるため
         let isFirstLaunch = !UserDefaults.standard.bool(forKey: "alreadyLaunched")
-        if true {
+        if isFirstLaunch {
             let demoPath = URL(filePath: Bundle.main.path(forResource: "demo", ofType: "yaml")!)
             let qaEntries = try loadFileService.load(path: demoPath)
             for qaEntry in qaEntries {
