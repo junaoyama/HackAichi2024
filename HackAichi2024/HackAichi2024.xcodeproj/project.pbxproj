@@ -33,17 +33,17 @@
 		34E670572C981DF300BD8DA8 /* YamlLoadFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E670562C981DF300BD8DA8 /* YamlLoadFileService.swift */; };
 		BF2958AF2C94349B00413B2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2958AE2C94349B00413B2A /* AppDelegate.swift */; };
 		BF2958B12C94349B00413B2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2958B02C94349B00413B2A /* SceneDelegate.swift */; };
-		BF2958B32C94349B00413B2A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2958B22C94349B00413B2A /* ViewController.swift */; };
 		BF2958B92C94349B00413B2A /* HackAichi2024.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF2958B72C94349B00413B2A /* HackAichi2024.xcdatamodeld */; };
 		BF2958BB2C94349D00413B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2958BA2C94349D00413B2A /* Assets.xcassets */; };
 		BF2958BE2C94349D00413B2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2958BC2C94349D00413B2A /* LaunchScreen.storyboard */; };
-		BF2958CE2C969B1700413B2A /* QuestionSendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2958CD2C969B1700413B2A /* QuestionSendView.swift */; };
 		BFC1EE752C96C1D8007E3A9B /* GoodBadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE742C96C1D8007E3A9B /* GoodBadButton.swift */; };
 		BFC1EE7B2C96CD9D007E3A9B /* CharacterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE7A2C96CD9D007E3A9B /* CharacterImageView.swift */; };
-		BFC1EE7D2C96D25B007E3A9B /* UserMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE7C2C96D25B007E3A9B /* UserMessageView.swift */; };
 		BFC1EE7F2C9715CC007E3A9B /* TelMailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE7E2C9715CC007E3A9B /* TelMailButton.swift */; };
-		BFC1EE812C972460007E3A9B /* CharacterMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE802C97245F007E3A9B /* CharacterMessageView.swift */; };
 		BFC1EE9C2C9C1EB1007E3A9B /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = BFC1EE9B2C9C1EB1007E3A9B /* MessageKit */; };
+		BFC1EEB42C9C7992007E3A9B /* ChatBotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EEB32C9C7992007E3A9B /* ChatBotViewController.swift */; };
+		BFC1EEC62C9D4383007E3A9B /* ChatMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EEC52C9D4383007E3A9B /* ChatMessagesViewController.swift */; };
+		BFD3BD222C9E9C6400E88814 /* MessageSenderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD212C9E9C6400E88814 /* MessageSenderType.swift */; };
+		BFD3BD242C9E9CBC00E88814 /* ChatMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD232C9E9CBC00E88814 /* ChatMessageType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,17 +71,17 @@
 		BF2958AB2C94349B00413B2A /* HackAichi2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackAichi2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2958AE2C94349B00413B2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF2958B02C94349B00413B2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BF2958B22C94349B00413B2A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BF2958B82C94349B00413B2A /* HackAichi2024.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HackAichi2024.xcdatamodel; sourceTree = "<group>"; };
 		BF2958BA2C94349D00413B2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF2958BD2C94349D00413B2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF2958BF2C94349D00413B2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF2958CD2C969B1700413B2A /* QuestionSendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSendView.swift; sourceTree = "<group>"; };
 		BFC1EE742C96C1D8007E3A9B /* GoodBadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodBadButton.swift; sourceTree = "<group>"; };
 		BFC1EE7A2C96CD9D007E3A9B /* CharacterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterImageView.swift; sourceTree = "<group>"; };
-		BFC1EE7C2C96D25B007E3A9B /* UserMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMessageView.swift; sourceTree = "<group>"; };
 		BFC1EE7E2C9715CC007E3A9B /* TelMailButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelMailButton.swift; sourceTree = "<group>"; };
-		BFC1EE802C97245F007E3A9B /* CharacterMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterMessageView.swift; sourceTree = "<group>"; };
+		BFC1EEB32C9C7992007E3A9B /* ChatBotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotViewController.swift; sourceTree = "<group>"; };
+		BFC1EEC52C9D4383007E3A9B /* ChatMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessagesViewController.swift; sourceTree = "<group>"; };
+		BFD3BD212C9E9C6400E88814 /* MessageSenderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSenderType.swift; sourceTree = "<group>"; };
+		BFD3BD232C9E9CBC00E88814 /* ChatMessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,19 +245,43 @@
 				34E6700F2C96C66100BD8DA8 /* Infra */,
 				BF2958AE2C94349B00413B2A /* AppDelegate.swift */,
 				BF2958B02C94349B00413B2A /* SceneDelegate.swift */,
-				BF2958B22C94349B00413B2A /* ViewController.swift */,
-				BFC1EE7A2C96CD9D007E3A9B /* CharacterImageView.swift */,
-				BFC1EE7C2C96D25B007E3A9B /* UserMessageView.swift */,
-				BFC1EE802C97245F007E3A9B /* CharacterMessageView.swift */,
-				BF2958CD2C969B1700413B2A /* QuestionSendView.swift */,
-				BFC1EE742C96C1D8007E3A9B /* GoodBadButton.swift */,
-				BFC1EE7E2C9715CC007E3A9B /* TelMailButton.swift */,
+				BFD3BD202C9E9C2A00E88814 /* Models */,
+				BFC1EE9E2C9C673C007E3A9B /* Views */,
+				BFC1EE9D2C9C6732007E3A9B /* Controllers */,
 				BF2958BA2C94349D00413B2A /* Assets.xcassets */,
 				BF2958BC2C94349D00413B2A /* LaunchScreen.storyboard */,
 				BF2958BF2C94349D00413B2A /* Info.plist */,
 				BF2958B72C94349B00413B2A /* HackAichi2024.xcdatamodeld */,
 			);
 			path = HackAichi2024;
+			sourceTree = "<group>";
+		};
+		BFC1EE9D2C9C6732007E3A9B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BFC1EEB32C9C7992007E3A9B /* ChatBotViewController.swift */,
+				BFC1EEC52C9D4383007E3A9B /* ChatMessagesViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BFC1EE9E2C9C673C007E3A9B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BFC1EE7A2C96CD9D007E3A9B /* CharacterImageView.swift */,
+				BFC1EE742C96C1D8007E3A9B /* GoodBadButton.swift */,
+				BFC1EE7E2C9715CC007E3A9B /* TelMailButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BFD3BD202C9E9C2A00E88814 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BFD3BD212C9E9C6400E88814 /* MessageSenderType.swift */,
+				BFD3BD232C9E9CBC00E88814 /* ChatMessageType.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,8 +370,11 @@
 				346D783A2C9E5923007EDD43 /* LoadQAEntriesImpl.swift in Sources */,
 				34E670482C97CB4500BD8DA8 /* AppleEmbeddingService.swift in Sources */,
 				34E6701C2C97188F00BD8DA8 /* QAEntryRepository.swift in Sources */,
+				BFC1EEB42C9C7992007E3A9B /* ChatBotViewController.swift in Sources */,
 				34E6704A2C97DA2A00BD8DA8 /* LoadQAEntriesUseCase.swift in Sources */,
+				BFD3BD222C9E9C6400E88814 /* MessageSenderType.swift in Sources */,
 				34E670552C981D7A00BD8DA8 /* LoadFileService.swift in Sources */,
+				34E670272C972EC700BD8DA8 /* GetBotResponseUsecase.swift in Sources */,
 				34E670272C972EC700BD8DA8 /* GetBotResponseUsecaseImpl.swift in Sources */,
 				BF2958B32C94349B00413B2A /* ViewController.swift in Sources */,
 				346D78382C9E58E1007EDD43 /* GetBotResponseUseCase.swift in Sources */,
@@ -365,6 +392,7 @@
 				346D783C2C9E5A3F007EDD43 /* RepositoryProviderService.swift in Sources */,
 				34E670442C97C81F00BD8DA8 /* Embedding.swift in Sources */,
 				34E670222C971A5C00BD8DA8 /* Message.swift in Sources */,
+				BFD3BD242C9E9CBC00E88814 /* ChatMessageType.swift in Sources */,
 				BF2958B92C94349B00413B2A /* HackAichi2024.xcdatamodeld in Sources */,
 				34E6701E2C9718EA00BD8DA8 /* QAEntry.swift in Sources */,
 				346D78402C9E5FAA007EDD43 /* LoadMessageHistoryUseCase.swift in Sources */,
@@ -372,7 +400,7 @@
 				BFC1EE7F2C9715CC007E3A9B /* TelMailButton.swift in Sources */,
 				BF2958B92C94349B00413B2A /* HackAichi2024.xcdatamodeld in Sources */,
 				BFC1EE7B2C96CD9D007E3A9B /* CharacterImageView.swift in Sources */,
-				BFC1EE812C972460007E3A9B /* CharacterMessageView.swift in Sources */,
+				BFC1EEC62C9D4383007E3A9B /* ChatMessagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
