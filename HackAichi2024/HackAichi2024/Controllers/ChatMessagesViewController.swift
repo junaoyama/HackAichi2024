@@ -95,7 +95,7 @@ extension ChatMessagesViewController: MessagesDataSource {
 extension ChatMessagesViewController: MessagesDisplayDelegate {
     // 背景色
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-        return isFromCurrentSender(message: message) ? UIColor.systemBlue : UIColor.systemBackground
+        return .cellBackground
     }
 
     // メッセージスタイル
