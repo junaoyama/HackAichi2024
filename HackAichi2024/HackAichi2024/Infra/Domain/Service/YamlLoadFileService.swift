@@ -9,9 +9,9 @@ import Foundation
 import Yams
 
 class YamlLoadFileService: LoadFileService {
-    func load() -> [QAEntry] {
+    func load(path: URL) -> [QAEntry] {
         var demoQAEntries: [QAEntry] = []
-        guard let demoPath = Bundle.main.path(forResource: "demo", ofType: "yaml") else { return demoQAEntries }
+        let demoPath = path.relativePath
         do {
             // ファイルの内容を文字列として読み込む
             let yamlString = try String(contentsOfFile: demoPath, encoding: .utf8)
