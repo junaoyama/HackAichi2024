@@ -46,6 +46,7 @@ final class ChatMessagesViewController: MessagesViewController {
         if let layout = self.messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout {
             layout.setMessageIncomingAvatarSize(.zero)
             layout.setMessageOutgoingAvatarSize(.zero)
+            layout.messagesCollectionView.contentInset = UIEdgeInsets(top: 15)
             layout.setMessageIncomingMessageTopLabelAlignment(LabelAlignment(textAlignment: .left, textInsets: UIEdgeInsets(left: 10)))
             layout.setMessageIncomingMessageBottomLabelAlignment(LabelAlignment(textAlignment: .left, textInsets: UIEdgeInsets(left: 10)))
             layout.setMessageOutgoingMessageTopLabelAlignment(LabelAlignment(textAlignment: .right, textInsets: UIEdgeInsets(right: 10)))
@@ -73,13 +74,6 @@ extension ChatMessagesViewController: MessagesDataSource {
         return messageList[indexPath.section]
     }
 
-    // messageTopLabelの属性テキスト
-    func messageTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
-        return NSAttributedString(
-            string: messageList[indexPath.section].sender.displayName,
-            attributes: [.font: UIFont.systemFont(ofSize: 12.0), .foregroundColor: UIColor.systemBlue])
-    }
-
     // messageBottomLabelの属性テキスト
     func messageBottomLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
         let dateFormatter = DateFormatter()
@@ -95,22 +89,17 @@ extension ChatMessagesViewController: MessagesDataSource {
 extension ChatMessagesViewController: MessagesDisplayDelegate {
     // 背景色
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-        return isFromCurrentSender(message: message) ? UIColor.systemBlue : UIColor.systemBackground
+        return .cellBackground
     }
 
     // メッセージスタイル
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
-        return .bubble
+        return .bubbleOutline(isFromCurrentSender(message: message) ? .userCellBorder : .characterCellBorder)
     }
 }
 
 // MessagesLayoutDelegate
 extension ChatMessagesViewController: MessagesLayoutDelegate {
-    // messageTopLabelの高さ
-    func messageTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
-        return 24
-    }
-
     // messageBottomLabelの高さ
     func messageBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
         return 24

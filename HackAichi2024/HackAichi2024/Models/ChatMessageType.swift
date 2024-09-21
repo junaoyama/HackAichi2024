@@ -25,7 +25,7 @@ struct ChatMessageType: MessageType {
                 string: message,
                 attributes: [
                     .font: UIFont.systemFont(ofSize: 14.0),
-                    .foregroundColor: sender.senderId == "0" ? UIColor.white : UIColor.label
+                    .foregroundColor: UIColor.cellText
                 ]
             )),
             sentDate: Date())
