@@ -12,7 +12,7 @@ import InputBarAccessoryView
 final class ChatMessagesViewController: MessagesViewController {
 
     // メッセージリスト
-    private var messageList: [ChatMessageType] = [] {
+    var messageList: [ChatMessageType] = [] {
         // メッセージ設定時に呼ばれる
         didSet {
             messagesCollectionView.reloadData()
@@ -20,18 +20,18 @@ final class ChatMessagesViewController: MessagesViewController {
         }
     }
     
-    private let getBotResposeUseCase: GetBotResponseUseCase = GetBotResponseUseCaseImpl()
-    private let loadQAEntriesUseCase: LoadQAEntriesUseCase = LocalLoadQAEntriesUseCase()
-
+    init(messageList: [ChatMessageType]) {
+        self.messageList = messageList
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // ビューロード時に呼ばれる
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.async {
-            // メッセージリストの初期化
-            self.messageList = [
-                ChatMessageType.new(sender: MessageSenderType.character, message: "ようこそ、質問を入力して送信してね"),
-            ]
-        }
         
         // messagesCollectionView
         messagesCollectionView.backgroundColor = UIColor.secondarySystemBackground
@@ -40,7 +40,6 @@ final class ChatMessagesViewController: MessagesViewController {
         messagesCollectionView.messagesDisplayDelegate = self
         
         // messageInputBar
-        messageInputBar.delegate = self
         messageInputBar.sendButton.title = nil
         messageInputBar.sendButton.image = UIImage(systemName: "paperplane")
         
@@ -53,13 +52,7 @@ final class ChatMessagesViewController: MessagesViewController {
             layout.setMessageOutgoingMessageBottomLabelAlignment(LabelAlignment(textAlignment: .right, textInsets: UIEdgeInsets(right: 10)))
         }
         
-
-        Task {
-            let response = try await loadQAEntriesUseCase.loadIfNeed()
-            print(response)
-        }
-        
-        
+        messagesCollectionView.reloadData()
     }
 }
 
@@ -107,15 +100,7 @@ extension ChatMessagesViewController: MessagesDisplayDelegate {
 
     // メッセージスタイル
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
-//        let corner: MessageStyle.TailCorner = isFromCurrentSender(message: message) ? .bottomRight : .bottomLeft
-//        return .bubbleTail(corner, .curved)
         return .bubble
-    }
-
-    // avaterViewの設定
-    func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
-        let sender = messageList[indexPath.section].sender as! MessageSenderType
-        avatarView.image =  UIImage(named: sender.iconName)
     }
 }
 
@@ -134,28 +119,6 @@ extension ChatMessagesViewController: MessagesLayoutDelegate {
     // headerViewのサイズ
     func headerViewSize(for section: Int, in messagesCollectionView: MessagesCollectionView) -> CGSize {
         return CGSize.zero
-    }
-}
-
-// InputBarAccessoryViewDelegate
-extension ChatMessagesViewController: InputBarAccessoryViewDelegate {
-    // InputBarAccessoryViewの送信ボタン押下時に呼ばれる
-    func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
-        messageList.append(ChatMessageType.new(sender: MessageSenderType.user, message: text))
-        messageInputBar.inputTextView.text = String()
-        returnAnswer(question: text)
-    }
-    
-    func returnAnswer(question: String) {
-        messageList.append(ChatMessageType.new(sender: MessageSenderType.character, message: "・・・"))
-        var answer = String()
-        Task {
-            let response = try await getBotResposeUseCase.respondToMessage(Message(id: UUID(), sender: .user, content: question, timestamp: Date()))
-            answer = response.content
-            messageList.append(ChatMessageType.new(sender: MessageSenderType.character, message: answer))
-            print(response)
-        }
-        
     }
 }
 

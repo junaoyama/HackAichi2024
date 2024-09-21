@@ -7,10 +7,14 @@
 
 import UIKit
 import MessageKit
+import InputBarAccessoryView
 
 class ChatBotViewController: UIViewController {
     private var messagesViewController: ChatMessagesViewController?
     private var characterImageView: CharacterImageView!
+    
+    private let getBotResposeUseCase: GetBotResponseUseCase = GetBotResponseUseCaseImpl()
+    private let loadQAEntriesUseCase: LoadQAEntriesUseCase = LocalLoadQAEntriesUseCase()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +26,17 @@ class ChatBotViewController: UIViewController {
         self.view.addSubview(characterImageView)
         
         setUpConstraints()
+        
+        Task {
+            try await loadQAEntriesUseCase.loadIfNeed()
+        }
     }
 
     private func embedChildViewController() {
         // 1. 子ViewControllerのインスタンスを作成
-        let childVC = ChatMessagesViewController()
+        let childVC = ChatMessagesViewController(messageList: [ChatMessageType.new(sender: MessageSenderType.character, message: "ようこそ、質問を入力して送信してね")])
         self.messagesViewController = childVC
+        self.messagesViewController?.messageInputBar.delegate = self
 
         // 2. 子ViewControllerを親に追加
         self.addChild(childVC)
@@ -68,5 +77,27 @@ class ChatBotViewController: UIViewController {
 
         self.messagesViewController = nil
     }
+}
 
+// InputBarAccessoryViewDelegate
+extension ChatBotViewController: InputBarAccessoryViewDelegate {
+    
+    // InputBarAccessoryViewの送信ボタン押下時に呼ばれる
+    func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
+        let userMessage = Message(id: UUID(), sender: .user, content: text, timestamp: Date())
+        messagesViewController?.messageList.append(ChatMessageType.new(sender: MessageSenderType.user, message: userMessage.content))
+        messagesViewController?.messageInputBar.inputTextView.text = String()
+        self.messagesViewController?.setTypingIndicatorViewHidden(false, animated: true)
+        DispatchQueue.main.asyncAfter(deadline: .now()+3, execute: {
+            Task {
+                let response = try await self.getBotResposeUseCase.respondToMessage(userMessage)
+                self.messagesViewController?.setTypingIndicatorViewHidden(true, animated: true, whilePerforming: {
+                    DispatchQueue.main.async {
+                        self.messagesViewController?.messageList.append(ChatMessageType.new(sender: MessageSenderType.character, message: response.content))
+                    }
+                })
+                print(response)
+            }
+        })
+    }
 }
