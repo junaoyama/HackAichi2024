@@ -100,7 +100,7 @@ extension ChatMessagesViewController: MessagesDisplayDelegate {
 
     // メッセージスタイル
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
-        return .bubble
+        return .bubbleOutline(isFromCurrentSender(message: message) ? .userCellBorder : .characterCellBorder)
     }
 }
 
