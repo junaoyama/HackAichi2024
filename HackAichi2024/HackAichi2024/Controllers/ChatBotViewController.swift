@@ -9,7 +9,7 @@ import UIKit
 import MessageKit
 
 class ChatBotViewController: UIViewController {
-    private var messagesViewController: MessagesViewController?
+    private var messagesViewController: ChatMessagesViewController?
     private var characterImageView: CharacterImageView!
 
     override func viewDidLoad() {
@@ -26,7 +26,7 @@ class ChatBotViewController: UIViewController {
 
     private func embedChildViewController() {
         // 1. 子ViewControllerのインスタンスを作成
-        let childVC = MessagesViewController()
+        let childVC = ChatMessagesViewController()
         self.messagesViewController = childVC
 
         // 2. 子ViewControllerを親に追加

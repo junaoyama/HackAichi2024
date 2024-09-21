@@ -32,6 +32,9 @@
 		BFC1EE7F2C9715CC007E3A9B /* TelMailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE7E2C9715CC007E3A9B /* TelMailButton.swift */; };
 		BFC1EE9C2C9C1EB1007E3A9B /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = BFC1EE9B2C9C1EB1007E3A9B /* MessageKit */; };
 		BFC1EEB42C9C7992007E3A9B /* ChatBotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EEB32C9C7992007E3A9B /* ChatBotViewController.swift */; };
+		BFC1EEC62C9D4383007E3A9B /* ChatMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EEC52C9D4383007E3A9B /* ChatMessagesViewController.swift */; };
+		BFD3BD222C9E9C6400E88814 /* MessageSenderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD212C9E9C6400E88814 /* MessageSenderType.swift */; };
+		BFD3BD242C9E9CBC00E88814 /* ChatMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD232C9E9CBC00E88814 /* ChatMessageType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		BFC1EE7A2C96CD9D007E3A9B /* CharacterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterImageView.swift; sourceTree = "<group>"; };
 		BFC1EE7E2C9715CC007E3A9B /* TelMailButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelMailButton.swift; sourceTree = "<group>"; };
 		BFC1EEB32C9C7992007E3A9B /* ChatBotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotViewController.swift; sourceTree = "<group>"; };
+		BFC1EEC52C9D4383007E3A9B /* ChatMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessagesViewController.swift; sourceTree = "<group>"; };
+		BFD3BD212C9E9C6400E88814 /* MessageSenderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSenderType.swift; sourceTree = "<group>"; };
+		BFD3BD232C9E9CBC00E88814 /* ChatMessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,8 +202,9 @@
 				34E6700F2C96C66100BD8DA8 /* Infra */,
 				BF2958AE2C94349B00413B2A /* AppDelegate.swift */,
 				BF2958B02C94349B00413B2A /* SceneDelegate.swift */,
-				BFC1EE9D2C9C6732007E3A9B /* Controllers */,
+				BFD3BD202C9E9C2A00E88814 /* Models */,
 				BFC1EE9E2C9C673C007E3A9B /* Views */,
+				BFC1EE9D2C9C6732007E3A9B /* Controllers */,
 				BF2958BA2C94349D00413B2A /* Assets.xcassets */,
 				BF2958BC2C94349D00413B2A /* LaunchScreen.storyboard */,
 				BF2958BF2C94349D00413B2A /* Info.plist */,
@@ -210,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				BFC1EEB32C9C7992007E3A9B /* ChatBotViewController.swift */,
+				BFC1EEC52C9D4383007E3A9B /* ChatMessagesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -222,6 +230,15 @@
 				BFC1EE7E2C9715CC007E3A9B /* TelMailButton.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BFD3BD202C9E9C2A00E88814 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BFD3BD212C9E9C6400E88814 /* MessageSenderType.swift */,
+				BFD3BD232C9E9CBC00E88814 /* ChatMessageType.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +327,7 @@
 				34E6701C2C97188F00BD8DA8 /* QAEntryRepository.swift in Sources */,
 				BFC1EEB42C9C7992007E3A9B /* ChatBotViewController.swift in Sources */,
 				34E6704A2C97DA2A00BD8DA8 /* LoadQAEntriesUseCase.swift in Sources */,
+				BFD3BD222C9E9C6400E88814 /* MessageSenderType.swift in Sources */,
 				34E670552C981D7A00BD8DA8 /* LoadFileService.swift in Sources */,
 				34E670272C972EC700BD8DA8 /* GetBotResponseUsecase.swift in Sources */,
 				BFC1EE752C96C1D8007E3A9B /* GoodBadButton.swift in Sources */,
@@ -320,11 +338,13 @@
 				34E670462C97CB2D00BD8DA8 /* EmbeddingService.swift in Sources */,
 				34E670442C97C81F00BD8DA8 /* Embedding.swift in Sources */,
 				34E670222C971A5C00BD8DA8 /* Message.swift in Sources */,
+				BFD3BD242C9E9CBC00E88814 /* ChatMessageType.swift in Sources */,
 				BF2958B92C94349B00413B2A /* HackAichi2024.xcdatamodeld in Sources */,
 				34E6701E2C9718EA00BD8DA8 /* QAEntry.swift in Sources */,
 				BFC1EE7F2C9715CC007E3A9B /* TelMailButton.swift in Sources */,
 				BF2958B92C94349B00413B2A /* HackAichi2024.xcdatamodeld in Sources */,
 				BFC1EE7B2C96CD9D007E3A9B /* CharacterImageView.swift in Sources */,
+				BFC1EEC62C9D4383007E3A9B /* ChatMessagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
