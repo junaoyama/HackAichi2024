@@ -46,6 +46,7 @@ final class ChatMessagesViewController: MessagesViewController {
         if let layout = self.messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout {
             layout.setMessageIncomingAvatarSize(.zero)
             layout.setMessageOutgoingAvatarSize(.zero)
+            layout.messagesCollectionView.contentInset = UIEdgeInsets(top: 15)
             layout.setMessageIncomingMessageTopLabelAlignment(LabelAlignment(textAlignment: .left, textInsets: UIEdgeInsets(left: 10)))
             layout.setMessageIncomingMessageBottomLabelAlignment(LabelAlignment(textAlignment: .left, textInsets: UIEdgeInsets(left: 10)))
             layout.setMessageOutgoingMessageTopLabelAlignment(LabelAlignment(textAlignment: .right, textInsets: UIEdgeInsets(right: 10)))
