@@ -44,6 +44,8 @@
 		BFC1EEC62C9D4383007E3A9B /* ChatMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EEC52C9D4383007E3A9B /* ChatMessagesViewController.swift */; };
 		BFD3BD222C9E9C6400E88814 /* MessageSenderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD212C9E9C6400E88814 /* MessageSenderType.swift */; };
 		BFD3BD242C9E9CBC00E88814 /* ChatMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD232C9E9CBC00E88814 /* ChatMessageType.swift */; };
+		BFD3BD262C9EEAF300E88814 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFD3BD252C9EEAF300E88814 /* Color.xcassets */; };
+		BFD3BD2B2C9EF0C100E88814 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD2A2C9EF0C100E88814 /* UIColor+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		BFC1EEC52C9D4383007E3A9B /* ChatMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessagesViewController.swift; sourceTree = "<group>"; };
 		BFD3BD212C9E9C6400E88814 /* MessageSenderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSenderType.swift; sourceTree = "<group>"; };
 		BFD3BD232C9E9CBC00E88814 /* ChatMessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageType.swift; sourceTree = "<group>"; };
+		BFD3BD252C9EEAF300E88814 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		BFD3BD2A2C9EF0C100E88814 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,7 +252,9 @@
 				BFD3BD202C9E9C2A00E88814 /* Models */,
 				BFC1EE9E2C9C673C007E3A9B /* Views */,
 				BFC1EE9D2C9C6732007E3A9B /* Controllers */,
+				BFD3BD2C2C9EF0E400E88814 /* Extensions */,
 				BF2958BA2C94349D00413B2A /* Assets.xcassets */,
+				BFD3BD252C9EEAF300E88814 /* Color.xcassets */,
 				BF2958BC2C94349D00413B2A /* LaunchScreen.storyboard */,
 				BF2958BF2C94349D00413B2A /* Info.plist */,
 				BF2958B72C94349B00413B2A /* HackAichi2024.xcdatamodeld */,
@@ -282,6 +288,14 @@
 				BFD3BD232C9E9CBC00E88814 /* ChatMessageType.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BFD3BD2C2C9EF0E400E88814 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BFD3BD2A2C9EF0C100E88814 /* UIColor+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF2958BE2C94349D00413B2A /* LaunchScreen.storyboard in Resources */,
+				BFD3BD262C9EEAF300E88814 /* Color.xcassets in Resources */,
 				34E670522C98175600BD8DA8 /* demo.yaml in Resources */,
 				BF2958BB2C94349D00413B2A /* Assets.xcassets in Resources */,
 			);
@@ -373,13 +388,12 @@
 				BFC1EEB42C9C7992007E3A9B /* ChatBotViewController.swift in Sources */,
 				34E6704A2C97DA2A00BD8DA8 /* LoadQAEntriesUseCase.swift in Sources */,
 				BFD3BD222C9E9C6400E88814 /* MessageSenderType.swift in Sources */,
+				BFD3BD2B2C9EF0C100E88814 /* UIColor+Extensions.swift in Sources */,
 				34E670552C981D7A00BD8DA8 /* LoadFileService.swift in Sources */,
-				34E670272C972EC700BD8DA8 /* GetBotResponseUsecase.swift in Sources */,
 				34E670272C972EC700BD8DA8 /* GetBotResponseUsecaseImpl.swift in Sources */,
-				BF2958B32C94349B00413B2A /* ViewController.swift in Sources */,
+				34E670272C972EC700BD8DA8 /* GetBotResponseUsecaseImpl.swift in Sources */,
 				346D78382C9E58E1007EDD43 /* GetBotResponseUseCase.swift in Sources */,
 				346D783E2C9E5AED007EDD43 /* LocalRepositoryProviderService.swift in Sources */,
-				BF2958CE2C969B1700413B2A /* QuestionSendView.swift in Sources */,
 				BFC1EE752C96C1D8007E3A9B /* GoodBadButton.swift in Sources */,
 				BF2958AF2C94349B00413B2A /* AppDelegate.swift in Sources */,
 				346D782D2C9E4121007EDD43 /* SQLite3DataFormatter.swift in Sources */,
@@ -396,7 +410,6 @@
 				BF2958B92C94349B00413B2A /* HackAichi2024.xcdatamodeld in Sources */,
 				34E6701E2C9718EA00BD8DA8 /* QAEntry.swift in Sources */,
 				346D78402C9E5FAA007EDD43 /* LoadMessageHistoryUseCase.swift in Sources */,
-				BFC1EE7D2C96D25B007E3A9B /* UserMessageView.swift in Sources */,
 				BFC1EE7F2C9715CC007E3A9B /* TelMailButton.swift in Sources */,
 				BF2958B92C94349B00413B2A /* HackAichi2024.xcdatamodeld in Sources */,
 				BFC1EE7B2C96CD9D007E3A9B /* CharacterImageView.swift in Sources */,

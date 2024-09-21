@@ -34,7 +34,7 @@ final class ChatMessagesViewController: MessagesViewController {
         super.viewDidLoad()
         
         // messagesCollectionView
-        messagesCollectionView.backgroundColor = UIColor.secondarySystemBackground
+        messagesCollectionView.backgroundColor = .vcBackground
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
