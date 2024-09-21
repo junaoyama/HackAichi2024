@@ -14,7 +14,7 @@ class ChatBotViewController: UIViewController {
     private var characterImageView: CharacterImageView!
     
     private let getBotResposeUseCase: GetBotResponseUseCase = GetBotResponseUseCaseImpl()
-    private let loadQAEntriesUseCase: LoadQAEntriesUseCase = LocalLoadQAEntriesUseCase()
+    private let loadQAEntriesUseCase: LoadQAEntriesUseCase = LocalLoadQAEntriesUseCaseImpl()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,7 +84,7 @@ extension ChatBotViewController: InputBarAccessoryViewDelegate {
     
     // InputBarAccessoryViewの送信ボタン押下時に呼ばれる
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
-        let userMessage = Message(id: UUID(), sender: .user, content: text, timestamp: Date())
+        let userMessage = Message(id: UUID(), sender: .user, content: text, sentAt: Date())
         messagesViewController?.messageList.append(ChatMessageType.new(sender: MessageSenderType.user, message: userMessage.content))
         messagesViewController?.messageInputBar.inputTextView.text = String()
         self.messagesViewController?.setTypingIndicatorViewHidden(false, animated: true)
