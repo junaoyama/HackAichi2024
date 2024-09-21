@@ -18,7 +18,7 @@ class ChatBotViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .viewControllerBackground
+        self.view.backgroundColor = .vcBackground
 
         embedChildViewController()
         

@@ -45,6 +45,7 @@
 		BFD3BD222C9E9C6400E88814 /* MessageSenderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD212C9E9C6400E88814 /* MessageSenderType.swift */; };
 		BFD3BD242C9E9CBC00E88814 /* ChatMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD232C9E9CBC00E88814 /* ChatMessageType.swift */; };
 		BFD3BD262C9EEAF300E88814 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFD3BD252C9EEAF300E88814 /* Color.xcassets */; };
+		BFD3BD2B2C9EF0C100E88814 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD2A2C9EF0C100E88814 /* UIColor+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		BFD3BD212C9E9C6400E88814 /* MessageSenderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSenderType.swift; sourceTree = "<group>"; };
 		BFD3BD232C9E9CBC00E88814 /* ChatMessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageType.swift; sourceTree = "<group>"; };
 		BFD3BD252C9EEAF300E88814 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		BFD3BD2A2C9EF0C100E88814 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +252,7 @@
 				BFD3BD202C9E9C2A00E88814 /* Models */,
 				BFC1EE9E2C9C673C007E3A9B /* Views */,
 				BFC1EE9D2C9C6732007E3A9B /* Controllers */,
+				BFD3BD2C2C9EF0E400E88814 /* Extensions */,
 				BF2958BA2C94349D00413B2A /* Assets.xcassets */,
 				BFD3BD252C9EEAF300E88814 /* Color.xcassets */,
 				BF2958BC2C94349D00413B2A /* LaunchScreen.storyboard */,
@@ -285,6 +288,14 @@
 				BFD3BD232C9E9CBC00E88814 /* ChatMessageType.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BFD3BD2C2C9EF0E400E88814 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BFD3BD2A2C9EF0C100E88814 /* UIColor+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +388,7 @@
 				BFC1EEB42C9C7992007E3A9B /* ChatBotViewController.swift in Sources */,
 				34E6704A2C97DA2A00BD8DA8 /* LoadQAEntriesUseCase.swift in Sources */,
 				BFD3BD222C9E9C6400E88814 /* MessageSenderType.swift in Sources */,
+				BFD3BD2B2C9EF0C100E88814 /* UIColor+Extensions.swift in Sources */,
 				34E670552C981D7A00BD8DA8 /* LoadFileService.swift in Sources */,
 				34E670272C972EC700BD8DA8 /* GetBotResponseUsecaseImpl.swift in Sources */,
 				34E670272C972EC700BD8DA8 /* GetBotResponseUsecaseImpl.swift in Sources */,
