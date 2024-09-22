@@ -120,10 +120,14 @@ extension ChatBotViewController: MessageCellDelegate {
     // goodを押したときに呼ばれる
     func didTapCellTopLabel(in cell: MessageCollectionViewCell) {
         print("didTapGood")
+        let cell = cell as! ChatBotMessageContentCell
+        cell.didTapGoodButton()
     }
     
     // Badを押したときに呼ばれる
     func didTapMessageBottomLabel(in cell: MessageCollectionViewCell) {
         print("didTapBad")
+        let cell = cell as! ChatBotMessageContentCell
+        cell.didTapBadButton()
     }
 }

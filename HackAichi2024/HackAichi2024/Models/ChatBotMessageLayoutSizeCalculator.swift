@@ -30,7 +30,7 @@ class ChatBotMessageLayoutSizeCalculator: CellSizeCalculator {
         
     //    good or badボタンに関する設定
         var evaluateButtonSize: CGSize = .init(width: 24, height: 24)
-        var evaluateButtonVerticalTopMargin: CGFloat = 5
+        var evaluateButtonVerticalTopMargin: CGFloat = 8
     //    goodボタンとbadボタンがどれくらい離れているか
         var evaluateButtonVerticalSpacing: CGFloat = 8
 

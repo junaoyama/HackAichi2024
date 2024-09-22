@@ -57,6 +57,32 @@ class ChatBotMessageContentCell: MessageCollectionViewCell {
         imageView.tintColor = .darkGray
         return imageView
     }()
+    
+    func didTapGoodButton() {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 1.0, animations: {
+            self.goodButton.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+            self.badButton.transform = CGAffineTransform.identity
+            self.goodButton.tintColor = .systemPink
+            self.badButton.tintColor = .darkGray
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.2, delay: 0.2) {
+                self.goodButton.transform = CGAffineTransform.identity
+            }
+        })
+    }
+    
+    func didTapBadButton() {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.4, initialSpringVelocity: 1.0, animations: {
+            self.goodButton.transform = CGAffineTransform.identity
+            self.badButton.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+            self.goodButton.tintColor = .darkGray
+            self.badButton.tintColor = .systemBlue
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.2, delay: 0.2) {
+                self.badButton.transform = CGAffineTransform.identity
+            }
+        })
+    }
 
     override func prepareForReuse() {
         super.prepareForReuse()
