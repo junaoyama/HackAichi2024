@@ -48,6 +48,7 @@
 		BFD3BD2B2C9EF0C100E88814 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD2A2C9EF0C100E88814 /* UIColor+Extensions.swift */; };
 		BFD3BD2E2C9FCD7100E88814 /* CharacterImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD2D2C9FCD7100E88814 /* CharacterImageViewModel.swift */; };
 		BFD3BD302C9FCD9500E88814 /* CharacterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD2F2C9FCD9500E88814 /* CharacterState.swift */; };
+		BFD3BD332C9FE8E800E88814 /* SwiftyGif in Frameworks */ = {isa = PBXBuildFile; productRef = BFD3BD322C9FE8E800E88814 /* SwiftyGif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,7 @@
 				34E670502C9816A000BD8DA8 /* Yams in Frameworks */,
 				34BFBDF52C96841900F6B1BA /* SQLiteVec in Frameworks */,
 				BFC1EE9C2C9C1EB1007E3A9B /* MessageKit in Frameworks */,
+				BFD3BD332C9FE8E800E88814 /* SwiftyGif in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +327,7 @@
 				34BFBDF42C96841900F6B1BA /* SQLiteVec */,
 				34E6704F2C9816A000BD8DA8 /* Yams */,
 				BFC1EE9B2C9C1EB1007E3A9B /* MessageKit */,
+				BFD3BD322C9FE8E800E88814 /* SwiftyGif */,
 			);
 			productName = HackAichi2024;
 			productReference = BF2958AB2C94349B00413B2A /* HackAichi2024.app */;
@@ -358,6 +361,7 @@
 				34BFBDF12C96841900F6B1BA /* XCRemoteSwiftPackageReference "SQLiteVec" */,
 				34E6704E2C9816A000BD8DA8 /* XCRemoteSwiftPackageReference "Yams" */,
 				BFC1EE9A2C9C1EB1007E3A9B /* XCRemoteSwiftPackageReference "MessageKit" */,
+				BFD3BD312C9FE8E800E88814 /* XCRemoteSwiftPackageReference "SwiftyGif" */,
 			);
 			productRefGroup = BF2958AC2C94349B00413B2A /* Products */;
 			projectDirPath = "";
@@ -660,6 +664,14 @@
 				minimumVersion = 4.2.0;
 			};
 		};
+		BFD3BD312C9FE8E800E88814 /* XCRemoteSwiftPackageReference "SwiftyGif" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kirualex/SwiftyGif.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.5;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -682,6 +694,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BFC1EE9A2C9C1EB1007E3A9B /* XCRemoteSwiftPackageReference "MessageKit" */;
 			productName = MessageKit;
+		};
+		BFD3BD322C9FE8E800E88814 /* SwiftyGif */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BFD3BD312C9FE8E800E88814 /* XCRemoteSwiftPackageReference "SwiftyGif" */;
+			productName = SwiftyGif;
 		};
 /* End XCSwiftPackageProductDependency section */
 
