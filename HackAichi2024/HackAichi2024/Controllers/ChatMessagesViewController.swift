@@ -44,6 +44,7 @@ final class ChatMessagesViewController: MessagesViewController {
         messageInputBar.sendButton.image = UIImage(systemName: "paperplane.fill", withConfiguration: UIImage.SymbolConfiguration(font: .systemFont(ofSize: 23)))
         messageInputBar.sendButton.tintColor = .userCellBorder
         messageInputBar.inputTextView.placeholder = "質問を入力してね！"
+        messageInputBar.inputTextView.tintColor = .userCellBorder
         
         if let layout = self.messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout {
             layout.setMessageIncomingAvatarSize(.zero)
