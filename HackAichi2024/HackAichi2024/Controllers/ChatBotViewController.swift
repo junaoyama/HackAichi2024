@@ -87,6 +87,8 @@ extension ChatBotViewController: InputBarAccessoryViewDelegate {
         let userMessage = Message(id: UUID(), sender: .user, content: text, sentAt: Date())
         messagesViewController?.messageList.append(ChatMessageType.new(sender: MessageSenderType.user, message: userMessage.content))
         messagesViewController?.messageInputBar.inputTextView.text = String()
+        self.messagesViewController?.messageInputBar.shouldManageSendButtonEnabledState = false
+        self.messagesViewController?.messageInputBar.sendButton.isEnabled = false
         self.messagesViewController?.setTypingIndicatorViewHidden(false, animated: true)
         DispatchQueue.main.asyncAfter(deadline: .now()+3, execute: {
             Task {
@@ -95,8 +97,12 @@ extension ChatBotViewController: InputBarAccessoryViewDelegate {
                     DispatchQueue.main.async {
                         self.messagesViewController?.messageList.append(ChatMessageType.new(sender: MessageSenderType.character, message: response.content))
                     }
+                    self.messagesViewController?.messageInputBar.shouldManageSendButtonEnabledState = true
+                    guard let isEmpty = self.messagesViewController?.messageInputBar.inputTextView.text.isEmpty else { return }
+                    if !isEmpty {
+                        self.messagesViewController?.messageInputBar.sendButton.isEnabled = true
+                    }
                 })
-                print(response)
             }
         })
     }
