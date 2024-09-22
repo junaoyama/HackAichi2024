@@ -24,7 +24,7 @@ struct ChatMessageType: MessageType {
             kind: .attributedText(NSAttributedString(
                 string: message,
                 attributes: [
-                    .font: UIFont.systemFont(ofSize: 14.0),
+                    .font: UIFont.systemFont(ofSize: 18.0),
                     .foregroundColor: UIColor.cellText
                 ]
             )),
