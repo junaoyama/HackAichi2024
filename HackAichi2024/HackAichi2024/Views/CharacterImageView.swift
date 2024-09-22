@@ -8,10 +8,11 @@
 import UIKit
 
 class CharacterImageView: UIImageView {
-
-    override init(image: UIImage?) {
-        super.init(image: image)
+    
+    init(viewModel: CharacterImageViewModel) {
+        super.init(frame: .zero)
         setUpImageView()
+        apply(viewModel: viewModel)
     }
     
     required init?(coder: NSCoder) {
@@ -21,5 +22,9 @@ class CharacterImageView: UIImageView {
     private func setUpImageView() {
         self.contentMode = .scaleAspectFit
         self.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    func apply(viewModel: CharacterImageViewModel) {
+        self.image = viewModel.image
     }
 }

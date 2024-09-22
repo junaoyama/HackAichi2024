@@ -12,6 +12,7 @@ import InputBarAccessoryView
 class ChatBotViewController: UIViewController {
     private var messagesViewController: ChatMessagesViewController?
     private var characterImageView: CharacterImageView!
+    private var characterImageViewModel: CharacterImageViewModel!
     
     private let getBotResposeUseCase: GetBotResponseUseCase = GetBotResponseUseCaseImpl()
     private let loadQAEntriesUseCase: LoadQAEntriesUseCase = LocalLoadQAEntriesUseCaseImpl()
@@ -19,10 +20,12 @@ class ChatBotViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .vcBackground
+        
+        characterImageViewModel = CharacterImageViewModel(state: .welcome)
 
         embedChildViewController()
         
-        characterImageView = CharacterImageView(image: UIImage(named: "chatbot_charactor_1"))
+        characterImageView = CharacterImageView(viewModel: characterImageViewModel)
         self.view.addSubview(characterImageView)
         
         setUpConstraints()
@@ -86,6 +89,8 @@ extension ChatBotViewController: InputBarAccessoryViewDelegate {
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         let userMessage = Message(id: UUID(), sender: .user, content: text, sentAt: Date())
         messagesViewController?.messageList.append(ChatMessageType.new(sender: MessageSenderType.user, message: userMessage.content))
+        characterImageViewModel.state.goNextState()
+        characterImageView.apply(viewModel: characterImageViewModel)
         messagesViewController?.messageInputBar.inputTextView.text = String()
         self.messagesViewController?.messageInputBar.shouldManageSendButtonEnabledState = false
         self.messagesViewController?.messageInputBar.sendButton.isEnabled = false
@@ -96,6 +101,8 @@ extension ChatBotViewController: InputBarAccessoryViewDelegate {
                 self.messagesViewController?.setTypingIndicatorViewHidden(true, animated: true, whilePerforming: {
                     DispatchQueue.main.async {
                         self.messagesViewController?.messageList.append(ChatMessageType.new(sender: MessageSenderType.character, message: response.content))
+                        self.characterImageViewModel.state.goNextState()
+                        self.characterImageView.apply(viewModel: self.characterImageViewModel)
                     }
                     self.messagesViewController?.messageInputBar.shouldManageSendButtonEnabledState = true
                     guard let isEmpty = self.messagesViewController?.messageInputBar.inputTextView.text.isEmpty else { return }
