@@ -33,17 +33,30 @@ final class ChatMessagesViewController: MessagesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // messagesCollectionView
+        setUpMessagesCollectionView()
+        setUpMessageInputBar()
+        setUpLayout()
+        
+        messagesCollectionView.reloadData()
+    }
+    
+    private func setUpMessagesCollectionView() {
         messagesCollectionView.backgroundColor = .vcBackground
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
-        
-        // messageInputBar
+    }
+    
+    private func setUpMessageInputBar() {
         messageInputBar.sendButton.title = nil
-        messageInputBar.sendButton.image = UIImage(systemName: "paperplane")
+        messageInputBar.sendButton.image = UIImage(systemName: "paperplane.fill", withConfiguration: UIImage.SymbolConfiguration(font: .systemFont(ofSize: 23)))
+        messageInputBar.sendButton.tintColor = .sendButton
         messageInputBar.inputTextView.placeholder = "質問を入力してね！"
-        
+        messageInputBar.inputTextView.tintColor = .inputCursor
+        messageInputBar.inputTextView.font = .systemFont(ofSize: 20)
+    }
+    
+    private func setUpLayout() {
         if let layout = self.messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout {
             layout.setMessageIncomingAvatarSize(.zero)
             layout.setMessageOutgoingAvatarSize(.zero)
@@ -53,8 +66,6 @@ final class ChatMessagesViewController: MessagesViewController {
             layout.setMessageOutgoingMessageTopLabelAlignment(LabelAlignment(textAlignment: .right, textInsets: UIEdgeInsets(right: 10)))
             layout.setMessageOutgoingMessageBottomLabelAlignment(LabelAlignment(textAlignment: .right, textInsets: UIEdgeInsets(right: 10)))
         }
-        
-        messagesCollectionView.reloadData()
     }
 }
 

@@ -27,4 +27,12 @@ extension UIColor {
     class var characterCellBorder: UIColor {
         return UIColor(named: "characterMessageCellBorder")!
     }
+    
+    class var inputCursor: UIColor {
+        return UIColor(named: "inputBarCursor")!
+    }
+    
+    class var sendButton: UIColor {
+        return UIColor(named: "messageSendButton")!
+    }
 }
