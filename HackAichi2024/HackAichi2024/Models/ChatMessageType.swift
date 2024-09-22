@@ -18,16 +18,32 @@ struct ChatMessageType: MessageType {
 
     // メッセージの生成
     static func new(sender: SenderType, message: String) -> ChatMessageType {
-        return ChatMessageType(
-            sender: sender,
-            messageId: UUID().uuidString,
-            kind: .attributedText(NSAttributedString(
-                string: message,
-                attributes: [
-                    .font: UIFont.systemFont(ofSize: 18.0),
-                    .foregroundColor: UIColor.cellText
-                ]
-            )),
-            sentDate: Date())
+        //user
+        if sender.senderId == "0" {
+            return ChatMessageType(
+                sender: sender,
+                messageId: UUID().uuidString,
+                kind: .attributedText(NSAttributedString(
+                    string: message,
+                    attributes: [
+                        .font: UIFont.systemFont(ofSize: 18.0),
+                        .foregroundColor: UIColor.cellText
+                    ]
+                )),
+                sentDate: Date())
+        } else {
+            return ChatMessageType(
+                sender: sender,
+                messageId: UUID().uuidString,
+                kind: .custom(NSAttributedString(
+                    string: message,
+                    attributes: [
+                        .font: UIFont.systemFont(ofSize: 18.0),
+                        .foregroundColor: UIColor.cellText
+                    ]
+                )),
+                sentDate: Date())
+        }
+        
     }
 }

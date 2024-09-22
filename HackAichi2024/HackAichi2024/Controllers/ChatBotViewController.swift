@@ -40,6 +40,7 @@ class ChatBotViewController: UIViewController {
         let childVC = ChatMessagesViewController(messageList: [ChatMessageType.new(sender: MessageSenderType.character, message: "ようこそ、質問を入力して送信してね")])
         self.messagesViewController = childVC
         self.messagesViewController?.messageInputBar.delegate = self
+        self.messagesViewController?.messagesCollectionView.messageCellDelegate = self
 
         // 2. 子ViewControllerを親に追加
         self.addChild(childVC)
@@ -112,5 +113,17 @@ extension ChatBotViewController: InputBarAccessoryViewDelegate {
                 })
             }
         })
+    }
+}
+
+extension ChatBotViewController: MessageCellDelegate {
+    // goodを押したときに呼ばれる
+    func didTapCellTopLabel(in cell: MessageCollectionViewCell) {
+        print("didTapGood")
+    }
+    
+    // Badを押したときに呼ばれる
+    func didTapMessageBottomLabel(in cell: MessageCollectionViewCell) {
+        print("didTapBad")
     }
 }
