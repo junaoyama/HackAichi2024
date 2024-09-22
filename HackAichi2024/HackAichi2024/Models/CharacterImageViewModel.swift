@@ -14,6 +14,14 @@ class CharacterImageViewModel {
         }
     }
     
+    var type: CharacterImageType {
+        if image.isGif {
+            return .gif
+        } else {
+            return .image
+        }
+    }
+    
     var image: UIImage!
     
     init(state: CharacterState) {
@@ -24,9 +32,9 @@ class CharacterImageViewModel {
     private func setImage(state: CharacterState) {
         switch state {
         case .welcome:
-            image = UIImage(systemName: "1.circle")
+            image = try! UIImage(gifName: "welcomeBot.gif")
         case .thinking:
-            image = UIImage(systemName: "2.circle")
+            image = try! UIImage(gifName: "thinkingBot.gif")
         case .answer:
             image = UIImage(systemName: "3.circle")
         }
