@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftyGif
 
 class CharacterImageView: UIImageView {
     
@@ -25,6 +26,11 @@ class CharacterImageView: UIImageView {
     }
     
     func apply(viewModel: CharacterImageViewModel) {
-        self.image = viewModel.image
+        switch viewModel.type {
+        case .image:
+            self.setImage(viewModel.image)
+        case .gif:
+            self.setGifImage(viewModel.image)
+        }
     }
 }
