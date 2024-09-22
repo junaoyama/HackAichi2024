@@ -46,6 +46,8 @@
 		BFD3BD242C9E9CBC00E88814 /* ChatMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD232C9E9CBC00E88814 /* ChatMessageType.swift */; };
 		BFD3BD262C9EEAF300E88814 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFD3BD252C9EEAF300E88814 /* Color.xcassets */; };
 		BFD3BD2B2C9EF0C100E88814 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD2A2C9EF0C100E88814 /* UIColor+Extensions.swift */; };
+		BFD3BD2E2C9FCD7100E88814 /* CharacterImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD2D2C9FCD7100E88814 /* CharacterImageViewModel.swift */; };
+		BFD3BD302C9FCD9500E88814 /* CharacterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD2F2C9FCD9500E88814 /* CharacterState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +88,8 @@
 		BFD3BD232C9E9CBC00E88814 /* ChatMessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageType.swift; sourceTree = "<group>"; };
 		BFD3BD252C9EEAF300E88814 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		BFD3BD2A2C9EF0C100E88814 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		BFD3BD2D2C9FCD7100E88814 /* CharacterImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterImageViewModel.swift; sourceTree = "<group>"; };
+		BFD3BD2F2C9FCD9500E88814 /* CharacterState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +290,8 @@
 			children = (
 				BFD3BD212C9E9C6400E88814 /* MessageSenderType.swift */,
 				BFD3BD232C9E9CBC00E88814 /* ChatMessageType.swift */,
+				BFD3BD2D2C9FCD7100E88814 /* CharacterImageViewModel.swift */,
+				BFD3BD2F2C9FCD9500E88814 /* CharacterState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -385,8 +391,10 @@
 				346D783A2C9E5923007EDD43 /* LoadQAEntriesImpl.swift in Sources */,
 				34E670482C97CB4500BD8DA8 /* AppleEmbeddingService.swift in Sources */,
 				34E6701C2C97188F00BD8DA8 /* QAEntryRepository.swift in Sources */,
+				BFD3BD2E2C9FCD7100E88814 /* CharacterImageViewModel.swift in Sources */,
 				BFC1EEB42C9C7992007E3A9B /* ChatBotViewController.swift in Sources */,
 				34E6704A2C97DA2A00BD8DA8 /* LoadQAEntriesUseCase.swift in Sources */,
+				BFD3BD302C9FCD9500E88814 /* CharacterState.swift in Sources */,
 				BFD3BD222C9E9C6400E88814 /* MessageSenderType.swift in Sources */,
 				BFD3BD2B2C9EF0C100E88814 /* UIColor+Extensions.swift in Sources */,
 				34E670552C981D7A00BD8DA8 /* LoadFileService.swift in Sources */,
