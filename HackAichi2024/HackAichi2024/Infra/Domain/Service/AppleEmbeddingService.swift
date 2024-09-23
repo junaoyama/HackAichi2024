@@ -33,6 +33,7 @@ class AppleEmbeddingService: EmbeddingService {
     }
     
     func embed(text: String) async throws -> Embedding {
+        var text = text.trimmingCharacters(in: .whitespaces)
         try await setUpIfNeed()
         
         if Task.isCancelled {

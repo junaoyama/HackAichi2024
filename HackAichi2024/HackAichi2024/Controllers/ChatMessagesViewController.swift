@@ -20,7 +20,7 @@ final class ChatMessagesViewController: MessagesViewController {
         }
     }
     
-    var recommendView: RecommendView!
+    var recommendView: RecommendView = RecommendView(frame: .zero)
     
     private lazy var chatBotMessageSizeCalculator = ChatBotMessageLayoutSizeCalculator(
       layout: self.messagesCollectionView
@@ -77,7 +77,6 @@ final class ChatMessagesViewController: MessagesViewController {
     }
     
     private func setUpRecommendView() {
-        recommendView = RecommendView(frame: .zero)
         recommendView.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(recommendView)
         

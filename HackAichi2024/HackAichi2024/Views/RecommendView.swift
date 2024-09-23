@@ -8,9 +8,20 @@
 import Foundation
 import UIKit
 
+protocol RecommendViewDelegate: NSObject {
+    func didTap(_ recommendView: RecommendView)
+}
+
 class RecommendView: UIView {
+    weak var delegate: RecommendViewDelegate?
+    
     private let label = UILabel()
+    
     var padding: UIEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    
+    var text: String {
+        return label.text ?? ""
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,8 +41,8 @@ class RecommendView: UIView {
         // 角丸の設定
         self.layer.cornerRadius = 15
         self.layer.masksToBounds = false
-        self.layer.borderColor = UIColor.black.cgColor
-        self.layer.borderWidth = 2.0
+//        self.layer.borderColor = UIColor.black.cgColor
+//        self.layer.borderWidth = 2.0
     
         // 影の設定
         self.layer.shadowColor = UIColor.black.cgColor
@@ -42,13 +53,16 @@ class RecommendView: UIView {
         // ラベルの設定
         label.text = ""
         label.lineBreakMode = .byTruncatingTail
-        label.textColor = .black
+        label.textColor = UIColor(red: 105/255, green: 105/255, blue: 105/255, alpha: 1.0)
         label.textAlignment = .left
         label.numberOfLines = 2
         label.translatesAutoresizingMaskIntoConstraints = false
 
         // ラベルをビューに追加
         self.addSubview(label)
+        
+        let tapGestureRecognzier = UITapGestureRecognizer(target: self, action: #selector(didTap))
+        self.addGestureRecognizer(tapGestureRecognzier)
         
         setupConstraintsForPadding()
     }
@@ -66,7 +80,16 @@ class RecommendView: UIView {
         ])
     }
     
+    func clear() {
+        self.label.text = ""
+    }
+    
     func set(text: String) {
         self.label.text = text
+    }
+    
+    
+    @objc func didTap(recognizer: UITapGestureRecognizer) {
+        self.delegate?.didTap(self)
     }
 }

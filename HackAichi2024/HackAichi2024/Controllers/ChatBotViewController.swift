@@ -43,6 +43,7 @@ class ChatBotViewController: UIViewController {
         self.messagesViewController = childVC
         self.messagesViewController?.messageInputBar.delegate = self
         self.messagesViewController?.messagesCollectionView.messageCellDelegate = self
+        self.messagesViewController?.recommendView.delegate = self
 
         // 2. 子ViewControllerを親に追加
         self.addChild(childVC)
@@ -118,21 +119,21 @@ extension ChatBotViewController: InputBarAccessoryViewDelegate {
     }
     
     func inputBar(_ inputBar: InputBarAccessoryView, textViewTextDidChangeTo text: String) {
-           searchTask?.cancel()
-           searchTask = Task { @MainActor in
-               try? await Task.sleep(nanoseconds: 300 * 1_000_000) // 300ms待
-               if text.isEmpty {
-                   self.messagesViewController?.recommendView.set(text: "")
-                   return
-               }
-               
-               if Task.isCancelled {
-                   return
-               }
-               let recommend = try await recommendUseCase.recommend(from: text)
-               self.messagesViewController?.recommendView.set(text: recommend)
-           }
+        searchTask?.cancel()
+        searchTask = Task { @MainActor in
+            try? await Task.sleep(nanoseconds: 300 * 1_000_000) // 300ms待
+            if text.isEmpty {
+                self.messagesViewController?.recommendView.set(text: "")
+                return
+            }
+           
+            if Task.isCancelled {
+                return
+            }
+            let recommend = try await recommendUseCase.recommend(from: text)
+            self.messagesViewController?.recommendView.set(text: recommend)
        }
+   }
 
 }
 
@@ -149,5 +150,12 @@ extension ChatBotViewController: MessageCellDelegate {
         print("didTapBad")
         let cell = cell as! ChatBotMessageContentCell
         cell.didTapBadButton()
+    }
+}
+
+extension ChatBotViewController: RecommendViewDelegate {
+    func didTap(_ recommendView: RecommendView) {
+        recommendView.isHidden = true
+        messagesViewController?.messageInputBar.inputTextView.text = recommendView.text
     }
 }
