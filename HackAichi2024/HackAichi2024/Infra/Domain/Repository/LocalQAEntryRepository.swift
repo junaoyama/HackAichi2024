@@ -41,7 +41,7 @@ actor LocalQAEntryRepository: QAEntryRepository {
         )
     }
     
-    func vectorSimilar(to embedding: Embedding, k: Int = 1) async throws -> [QAEntry] {
+    func vectorSimilar(to embedding: Embedding, k: Int = 1) async throws -> [(qaEntry: QAEntry, distance: Float)] {
         try await createTableIfNeed()
         
         let vectorEmbeddings = embedding.vector
@@ -57,7 +57,12 @@ actor LocalQAEntryRepository: QAEntryRepository {
             params: [vectorEmbeddings, k]
         )
         
-        return result.compactMap(QAEntry.init)
+        return result.compactMap {
+            if let distance = $0["distance"] as? Double, let qaEntry = QAEntry.init($0) {
+                return (qaEntry, Float(distance))
+            }
+            return nil
+        }
     }
     
     private func createTableIfNeed() async throws {
