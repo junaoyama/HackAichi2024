@@ -146,8 +146,13 @@ class ChatBotMessageContentCell: MessageCollectionViewCell {
         
 //        自分が一番下に存在しているか？
         if sizeCalculator.messagesLayout.lastMessage(indexPath) {
-            goodButton.isHidden = false
-            badButton.isHidden = false
+            if !sizeCalculator.messagesLayout.firstMessage(indexPath) {
+                goodButton.isHidden = false
+                badButton.isHidden = false
+            } else {
+                goodButton.isHidden = true
+                badButton.isHidden = true
+            }
         } else {
             goodButton.isHidden = true
             badButton.isHidden = true
