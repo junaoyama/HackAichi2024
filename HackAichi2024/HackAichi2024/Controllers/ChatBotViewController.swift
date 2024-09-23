@@ -56,11 +56,11 @@ class ChatBotViewController: UIViewController {
     private func setUpConstraints() {
         guard let messagesViewController else { return }
         NSLayoutConstraint.activate([
-            characterImageView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
+            characterImageView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: -30),
             characterImageView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             characterImageView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
-            characterImageView.heightAnchor.constraint(equalToConstant: 200),
-            messagesViewController.view.topAnchor.constraint(equalTo: self.characterImageView.bottomAnchor),
+            characterImageView.heightAnchor.constraint(equalToConstant: 280),
+            messagesViewController.view.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 200),
             messagesViewController.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             messagesViewController.view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             messagesViewController.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
