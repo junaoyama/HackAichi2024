@@ -11,6 +11,7 @@ enum CharacterState {
     case welcome
     case thinking
     case answer
+    case unknown
     
     mutating func goNextState() {
         switch self {
@@ -19,6 +20,8 @@ enum CharacterState {
         case .thinking:
             self = .answer
         case .answer:
+            self = .thinking
+        case .unknown:
             self = .thinking
         }
     }
