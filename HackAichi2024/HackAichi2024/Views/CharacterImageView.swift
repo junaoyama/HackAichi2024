@@ -9,6 +9,7 @@ import UIKit
 import SwiftyGif
 
 class CharacterImageView: UIImageView {
+    private var animationTask: Task<Void, Error>?
     var interval: Double = 0
     
     init(viewModel: CharacterImageViewModel) {
@@ -35,6 +36,8 @@ class CharacterImageView: UIImageView {
             self.interval = viewModel.interval
             self.delegate = self
         }
+        animationTask?.cancel()
+        self.startAnimatingGif()
     }
 }
 
@@ -43,7 +46,9 @@ extension CharacterImageView: SwiftyGifDelegate {
         let characterImageView = sender as! CharacterImageView
         if characterImageView.interval != 0 {
             sender.stopAnimatingGif()
-            DispatchQueue.main.asyncAfter(deadline: .now() + interval) {
+            animationTask?.cancel()
+            animationTask = Task {
+                try await Task.sleep(nanoseconds: UInt64(interval * 1_000_000_000))
                 sender.startAnimatingGif() // 再びGIFを再生
             }
         }
