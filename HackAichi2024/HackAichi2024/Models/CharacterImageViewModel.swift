@@ -46,7 +46,9 @@ class CharacterImageViewModel {
 //            loopCount = 1
             interval = 1.5
         case .unknown:
-            return
+            image = try! UIImage(gifName: "sorryBot.gif")
+//            loopCount = 1
+            interval = 1.5
         }
     }
 }
