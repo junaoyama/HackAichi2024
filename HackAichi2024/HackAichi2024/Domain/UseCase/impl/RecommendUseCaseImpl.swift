@@ -19,7 +19,7 @@ class RecommendUseCaseImpl: RecommendUseCase {
     func recommend(from message: String) async throws -> String {
         if Task.isCancelled { throw AppError.tooManyVectorSearchRequest }
         let embedding = try await embeddingService.embed(text: message)
-        let qaEntry = try await qaEntriesRepository.vectorSimilar(to: embedding, k: 1)
-        return qaEntry.first!.question
+        let result = try await qaEntriesRepository.vectorSimilar(to: embedding, k: 1)
+        return result.first!.qaEntry.question
     }
 }
