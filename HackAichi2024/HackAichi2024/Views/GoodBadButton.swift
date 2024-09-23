@@ -12,14 +12,14 @@ enum ReactionType {
     case bad
 }
 
-fileprivate class SelectableButton: UIButton {
+class GoodButton: UIButton {
     private var reactionType: ReactionType
     private var image: UIImage {
         switch reactionType {
         case .good:
-            return UIImage(systemName: "hand.thumbsup")!
+            return UIImage(systemName: "hand.thumbsup.fill", withConfiguration: UIImage.SymbolConfiguration(font: UIFont.systemFont(ofSize: 20)))!
         case .bad:
-            return UIImage(systemName: "hand.thumbsdown")!
+            return UIImage(systemName: "hand.thumbsdown.fill", withConfiguration: UIImage.SymbolConfiguration(font: UIFont.systemFont(ofSize: 20)))!
         }
     }
     
@@ -34,17 +34,17 @@ fileprivate class SelectableButton: UIButton {
     }
     
     private func setUpButton() {
-        self.backgroundColor = .systemBlue
+        self.backgroundColor = .clear
         self.setImage(image, for: .normal)
-        self.tintColor = .white
-        self.layer.cornerRadius = 20
-        self.translatesAutoresizingMaskIntoConstraints = false
+        self.tintColor = .systemGray
+//        self.layer.cornerRadius = 20
+//        self.translatesAutoresizingMaskIntoConstraints = false
     }
 }
 
 class GoodBadButton: UIStackView {
-    private var goodButton: SelectableButton!
-    private var badButton: SelectableButton!
+    private var goodButton: GoodButton!
+    private var badButton: GoodButton!
     
     init() {
         super.init(frame: .zero)
@@ -61,10 +61,10 @@ class GoodBadButton: UIStackView {
         self.spacing = 20
         self.translatesAutoresizingMaskIntoConstraints = false
         
-        goodButton = SelectableButton(type: .good)
+        goodButton = GoodButton(type: .good)
         self.addArrangedSubview(goodButton)
         
-        badButton = SelectableButton(type: .bad)
+        badButton = GoodButton(type: .bad)
         self.addArrangedSubview(badButton)
     }
 }

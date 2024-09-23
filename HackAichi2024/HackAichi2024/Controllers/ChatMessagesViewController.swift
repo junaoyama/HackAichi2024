@@ -20,6 +20,10 @@ final class ChatMessagesViewController: MessagesViewController {
         }
     }
     
+    private lazy var chatBotMessageSizeCalculator = ChatBotMessageLayoutSizeCalculator(
+      layout: self.messagesCollectionView
+        .messagesCollectionViewFlowLayout)
+    
     init(messageList: [ChatMessageType]) {
         self.messageList = messageList
         super.init(nibName: nil, bundle: nil)
@@ -42,6 +46,7 @@ final class ChatMessagesViewController: MessagesViewController {
     
     private func setUpMessagesCollectionView() {
         messagesCollectionView.backgroundColor = .vcBackground
+        messagesCollectionView.register(ChatBotMessageContentCell.self)
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
@@ -107,6 +112,16 @@ extension ChatMessagesViewController: MessagesDisplayDelegate {
     // メッセージスタイル
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
         return .bubbleOutline(isFromCurrentSender(message: message) ? .userCellBorder : .characterCellBorder)
+    }
+    
+    func customCellSizeCalculator(for message: any MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CellSizeCalculator {
+        return chatBotMessageSizeCalculator
+    }
+    
+    func customCell(for message: any MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UICollectionViewCell {
+        let cell = messagesCollectionView.dequeueReusableCell(ChatBotMessageContentCell.self, for: indexPath)
+        cell.configure(with: message, at: indexPath, in: messagesCollectionView, dataSource: self, and: chatBotMessageSizeCalculator)
+        return cell
     }
 }
 
