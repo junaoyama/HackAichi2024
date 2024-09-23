@@ -37,6 +37,7 @@
 		34E670522C98175600BD8DA8 /* demo.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 34E670512C98175600BD8DA8 /* demo.yaml */; };
 		34E670552C981D7A00BD8DA8 /* LoadFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E670542C981D7A00BD8DA8 /* LoadFileService.swift */; };
 		34E670572C981DF300BD8DA8 /* YamlLoadFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E670562C981DF300BD8DA8 /* YamlLoadFileService.swift */; };
+		BF1493312CA1DED700576EFA /* welcomeRareBot.gif in Resources */ = {isa = PBXBuildFile; fileRef = BF1493302CA1DED700576EFA /* welcomeRareBot.gif */; };
 		BF15E2CF2CA17A0D0042F4EF /* sorryBot.gif in Resources */ = {isa = PBXBuildFile; fileRef = BF15E2CE2CA17A0D0042F4EF /* sorryBot.gif */; };
 		BF2958AF2C94349B00413B2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2958AE2C94349B00413B2A /* AppDelegate.swift */; };
 		BF2958B12C94349B00413B2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2958B02C94349B00413B2A /* SceneDelegate.swift */; };
@@ -93,6 +94,7 @@
 		34E670512C98175600BD8DA8 /* demo.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = demo.yaml; sourceTree = "<group>"; };
 		34E670542C981D7A00BD8DA8 /* LoadFileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFileService.swift; sourceTree = "<group>"; };
 		34E670562C981DF300BD8DA8 /* YamlLoadFileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YamlLoadFileService.swift; sourceTree = "<group>"; };
+		BF1493302CA1DED700576EFA /* welcomeRareBot.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = welcomeRareBot.gif; sourceTree = "<group>"; };
 		BF15E2CE2CA17A0D0042F4EF /* sorryBot.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sorryBot.gif; sourceTree = "<group>"; };
 		BF2958AB2C94349B00413B2A /* HackAichi2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackAichi2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2958AE2C94349B00413B2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -358,6 +360,7 @@
 			children = (
 				BFD3BD352C9FED8700E88814 /* thinkingBot.gif */,
 				BFD3BD452CA1431100E88814 /* welcomeBot.gif */,
+				BF1493302CA1DED700576EFA /* welcomeRareBot.gif */,
 				BFD3BD432CA11F0700E88814 /* answerableBot.gif */,
 				BF15E2CE2CA17A0D0042F4EF /* sorryBot.gif */,
 			);
@@ -452,6 +455,7 @@
 				BFD3BD262C9EEAF300E88814 /* Color.xcassets in Resources */,
 				BFD3BD362C9FED8700E88814 /* thinkingBot.gif in Resources */,
 				BF15E2CF2CA17A0D0042F4EF /* sorryBot.gif in Resources */,
+				BF1493312CA1DED700576EFA /* welcomeRareBot.gif in Resources */,
 				34E670522C98175600BD8DA8 /* demo.yaml in Resources */,
 				BF2958BB2C94349D00413B2A /* Assets.xcassets in Resources */,
 				34DFEB332CA1BA0600980C20 /* question.yaml in Resources */,
@@ -656,6 +660,7 @@
 				DEVELOPMENT_TEAM = 2PJ54JWDJZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HackAichi2024/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = " ばずぼっと";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -666,7 +671,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = g.exst.aom.j.HackAichi2024;
+				PRODUCT_BUNDLE_IDENTIFIER = g.exst.aom.j.a.HackAichi2024;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -684,6 +689,7 @@
 				DEVELOPMENT_TEAM = 2PJ54JWDJZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HackAichi2024/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = " ばずぼっと";
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -694,7 +700,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = g.exst.aom.j.HackAichi2024;
+				PRODUCT_BUNDLE_IDENTIFIER = g.exst.aom.j.a.HackAichi2024;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
