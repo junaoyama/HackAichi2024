@@ -9,6 +9,7 @@ import UIKit
 import SwiftyGif
 
 class CharacterImageView: UIImageView {
+    var interval: Double = 0
     
     init(viewModel: CharacterImageViewModel) {
         super.init(frame: .zero)
@@ -30,7 +31,21 @@ class CharacterImageView: UIImageView {
         case .image:
             self.setImage(viewModel.image)
         case .gif:
-            self.setGifImage(viewModel.image)
+            self.setGifImage(viewModel.image, loopCount: viewModel.loopCount)
+            self.interval = viewModel.interval
+            self.delegate = self
+        }
+    }
+}
+
+extension CharacterImageView: SwiftyGifDelegate {
+    func gifDidLoop(sender: UIImageView) {
+        let characterImageView = sender as! CharacterImageView
+        if characterImageView.interval != 0 {
+            sender.stopAnimatingGif()
+            DispatchQueue.main.asyncAfter(deadline: .now() + interval) {
+                sender.startAnimatingGif() // 再びGIFを再生
+            }
         }
     }
 }
