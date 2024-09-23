@@ -16,16 +16,18 @@ class ChatBotViewController: UIViewController {
     
     private let getBotResposeUseCase: GetBotResponseUseCase = GetBotResponseUseCaseImpl()
     private let loadQAEntriesUseCase: LoadQAEntriesUseCase = LocalLoadQAEntriesUseCaseImpl()
+    private let recommendUseCase: RecommendUseCase = RecommendUseCaseImpl()
+    
+    private var searchTask: Task<Void, any Error>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .vcBackground
         
         characterImageViewModel = CharacterImageViewModel(state: .welcome)
+        characterImageView = CharacterImageView(viewModel: characterImageViewModel)
 
         embedChildViewController()
-        
-        characterImageView = CharacterImageView(viewModel: characterImageViewModel)
         self.view.addSubview(characterImageView)
         
         setUpConstraints()
@@ -114,6 +116,24 @@ extension ChatBotViewController: InputBarAccessoryViewDelegate {
             }
         })
     }
+    
+    func inputBar(_ inputBar: InputBarAccessoryView, textViewTextDidChangeTo text: String) {
+           searchTask?.cancel()
+           searchTask = Task { @MainActor in
+               try? await Task.sleep(nanoseconds: 300 * 1_000_000) // 300ms待
+               if text.isEmpty {
+                   self.messagesViewController?.recommendView.set(text: "")
+                   return
+               }
+               
+               if Task.isCancelled {
+                   return
+               }
+               let recommend = try await recommendUseCase.recommend(from: text)
+               self.messagesViewController?.recommendView.set(text: recommend)
+           }
+       }
+
 }
 
 extension ChatBotViewController: MessageCellDelegate {

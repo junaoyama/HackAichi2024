@@ -35,6 +35,10 @@ class AppleEmbeddingService: EmbeddingService {
     func embed(text: String) async throws -> Embedding {
         try await setUpIfNeed()
         
+        if Task.isCancelled {
+            throw AppError.tooManyVectorSearchRequest
+        }
+        
         let embeddingResult = try embeddingProvider.embeddingResult(for: text, language: .japanese)
         // ゼロベクトルを用意
         var meanPooledEmbeddings = Array<Float>(repeating: 0, count: embeddingProvider.dimension)
