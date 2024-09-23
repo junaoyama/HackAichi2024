@@ -22,6 +22,7 @@
 		34DFEB292CA14E7B00980C20 /* RecommendUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DFEB282CA14E7B00980C20 /* RecommendUseCaseImpl.swift */; };
 		34DFEB2B2CA14E9900980C20 /* RecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DFEB2A2CA14E9900980C20 /* RecommendView.swift */; };
 		34DFEB2E2CA1500E00980C20 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DFEB2D2CA1500E00980C20 /* AppError.swift */; };
+		34DFEB312CA199C200980C20 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 34DFEB302CA199C200980C20 /* OpenAI */; };
 		34E6701C2C97188F00BD8DA8 /* QAEntryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E6701B2C97188F00BD8DA8 /* QAEntryRepository.swift */; };
 		34E6701E2C9718EA00BD8DA8 /* QAEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E6701D2C9718EA00BD8DA8 /* QAEntry.swift */; };
 		34E670222C971A5C00BD8DA8 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E670212C971A5C00BD8DA8 /* Message.swift */; };
@@ -128,6 +129,7 @@
 				34E670502C9816A000BD8DA8 /* Yams in Frameworks */,
 				34BFBDF52C96841900F6B1BA /* SQLiteVec in Frameworks */,
 				BFC1EE9C2C9C1EB1007E3A9B /* MessageKit in Frameworks */,
+				34DFEB312CA199C200980C20 /* OpenAI in Frameworks */,
 				BFD3BD332C9FE8E800E88814 /* SwiftyGif in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +393,7 @@
 				34E6704F2C9816A000BD8DA8 /* Yams */,
 				BFC1EE9B2C9C1EB1007E3A9B /* MessageKit */,
 				BFD3BD322C9FE8E800E88814 /* SwiftyGif */,
+				34DFEB302CA199C200980C20 /* OpenAI */,
 			);
 			productName = HackAichi2024;
 			productReference = BF2958AB2C94349B00413B2A /* HackAichi2024.app */;
@@ -425,6 +428,7 @@
 				34E6704E2C9816A000BD8DA8 /* XCRemoteSwiftPackageReference "Yams" */,
 				BFC1EE9A2C9C1EB1007E3A9B /* XCRemoteSwiftPackageReference "MessageKit" */,
 				BFD3BD312C9FE8E800E88814 /* XCRemoteSwiftPackageReference "SwiftyGif" */,
+				34DFEB2F2CA199C200980C20 /* XCRemoteSwiftPackageReference "OpenAI" */,
 			);
 			productRefGroup = BF2958AC2C94349B00413B2A /* Products */;
 			projectDirPath = "";
@@ -726,6 +730,14 @@
 				version = 0.0.7;
 			};
 		};
+		34DFEB2F2CA199C200980C20 /* XCRemoteSwiftPackageReference "OpenAI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MacPaw/OpenAI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
 		34E6704E2C9816A000BD8DA8 /* XCRemoteSwiftPackageReference "Yams" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jpsim/Yams.git";
@@ -762,6 +774,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 34BFBDF12C96841900F6B1BA /* XCRemoteSwiftPackageReference "SQLiteVec" */;
 			productName = SQLiteVec;
+		};
+		34DFEB302CA199C200980C20 /* OpenAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 34DFEB2F2CA199C200980C20 /* XCRemoteSwiftPackageReference "OpenAI" */;
+			productName = OpenAI;
 		};
 		34E6704F2C9816A000BD8DA8 /* Yams */ = {
 			isa = XCSwiftPackageProductDependency;
