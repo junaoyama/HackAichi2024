@@ -7,7 +7,7 @@
 
 import Foundation
 
-class GetBotResponseUseCaseImpl: GetBotResponseUseCase {
+class GetBotResponseUseCaseImpl: AskChatBotUseCase {
     private let embeddingService: EmbeddingService
     private let qaEntryRepository: QAEntryRepository
     private let messageLogRepository: MessageLogRepository
@@ -18,7 +18,7 @@ class GetBotResponseUseCaseImpl: GetBotResponseUseCase {
         self.messageLogRepository = messageLogRepository
     }
     
-    func respondToMessage(_ message: Message) async throws -> Message {
+    func askQuestion(_ message: Message) async throws -> ChatBotResponse {
 //        質問を記録する
         try await messageLogRepository.save(message: message)
         let embedding = try await embeddingService.embed(text: message.content)
@@ -27,6 +27,6 @@ class GetBotResponseUseCaseImpl: GetBotResponseUseCase {
         let answer = Message(id: .init(), sender: .bot, content: qaEntries[0].answer, sentAt: Date())
 //        答えを記録する
         try await messageLogRepository.save(message: answer)
-        return answer
+        return ChatBotResponse.success(answer)
     }
 }
