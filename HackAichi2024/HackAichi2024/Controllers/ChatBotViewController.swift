@@ -19,6 +19,7 @@ class ChatBotViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.view.backgroundColor = .vcBackground
         
         characterImageViewModel = CharacterImageViewModel(state: .welcome)
@@ -33,6 +34,8 @@ class ChatBotViewController: UIViewController {
         Task {
             try await loadQAEntriesUseCase.loadIfNeed()
         }
+        
+        
     }
 
     private func embedChildViewController() {
