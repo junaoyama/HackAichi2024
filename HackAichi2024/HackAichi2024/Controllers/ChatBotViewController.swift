@@ -14,7 +14,7 @@ class ChatBotViewController: UIViewController {
     private var characterImageView: CharacterImageView!
     private var characterImageViewModel: CharacterImageViewModel!
     
-    private let getBotResposeUseCase: GetBotResponseUseCase = GetBotResponseUseCaseImpl()
+    private let getBotResposeUseCase: AskChatBotUseCase = GetBotResponseUseCaseImpl()
     private let loadQAEntriesUseCase: LoadQAEntriesUseCase = LocalLoadQAEntriesUseCaseImpl()
     private let recommendUseCase: RecommendUseCase = RecommendUseCaseImpl()
     
@@ -101,19 +101,24 @@ extension ChatBotViewController: InputBarAccessoryViewDelegate {
         self.messagesViewController?.setTypingIndicatorViewHidden(false, animated: true)
         DispatchQueue.main.asyncAfter(deadline: .now()+3, execute: {
             Task {
-                let response = try await self.getBotResposeUseCase.respondToMessage(userMessage)
-                self.messagesViewController?.setTypingIndicatorViewHidden(true, animated: true, whilePerforming: {
-                    DispatchQueue.main.async {
-                        self.messagesViewController?.messageList.append(ChatMessageType.new(sender: MessageSenderType.character, message: response.content))
-                        self.characterImageViewModel.state.goNextState()
-                        self.characterImageView.apply(viewModel: self.characterImageViewModel)
-                    }
-                    self.messagesViewController?.messageInputBar.shouldManageSendButtonEnabledState = true
-                    guard let isEmpty = self.messagesViewController?.messageInputBar.inputTextView.text.isEmpty else { return }
-                    if !isEmpty {
-                        self.messagesViewController?.messageInputBar.sendButton.isEnabled = true
-                    }
-                })
+                let response = try await self.getBotResposeUseCase.askQuestion(userMessage)
+                switch response {
+                case .success(let message):
+                    self.messagesViewController?.setTypingIndicatorViewHidden(true, animated: true, whilePerforming: {
+                        DispatchQueue.main.async {
+                            self.messagesViewController?.messageList.append(ChatMessageType.new(sender: MessageSenderType.character, message: message.content))
+                            self.characterImageViewModel.state.goNextState()
+                            self.characterImageView.apply(viewModel: self.characterImageViewModel)
+                        }
+                        self.messagesViewController?.messageInputBar.shouldManageSendButtonEnabledState = true
+                        guard let isEmpty = self.messagesViewController?.messageInputBar.inputTextView.text.isEmpty else { return }
+                        if !isEmpty {
+                            self.messagesViewController?.messageInputBar.sendButton.isEnabled = true
+                        }
+                    })
+                case .fail:
+                    break
+                }
             }
         })
     }
