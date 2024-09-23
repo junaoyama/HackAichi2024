@@ -11,14 +11,24 @@ enum CharacterState {
     case welcome
     case thinking
     case answer
+    case unknown
     
-    mutating func goNextState() {
+    mutating func goNextState(response: ChatBotResponse? = nil) {
         switch self {
         case .welcome:
             self = .thinking
         case .thinking:
-            self = .answer
+            switch response {
+            case .success(_):
+                self = .answer
+            case .fail:
+                self = .unknown
+            case nil:
+                self = .unknown
+            }
         case .answer:
+            self = .thinking
+        case .unknown:
             self = .thinking
         }
     }

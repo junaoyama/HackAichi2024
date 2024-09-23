@@ -110,7 +110,7 @@ extension ChatBotViewController: InputBarAccessoryViewDelegate {
                     self.messagesViewController?.setTypingIndicatorViewHidden(true, animated: true, whilePerforming: {
                         DispatchQueue.main.async {
                             self.messagesViewController?.messageList.append(ChatMessageType.new(sender: MessageSenderType.character, message: message.content))
-                            self.characterImageViewModel.state.goNextState()
+                            self.characterImageViewModel.state.goNextState(response: response)
                             self.characterImageView.apply(viewModel: self.characterImageViewModel)
                         }
                         self.messagesViewController?.messageInputBar.shouldManageSendButtonEnabledState = true
@@ -120,7 +120,18 @@ extension ChatBotViewController: InputBarAccessoryViewDelegate {
                         }
                     })
                 case .fail:
-                    break
+                    self.messagesViewController?.setTypingIndicatorViewHidden(true, animated: true, whilePerforming: {
+                        DispatchQueue.main.async {
+                            self.messagesViewController?.messageList.append(ChatMessageType.new(sender: MessageSenderType.character, message: "わかりません"))
+                            self.characterImageViewModel.state.goNextState(response: response)
+                            self.characterImageView.apply(viewModel: self.characterImageViewModel)
+                        }
+                        self.messagesViewController?.messageInputBar.shouldManageSendButtonEnabledState = true
+                        guard let isEmpty = self.messagesViewController?.messageInputBar.inputTextView.text.isEmpty else { return }
+                        if !isEmpty {
+                            self.messagesViewController?.messageInputBar.sendButton.isEnabled = true
+                        }
+                    })
                 }
             }
         })

@@ -35,6 +35,7 @@
 		34E670522C98175600BD8DA8 /* demo.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 34E670512C98175600BD8DA8 /* demo.yaml */; };
 		34E670552C981D7A00BD8DA8 /* LoadFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E670542C981D7A00BD8DA8 /* LoadFileService.swift */; };
 		34E670572C981DF300BD8DA8 /* YamlLoadFileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E670562C981DF300BD8DA8 /* YamlLoadFileService.swift */; };
+		BF15E2CF2CA17A0D0042F4EF /* sorryBot.gif in Resources */ = {isa = PBXBuildFile; fileRef = BF15E2CE2CA17A0D0042F4EF /* sorryBot.gif */; };
 		BF2958AF2C94349B00413B2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2958AE2C94349B00413B2A /* AppDelegate.swift */; };
 		BF2958B12C94349B00413B2A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2958B02C94349B00413B2A /* SceneDelegate.swift */; };
 		BF2958B92C94349B00413B2A /* HackAichi2024.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF2958B72C94349B00413B2A /* HackAichi2024.xcdatamodeld */; };
@@ -89,6 +90,7 @@
 		34E670512C98175600BD8DA8 /* demo.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = demo.yaml; sourceTree = "<group>"; };
 		34E670542C981D7A00BD8DA8 /* LoadFileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFileService.swift; sourceTree = "<group>"; };
 		34E670562C981DF300BD8DA8 /* YamlLoadFileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YamlLoadFileService.swift; sourceTree = "<group>"; };
+		BF15E2CE2CA17A0D0042F4EF /* sorryBot.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = sorryBot.gif; sourceTree = "<group>"; };
 		BF2958AB2C94349B00413B2A /* HackAichi2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackAichi2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF2958AE2C94349B00413B2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF2958B02C94349B00413B2A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 				BFD3BD352C9FED8700E88814 /* thinkingBot.gif */,
 				BFD3BD452CA1431100E88814 /* welcomeBot.gif */,
 				BFD3BD432CA11F0700E88814 /* answerableBot.gif */,
+				BF15E2CE2CA17A0D0042F4EF /* sorryBot.gif */,
 			);
 			path = Gif;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				BF2958BE2C94349D00413B2A /* LaunchScreen.storyboard in Resources */,
 				BFD3BD262C9EEAF300E88814 /* Color.xcassets in Resources */,
 				BFD3BD362C9FED8700E88814 /* thinkingBot.gif in Resources */,
+				BF15E2CF2CA17A0D0042F4EF /* sorryBot.gif in Resources */,
 				34E670522C98175600BD8DA8 /* demo.yaml in Resources */,
 				BF2958BB2C94349D00413B2A /* Assets.xcassets in Resources */,
 				BFD3BD442CA11F0700E88814 /* answerableBot.gif in Resources */,

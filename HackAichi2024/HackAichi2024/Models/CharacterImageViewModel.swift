@@ -45,6 +45,10 @@ class CharacterImageViewModel {
             image = try! UIImage(gifName: "answerableBot.gif")
 //            loopCount = 1
             interval = 1.5
+        case .unknown:
+            image = try! UIImage(gifName: "sorryBot.gif")
+//            loopCount = 1
+            interval = 1.5
         }
     }
 }
