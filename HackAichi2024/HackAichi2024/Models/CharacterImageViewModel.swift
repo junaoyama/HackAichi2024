@@ -36,7 +36,7 @@ class CharacterImageViewModel {
         case .thinking:
             image = try! UIImage(gifName: "thinkingBot.gif")
         case .answer:
-            image = UIImage(systemName: "3.circle")
+            image = try! UIImage(gifName: "answerableBot.gif")
         }
     }
 }

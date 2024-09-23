@@ -56,6 +56,7 @@
 		BFD3BD3E2CA037E800E88814 /* MessagesCollectionViewFlowLayout+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD3D2CA037E800E88814 /* MessagesCollectionViewFlowLayout+Extensions.swift */; };
 		BFD3BD402CA0385D00E88814 /* ChatBotMessageLayoutSizeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD3F2CA0385D00E88814 /* ChatBotMessageLayoutSizeCalculator.swift */; };
 		BFD3BD422CA038BD00E88814 /* ChatBotMessageContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD412CA038BD00E88814 /* ChatBotMessageContentCell.swift */; };
+		BFD3BD442CA11F0700E88814 /* answerableBot.gif in Resources */ = {isa = PBXBuildFile; fileRef = BFD3BD432CA11F0700E88814 /* answerableBot.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +106,7 @@
 		BFD3BD3D2CA037E800E88814 /* MessagesCollectionViewFlowLayout+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MessagesCollectionViewFlowLayout+Extensions.swift"; sourceTree = "<group>"; };
 		BFD3BD3F2CA0385D00E88814 /* ChatBotMessageLayoutSizeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotMessageLayoutSizeCalculator.swift; sourceTree = "<group>"; };
 		BFD3BD412CA038BD00E88814 /* ChatBotMessageContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotMessageContentCell.swift; sourceTree = "<group>"; };
+		BFD3BD432CA11F0700E88814 /* answerableBot.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = answerableBot.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -331,6 +333,7 @@
 			children = (
 				BFD3BD352C9FED8700E88814 /* thinkingBot.gif */,
 				BFD3BD392C9FFA2B00E88814 /* welcomeBot.gif */,
+				BFD3BD432CA11F0700E88814 /* answerableBot.gif */,
 			);
 			path = Gif;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				BFD3BD362C9FED8700E88814 /* thinkingBot.gif in Resources */,
 				34E670522C98175600BD8DA8 /* demo.yaml in Resources */,
 				BF2958BB2C94349D00413B2A /* Assets.xcassets in Resources */,
+				BFD3BD442CA11F0700E88814 /* answerableBot.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
