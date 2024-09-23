@@ -8,11 +8,8 @@
 import UIKit
 import MessageKit
 import InputBarAccessoryView
-import AVKit
 
 class ChatBotViewController: UIViewController {
-    private var player: AVPlayer!
-    private var playerLayer: AVPlayerLayer!
     private var messagesViewController: ChatMessagesViewController?
     private var characterImageView: CharacterImageView!
     private var characterImageViewModel: CharacterImageViewModel!
@@ -22,25 +19,6 @@ class ChatBotViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // 動画ファイルのパスを取得
-        if let path = Bundle.main.path(forResource: "test", ofType: "mov") {
-            let videoURL = URL(fileURLWithPath: path)
-            player = AVPlayer(url: videoURL)
-
-            // 動画プレイヤーのレイヤーを作成して画面に配置
-            playerLayer = AVPlayerLayer(player: player)
-            playerLayer.frame = view.bounds
-            playerLayer.videoGravity = .resizeAspectFill
-            playerLayer.zPosition = 1
-            view.layer.addSublayer(playerLayer)
-
-            // 動画の再生が終了したらメイン画面に遷移
-            NotificationCenter.default.addObserver(self, selector: #selector(videoDidFinish), name: .AVPlayerItemDidPlayToEndTime, object: player?.currentItem)
-
-            // 動画を再生
-            player?.play()
-        }
         
         self.view.backgroundColor = .vcBackground
         
@@ -58,11 +36,6 @@ class ChatBotViewController: UIViewController {
         }
         
         
-    }
-    
-    @objc func videoDidFinish() {
-        self.player = nil
-        playerLayer.removeFromSuperlayer()
     }
 
     private func embedChildViewController() {

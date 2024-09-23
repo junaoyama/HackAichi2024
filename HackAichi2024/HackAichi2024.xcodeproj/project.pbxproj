@@ -36,7 +36,6 @@
 		BF2958B92C94349B00413B2A /* HackAichi2024.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF2958B72C94349B00413B2A /* HackAichi2024.xcdatamodeld */; };
 		BF2958BB2C94349D00413B2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF2958BA2C94349D00413B2A /* Assets.xcassets */; };
 		BF2958BE2C94349D00413B2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF2958BC2C94349D00413B2A /* LaunchScreen.storyboard */; };
-		BF6F59932CA159B500034481 /* test.mov in Resources */ = {isa = PBXBuildFile; fileRef = BF6F59922CA159B500034481 /* test.mov */; };
 		BFC1EE752C96C1D8007E3A9B /* GoodBadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE742C96C1D8007E3A9B /* GoodBadButton.swift */; };
 		BFC1EE7B2C96CD9D007E3A9B /* CharacterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE7A2C96CD9D007E3A9B /* CharacterImageView.swift */; };
 		BFC1EE7F2C9715CC007E3A9B /* TelMailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC1EE7E2C9715CC007E3A9B /* TelMailButton.swift */; };
@@ -89,7 +88,6 @@
 		BF2958BA2C94349D00413B2A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF2958BD2C94349D00413B2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF2958BF2C94349D00413B2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF6F59922CA159B500034481 /* test.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = test.mov; sourceTree = "<group>"; };
 		BFC1EE742C96C1D8007E3A9B /* GoodBadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodBadButton.swift; sourceTree = "<group>"; };
 		BFC1EE7A2C96CD9D007E3A9B /* CharacterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterImageView.swift; sourceTree = "<group>"; };
 		BFC1EE7E2C9715CC007E3A9B /* TelMailButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelMailButton.swift; sourceTree = "<group>"; };
@@ -342,19 +340,10 @@
 			isa = PBXGroup;
 			children = (
 				BFD3BD252C9EEAF300E88814 /* Color.xcassets */,
-				BFD3BD482CA14D6300E88814 /* Movies */,
-				BFD3BD342C9FED6300E88814 /* Gif */,
 				BF2958BA2C94349D00413B2A /* Assets.xcassets */,
+				BFD3BD342C9FED6300E88814 /* Gif */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		BFD3BD482CA14D6300E88814 /* Movies */ = {
-			isa = PBXGroup;
-			children = (
-				BF6F59922CA159B500034481 /* test.mov */,
-			);
-			path = Movies;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,7 +423,6 @@
 				BFD3BD362C9FED8700E88814 /* thinkingBot.gif in Resources */,
 				34E670522C98175600BD8DA8 /* demo.yaml in Resources */,
 				BF2958BB2C94349D00413B2A /* Assets.xcassets in Resources */,
-				BF6F59932CA159B500034481 /* test.mov in Resources */,
 				BFD3BD442CA11F0700E88814 /* answerableBot.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -632,6 +620,7 @@
 				DEVELOPMENT_TEAM = 2PJ54JWDJZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HackAichi2024/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -659,6 +648,7 @@
 				DEVELOPMENT_TEAM = 2PJ54JWDJZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HackAichi2024/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
