@@ -23,6 +23,8 @@ class CharacterImageViewModel {
     }
     
     var image: UIImage!
+    var loopCount: Int = -1
+    var interval: Double = 0
     
     init(state: CharacterState) {
         self.state = state
@@ -33,10 +35,16 @@ class CharacterImageViewModel {
         switch state {
         case .welcome:
             image = try! UIImage(gifName: "welcomeBot.gif")
+//            loopCount = 1
+            interval = 1.5
         case .thinking:
             image = try! UIImage(gifName: "thinkingBot.gif")
+//            loopCount = 1
+            interval = 0.3
         case .answer:
             image = try! UIImage(gifName: "answerableBot.gif")
+//            loopCount = 1
+            interval = 1.5
         }
     }
 }
