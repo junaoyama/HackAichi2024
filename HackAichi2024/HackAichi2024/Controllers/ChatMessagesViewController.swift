@@ -20,6 +20,8 @@ final class ChatMessagesViewController: MessagesViewController {
         }
     }
     
+    var recommendView: RecommendView = RecommendView(frame: .zero)
+    
     private lazy var chatBotMessageSizeCalculator = ChatBotMessageLayoutSizeCalculator(
       layout: self.messagesCollectionView
         .messagesCollectionViewFlowLayout)
@@ -40,6 +42,7 @@ final class ChatMessagesViewController: MessagesViewController {
         setUpMessagesCollectionView()
         setUpMessageInputBar()
         setUpLayout()
+        setUpRecommendView()
         
         messagesCollectionView.reloadData()
     }
@@ -71,6 +74,17 @@ final class ChatMessagesViewController: MessagesViewController {
             layout.setMessageOutgoingMessageTopLabelAlignment(LabelAlignment(textAlignment: .right, textInsets: UIEdgeInsets(right: 10)))
             layout.setMessageOutgoingMessageBottomLabelAlignment(LabelAlignment(textAlignment: .right, textInsets: UIEdgeInsets(right: 10)))
         }
+    }
+    
+    private func setUpRecommendView() {
+        recommendView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(recommendView)
+        
+        NSLayoutConstraint.activate([
+            recommendView.widthAnchor.constraint(lessThanOrEqualTo: self.view.widthAnchor, multiplier: 0.8),
+            recommendView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10),
+            recommendView.bottomAnchor.constraint(equalTo: self.messageInputBar.topAnchor, constant: -10)
+        ])
     }
 }
 
