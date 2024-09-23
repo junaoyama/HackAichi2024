@@ -294,9 +294,7 @@
 				BFC1EE9E2C9C673C007E3A9B /* Views */,
 				BFC1EE9D2C9C6732007E3A9B /* Controllers */,
 				BFD3BD2C2C9EF0E400E88814 /* Extensions */,
-				BF2958BA2C94349D00413B2A /* Assets.xcassets */,
-				BFD3BD342C9FED6300E88814 /* Gif */,
-				BFD3BD252C9EEAF300E88814 /* Color.xcassets */,
+				BFD3BD472CA14D2B00E88814 /* Resources */,
 				BF2958BC2C94349D00413B2A /* LaunchScreen.storyboard */,
 				BF2958BF2C94349D00413B2A /* Info.plist */,
 				BF2958B72C94349B00413B2A /* HackAichi2024.xcdatamodeld */,
@@ -356,6 +354,16 @@
 				BFD3BD432CA11F0700E88814 /* answerableBot.gif */,
 			);
 			path = Gif;
+			sourceTree = "<group>";
+		};
+		BFD3BD472CA14D2B00E88814 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BFD3BD252C9EEAF300E88814 /* Color.xcassets */,
+				BF2958BA2C94349D00413B2A /* Assets.xcassets */,
+				BFD3BD342C9FED6300E88814 /* Gif */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -636,6 +644,7 @@
 				DEVELOPMENT_TEAM = 2PJ54JWDJZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HackAichi2024/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -663,6 +672,7 @@
 				DEVELOPMENT_TEAM = 2PJ54JWDJZ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HackAichi2024/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

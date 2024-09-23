@@ -9,6 +9,10 @@ import Foundation
 import MessageKit
 
 extension MessagesCollectionViewFlowLayout {
+    func firstMessage(_ indexPath: IndexPath) -> Bool {
+        return indexPath.section == 0
+    }
+    
     func lastMessage(_ indexPath: IndexPath) -> Bool {
         let messagesCollectionView = self.messagesCollectionView
         
