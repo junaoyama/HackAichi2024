@@ -10,7 +10,7 @@
 		346D782D2C9E4121007EDD43 /* SQLite3DataFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346D782C2C9E4121007EDD43 /* SQLite3DataFormatter.swift */; };
 		346D78332C9E4CF0007EDD43 /* LocalMessageLogRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346D78322C9E4CF0007EDD43 /* LocalMessageLogRepository.swift */; };
 		346D78352C9E4D01007EDD43 /* MessageLogRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346D78342C9E4D01007EDD43 /* MessageLogRepository.swift */; };
-		346D78382C9E58E1007EDD43 /* GetBotResponseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346D78372C9E58E1007EDD43 /* GetBotResponseUseCase.swift */; };
+		346D78382C9E58E1007EDD43 /* AskChatBotUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346D78372C9E58E1007EDD43 /* AskChatBotUseCase.swift */; };
 		346D783A2C9E5923007EDD43 /* LoadQAEntriesImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346D78392C9E5923007EDD43 /* LoadQAEntriesImpl.swift */; };
 		346D783C2C9E5A3F007EDD43 /* RepositoryProviderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346D783B2C9E5A3F007EDD43 /* RepositoryProviderService.swift */; };
 		346D783E2C9E5AED007EDD43 /* LocalRepositoryProviderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346D783D2C9E5AED007EDD43 /* LocalRepositoryProviderService.swift */; };
@@ -63,7 +63,7 @@
 		346D782C2C9E4121007EDD43 /* SQLite3DataFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLite3DataFormatter.swift; sourceTree = "<group>"; };
 		346D78322C9E4CF0007EDD43 /* LocalMessageLogRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMessageLogRepository.swift; sourceTree = "<group>"; };
 		346D78342C9E4D01007EDD43 /* MessageLogRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageLogRepository.swift; sourceTree = "<group>"; };
-		346D78372C9E58E1007EDD43 /* GetBotResponseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBotResponseUseCase.swift; sourceTree = "<group>"; };
+		346D78372C9E58E1007EDD43 /* AskChatBotUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskChatBotUseCase.swift; sourceTree = "<group>"; };
 		346D78392C9E5923007EDD43 /* LoadQAEntriesImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadQAEntriesImpl.swift; sourceTree = "<group>"; };
 		346D783B2C9E5A3F007EDD43 /* RepositoryProviderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryProviderService.swift; sourceTree = "<group>"; };
 		346D783D2C9E5AED007EDD43 /* LocalRepositoryProviderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepositoryProviderService.swift; sourceTree = "<group>"; };
@@ -232,7 +232,7 @@
 			children = (
 				346D78362C9E58D0007EDD43 /* impl */,
 				34E670492C97DA2A00BD8DA8 /* LoadQAEntriesUseCase.swift */,
-				346D78372C9E58E1007EDD43 /* GetBotResponseUseCase.swift */,
+				346D78372C9E58E1007EDD43 /* AskChatBotUseCase.swift */,
 				346D783F2C9E5FAA007EDD43 /* LoadMessageHistoryUseCase.swift */,
 			);
 			path = UseCase;
@@ -440,7 +440,7 @@
 				34E670552C981D7A00BD8DA8 /* LoadFileService.swift in Sources */,
 				34E670272C972EC700BD8DA8 /* GetBotResponseUsecaseImpl.swift in Sources */,
 				34E670272C972EC700BD8DA8 /* GetBotResponseUsecaseImpl.swift in Sources */,
-				346D78382C9E58E1007EDD43 /* GetBotResponseUseCase.swift in Sources */,
+				346D78382C9E58E1007EDD43 /* AskChatBotUseCase.swift in Sources */,
 				BFD3BD422CA038BD00E88814 /* ChatBotMessageContentCell.swift in Sources */,
 				346D783E2C9E5AED007EDD43 /* LocalRepositoryProviderService.swift in Sources */,
 				BFC1EE752C96C1D8007E3A9B /* GoodBadButton.swift in Sources */,
