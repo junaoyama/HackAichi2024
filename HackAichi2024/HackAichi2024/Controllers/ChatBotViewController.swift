@@ -102,7 +102,7 @@ extension ChatBotViewController: InputBarAccessoryViewDelegate {
         self.messagesViewController?.messageInputBar.shouldManageSendButtonEnabledState = false
         self.messagesViewController?.messageInputBar.sendButton.isEnabled = false
         self.messagesViewController?.setTypingIndicatorViewHidden(false, animated: true)
-        DispatchQueue.main.asyncAfter(deadline: .now()+3, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
             Task {
                 let response = try await self.getBotResposeUseCase.askQuestion(userMessage)
                 switch response {
