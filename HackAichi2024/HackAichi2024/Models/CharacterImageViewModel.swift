@@ -34,7 +34,13 @@ class CharacterImageViewModel {
     private func setImage(state: CharacterState) {
         switch state {
         case .welcome:
-            image = try! UIImage(gifName: "welcomeBot.gif")
+            let randomValue = Int.random(in: 1...4)
+            if randomValue == 1 {
+                image = try! UIImage(gifName: "welcomeRareBot.gif")
+            } else {
+                image = try! UIImage(gifName: "welcomeBot.gif")
+            }
+            
 //            loopCount = 1
             interval = 1.5
         case .thinking:

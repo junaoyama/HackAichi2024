@@ -42,7 +42,7 @@ class ChatBotViewController: UIViewController {
 
     private func embedChildViewController() {
         // 1. 子ViewControllerのインスタンスを作成
-        let childVC = ChatMessagesViewController(messageList: [ChatMessageType.new(sender: MessageSenderType.character, message: "ようこそ、質問を入力して送信してね")])
+        let childVC = ChatMessagesViewController(messageList: [ChatMessageType.new(sender: MessageSenderType.character, message: "やあ！質問を入力してね！\n僕が困ったら、サポートデスクにすがりつく覚悟はできてるよ！")])
         self.messagesViewController = childVC
         self.messagesViewController?.messageInputBar.delegate = self
         self.messagesViewController?.messagesCollectionView.messageCellDelegate = self
@@ -102,7 +102,7 @@ extension ChatBotViewController: InputBarAccessoryViewDelegate {
         self.messagesViewController?.messageInputBar.shouldManageSendButtonEnabledState = false
         self.messagesViewController?.messageInputBar.sendButton.isEnabled = false
         self.messagesViewController?.setTypingIndicatorViewHidden(false, animated: true)
-        DispatchQueue.main.asyncAfter(deadline: .now()+3, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now()+2, execute: {
             Task {
                 let response = try await self.getBotResposeUseCase.askQuestion(userMessage)
                 switch response {
@@ -122,7 +122,7 @@ extension ChatBotViewController: InputBarAccessoryViewDelegate {
                 case .fail:
                     self.messagesViewController?.setTypingIndicatorViewHidden(true, animated: true, whilePerforming: {
                         DispatchQueue.main.async {
-                            self.messagesViewController?.messageList.append(ChatMessageType.new(sender: MessageSenderType.character, message: "わかりません"))
+                            self.messagesViewController?.messageList.append(ChatMessageType.new(sender: MessageSenderType.character, message: "えーっと...\nこれ、僕の新人マニュアルに載ってないやつかも...\nサポートデスクに電話して、僕のボスにお願いしてみて！"))
                             self.characterImageViewModel.state.goNextState(response: response)
                             self.characterImageView.apply(viewModel: self.characterImageViewModel)
                         }
