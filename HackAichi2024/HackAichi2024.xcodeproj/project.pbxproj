@@ -305,6 +305,7 @@
 				BFC1EE9E2C9C673C007E3A9B /* Views */,
 				BFC1EE9D2C9C6732007E3A9B /* Controllers */,
 				BFD3BD2C2C9EF0E400E88814 /* Extensions */,
+				BFF51CEA2CB0D7E6004D9A5C /* Constants */,
 				BFD3BD472CA14D2B00E88814 /* Resources */,
 				BF2958BC2C94349D00413B2A /* LaunchScreen.storyboard */,
 				BF2958BF2C94349D00413B2A /* Info.plist */,
@@ -343,7 +344,6 @@
 				BFD3BD372C9FEEB400E88814 /* CharacterImageType.swift */,
 				BFD3BD2F2C9FCD9500E88814 /* CharacterState.swift */,
 				BFD3BD3F2CA0385D00E88814 /* ChatBotMessageLayoutSizeCalculator.swift */,
-				BFF51CE82CB0B9B9004D9A5C /* ChatBotMessageTemplates.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -378,6 +378,14 @@
 				BFD3BD342C9FED6300E88814 /* Gif */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		BFF51CEA2CB0D7E6004D9A5C /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				BFF51CE82CB0B9B9004D9A5C /* ChatBotMessageTemplates.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
