@@ -65,6 +65,7 @@
 		BFD3BD422CA038BD00E88814 /* ChatBotMessageContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD412CA038BD00E88814 /* ChatBotMessageContentCell.swift */; };
 		BFD3BD442CA11F0700E88814 /* answerableBot.gif in Resources */ = {isa = PBXBuildFile; fileRef = BFD3BD432CA11F0700E88814 /* answerableBot.gif */; };
 		BFD3BD462CA1431100E88814 /* welcomeBot.gif in Resources */ = {isa = PBXBuildFile; fileRef = BFD3BD452CA1431100E88814 /* welcomeBot.gif */; };
+		BFF51CE92CB0B9BA004D9A5C /* ChatBotMessageTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF51CE82CB0B9B9004D9A5C /* ChatBotMessageTemplates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +123,7 @@
 		BFD3BD412CA038BD00E88814 /* ChatBotMessageContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotMessageContentCell.swift; sourceTree = "<group>"; };
 		BFD3BD432CA11F0700E88814 /* answerableBot.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = answerableBot.gif; sourceTree = "<group>"; };
 		BFD3BD452CA1431100E88814 /* welcomeBot.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = welcomeBot.gif; sourceTree = "<group>"; };
+		BFF51CE82CB0B9B9004D9A5C /* ChatBotMessageTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotMessageTemplates.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,6 +343,7 @@
 				BFD3BD372C9FEEB400E88814 /* CharacterImageType.swift */,
 				BFD3BD2F2C9FCD9500E88814 /* CharacterState.swift */,
 				BFD3BD3F2CA0385D00E88814 /* ChatBotMessageLayoutSizeCalculator.swift */,
+				BFF51CE82CB0B9B9004D9A5C /* ChatBotMessageTemplates.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				BF2958AF2C94349B00413B2A /* AppDelegate.swift in Sources */,
 				BFD3BD382C9FEEB400E88814 /* CharacterImageType.swift in Sources */,
 				346D782D2C9E4121007EDD43 /* SQLite3DataFormatter.swift in Sources */,
+				BFF51CE92CB0B9BA004D9A5C /* ChatBotMessageTemplates.swift in Sources */,
 				34E670572C981DF300BD8DA8 /* YamlLoadFileService.swift in Sources */,
 				BF2958B12C94349B00413B2A /* SceneDelegate.swift in Sources */,
 				34E670422C97C66D00BD8DA8 /* LocalQAEntryRepository.swift in Sources */,
