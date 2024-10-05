@@ -48,7 +48,7 @@ final class ChatMessagesViewController: MessagesViewController {
     }
     
     private func setUpMessagesCollectionView() {
-        messagesCollectionView.backgroundColor = .vcBackground
+        messagesCollectionView.backgroundColor = BuzzBotColors.vcBackground
         messagesCollectionView.register(ChatBotMessageContentCell.self)
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
@@ -58,9 +58,9 @@ final class ChatMessagesViewController: MessagesViewController {
     private func setUpMessageInputBar() {
         messageInputBar.sendButton.title = nil
         messageInputBar.sendButton.image = UIImage(systemName: "paperplane.fill", withConfiguration: UIImage.SymbolConfiguration(font: .systemFont(ofSize: 23)))
-        messageInputBar.sendButton.tintColor = .sendButton
+        messageInputBar.sendButton.tintColor = BuzzBotColors.sendButton
         messageInputBar.inputTextView.placeholder = "質問を入力してね！"
-        messageInputBar.inputTextView.tintColor = .inputCursor
+        messageInputBar.inputTextView.tintColor = BuzzBotColors.inputCursor
         messageInputBar.inputTextView.font = .systemFont(ofSize: 20)
     }
     
@@ -120,12 +120,12 @@ extension ChatMessagesViewController: MessagesDataSource {
 extension ChatMessagesViewController: MessagesDisplayDelegate {
     // 背景色
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-        return .cellBackground
+        return BuzzBotColors.cellBackground
     }
 
     // メッセージスタイル
     func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
-        return .bubbleOutline(isFromCurrentSender(message: message) ? .userCellBorder : .characterCellBorder)
+        return .bubbleOutline(isFromCurrentSender(message: message) ? BuzzBotColors.userCellBorder : BuzzBotColors.characterCellBorder)
     }
     
     func customCellSizeCalculator(for message: any MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CellSizeCalculator {
