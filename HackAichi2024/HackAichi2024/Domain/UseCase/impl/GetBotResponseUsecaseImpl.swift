@@ -15,7 +15,7 @@ class GetBotResponseUseCaseImpl: AskChatBotUseCase {
     private let llmService: LLMService
     private let failureThreshold: Float = 0.3
     
-    init(embeddingService: EmbeddingService = AppleEmbeddingService.shared, qaEntryRepository: QAEntryRepository = LocalRepositoryProviderService.shared.get(), messageLogRepository: MessageLogRepository = LocalRepositoryProviderService.shared.get(), llmService: LLMService = OpenAIService.shared) {
+    init(embeddingService: EmbeddingService = AppleEmbeddingService.shared, qaEntryRepository: QAEntryRepository = LocalRepositoryProviderService.shared.get(), messageLogRepository: MessageLogRepository = LocalRepositoryProviderService.shared.get(), llmService: LLMService = MockLLMService.shared) {
         self.embeddingService = embeddingService
         self.qaEntryRepository = qaEntryRepository
         self.messageLogRepository = messageLogRepository

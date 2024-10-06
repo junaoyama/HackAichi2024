@@ -18,6 +18,7 @@
 		346D78422C9E5FF9007EDD43 /* LoadMessageHistoryUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346D78412C9E5FF9007EDD43 /* LoadMessageHistoryUseCaseImpl.swift */; };
 		34BF61CC2CB24D960021D1CE /* LLMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BF61CB2CB24D850021D1CE /* LLMService.swift */; };
 		34BF61CE2CB24E150021D1CE /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BF61CD2CB24E0E0021D1CE /* OpenAIService.swift */; };
+		34BF61D12CB2574F0021D1CE /* MockLLMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BF61D02CB257480021D1CE /* MockLLMService.swift */; };
 		34BFBDF32C96841900F6B1BA /* CSQLiteVec in Frameworks */ = {isa = PBXBuildFile; productRef = 34BFBDF22C96841900F6B1BA /* CSQLiteVec */; };
 		34BFBDF52C96841900F6B1BA /* SQLiteVec in Frameworks */ = {isa = PBXBuildFile; productRef = 34BFBDF42C96841900F6B1BA /* SQLiteVec */; };
 		34DFEB272CA14E6400980C20 /* RecommendUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DFEB262CA14E6400980C20 /* RecommendUseCase.swift */; };
@@ -82,6 +83,7 @@
 		346D78412C9E5FF9007EDD43 /* LoadMessageHistoryUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMessageHistoryUseCaseImpl.swift; sourceTree = "<group>"; };
 		34BF61CB2CB24D850021D1CE /* LLMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLMService.swift; sourceTree = "<group>"; };
 		34BF61CD2CB24E0E0021D1CE /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
+		34BF61D02CB257480021D1CE /* MockLLMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLLMService.swift; sourceTree = "<group>"; };
 		34DFEB262CA14E6400980C20 /* RecommendUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendUseCase.swift; sourceTree = "<group>"; };
 		34DFEB282CA14E7B00980C20 /* RecommendUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendUseCaseImpl.swift; sourceTree = "<group>"; };
 		34DFEB2A2CA14E9900980C20 /* RecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendView.swift; sourceTree = "<group>"; };
@@ -166,6 +168,14 @@
 			path = impl;
 			sourceTree = "<group>";
 		};
+		34BF61CF2CB2573E0021D1CE /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				34BF61D02CB257480021D1CE /* MockLLMService.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		34DFEB2C2CA1500200980C20 /* Error */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +214,7 @@
 		34E670122C96DAA900BD8DA8 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				34BF61CF2CB2573E0021D1CE /* Mock */,
 				34BF61CD2CB24E0E0021D1CE /* OpenAIService.swift */,
 				34E670472C97CB4500BD8DA8 /* AppleEmbeddingService.swift */,
 				34E670562C981DF300BD8DA8 /* YamlLoadFileService.swift */,
@@ -518,6 +529,7 @@
 				BF2958B12C94349B00413B2A /* SceneDelegate.swift in Sources */,
 				34E670422C97C66D00BD8DA8 /* LocalQAEntryRepository.swift in Sources */,
 				346D78422C9E5FF9007EDD43 /* LoadMessageHistoryUseCaseImpl.swift in Sources */,
+				34BF61D12CB2574F0021D1CE /* MockLLMService.swift in Sources */,
 				34E670462C97CB2D00BD8DA8 /* EmbeddingService.swift in Sources */,
 				346D78352C9E4D01007EDD43 /* MessageLogRepository.swift in Sources */,
 				346D783C2C9E5A3F007EDD43 /* RepositoryProviderService.swift in Sources */,
