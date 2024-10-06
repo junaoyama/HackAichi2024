@@ -8,8 +8,8 @@
 import Foundation
 
 enum ChatBotMessageTemplates {
-    static let welcomeMessage = "やあ！質問を入力してね！\n僕が困ったら、サポートデスクにすがりつく覚悟はできてるよ！"
-    static let sorryMessage = "えーっと...\nこれ、僕の新人マニュアルに載ってないやつかも...\nサポートデスクに電話して、僕のボスにお願いしてみて！"
+    static let welcome = "やあ！質問を入力してね！\n僕が困ったら、サポートデスクにすがりつく覚悟はできてるよ！"
+    static let sorry = "えーっと...\nこれ、僕の新人マニュアルに載ってないやつかも...\nサポートデスクに電話して、僕のボスにお願いしてみて！"
     
-    static let placeholderMessage = "質問を入力してね！"
+    static let placeholder = "質問を入力してね！"
 }

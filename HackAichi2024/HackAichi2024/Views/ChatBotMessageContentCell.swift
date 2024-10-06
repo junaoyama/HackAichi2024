@@ -41,7 +41,7 @@ class ChatBotMessageContentCell: MessageCollectionViewCell {
         containerView.layer.masksToBounds = true
         containerView.layer.cornerRadius = 20
         containerView.backgroundColor = .white
-        containerView.layer.borderColor = BuzzBotColors.characterCellBorder.cgColor
+        containerView.layer.borderColor = ChatBotColors.characterCellBorder.cgColor
         containerView.layer.borderWidth = 1.0
         return containerView
     }()

@@ -7,8 +7,8 @@
 
 import UIKit
 
-enum BuzzBotColors {
-    static let  vcBackground = UIColor(named: "viewControllerBackground")!
+enum ChatBotColors {
+    static let vcBackground = UIColor(named: "viewControllerBackground")!
     
     static let cellBackground = UIColor(named: "messageCellBackground")!
     

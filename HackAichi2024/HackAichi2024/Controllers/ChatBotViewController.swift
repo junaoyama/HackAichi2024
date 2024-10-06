@@ -23,7 +23,7 @@ class ChatBotViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = BuzzBotColors.vcBackground
+        self.view.backgroundColor = ChatBotColors.vcBackground
         
         characterImageViewModel = CharacterImageViewModel(state: .welcome)
         characterImageView = CharacterImageView(viewModel: characterImageViewModel)
