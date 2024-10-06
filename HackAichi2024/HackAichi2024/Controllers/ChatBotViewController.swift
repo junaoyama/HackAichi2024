@@ -42,7 +42,7 @@ class ChatBotViewController: UIViewController {
 
     private func embedChildViewController() {
         // 1. 子ViewControllerのインスタンスを作成
-        let childVC = ChatMessagesViewController(messageList: [ChatMessageType.new(sender: MessageSenderType.character, message: ChatBotMessageTemplates.welcomeMessage)])
+        let childVC = ChatMessagesViewController(messageList: [ChatMessageType.new(sender: MessageSenderType.character, message: ChatBotMessageTemplates.welcome)])
         self.messagesViewController = childVC
         self.messagesViewController?.messageInputBar.delegate = self
         self.messagesViewController?.messagesCollectionView.messageCellDelegate = self
@@ -122,7 +122,7 @@ extension ChatBotViewController: InputBarAccessoryViewDelegate {
                 case .fail:
                     self.messagesViewController?.setTypingIndicatorViewHidden(true, animated: true, whilePerforming: {
                         DispatchQueue.main.async {
-                            self.messagesViewController?.messageList.append(ChatMessageType.new(sender: MessageSenderType.character, message: ChatBotMessageTemplates.sorryMessage))
+                            self.messagesViewController?.messageList.append(ChatMessageType.new(sender: MessageSenderType.character, message: ChatBotMessageTemplates.sorry))
                             self.characterImageViewModel.state.goNextState(response: response)
                             self.characterImageView.apply(viewModel: self.characterImageViewModel)
                         }
