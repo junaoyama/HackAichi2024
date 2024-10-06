@@ -59,7 +59,7 @@ final class ChatMessagesViewController: MessagesViewController {
         messageInputBar.sendButton.title = nil
         messageInputBar.sendButton.image = UIImage(systemName: "paperplane.fill", withConfiguration: UIImage.SymbolConfiguration(font: .systemFont(ofSize: 23)))
         messageInputBar.sendButton.tintColor = BuzzBotColors.sendButton
-        messageInputBar.inputTextView.placeholder = "質問を入力してね！"
+        messageInputBar.inputTextView.placeholder = ChatBotMessageTemplates.placeholderMessage
         messageInputBar.inputTextView.tintColor = BuzzBotColors.inputCursor
         messageInputBar.inputTextView.font = .systemFont(ofSize: 20)
     }
