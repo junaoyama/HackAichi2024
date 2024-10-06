@@ -27,7 +27,7 @@ struct ChatMessageType: MessageType {
                     string: message,
                     attributes: [
                         .font: UIFont.systemFont(ofSize: 18.0),
-                        .foregroundColor: UIColor.cellText
+                        .foregroundColor: ChatBotColors.cellText
                     ]
                 )),
                 sentDate: Date())
@@ -39,7 +39,7 @@ struct ChatMessageType: MessageType {
                     string: message,
                     attributes: [
                         .font: UIFont.systemFont(ofSize: 18.0),
-                        .foregroundColor: UIColor.cellText
+                        .foregroundColor: ChatBotColors.cellText
                     ]
                 )),
                 sentDate: Date())

@@ -53,7 +53,6 @@
 		BFD3BD222C9E9C6400E88814 /* MessageSenderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD212C9E9C6400E88814 /* MessageSenderType.swift */; };
 		BFD3BD242C9E9CBC00E88814 /* ChatMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD232C9E9CBC00E88814 /* ChatMessageType.swift */; };
 		BFD3BD262C9EEAF300E88814 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFD3BD252C9EEAF300E88814 /* Color.xcassets */; };
-		BFD3BD2B2C9EF0C100E88814 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD2A2C9EF0C100E88814 /* UIColor+Extensions.swift */; };
 		BFD3BD2E2C9FCD7100E88814 /* CharacterImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD2D2C9FCD7100E88814 /* CharacterImageViewModel.swift */; };
 		BFD3BD302C9FCD9500E88814 /* CharacterState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD2F2C9FCD9500E88814 /* CharacterState.swift */; };
 		BFD3BD332C9FE8E800E88814 /* SwiftyGif in Frameworks */ = {isa = PBXBuildFile; productRef = BFD3BD322C9FE8E800E88814 /* SwiftyGif */; };
@@ -65,6 +64,8 @@
 		BFD3BD422CA038BD00E88814 /* ChatBotMessageContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD3BD412CA038BD00E88814 /* ChatBotMessageContentCell.swift */; };
 		BFD3BD442CA11F0700E88814 /* answerableBot.gif in Resources */ = {isa = PBXBuildFile; fileRef = BFD3BD432CA11F0700E88814 /* answerableBot.gif */; };
 		BFD3BD462CA1431100E88814 /* welcomeBot.gif in Resources */ = {isa = PBXBuildFile; fileRef = BFD3BD452CA1431100E88814 /* welcomeBot.gif */; };
+		BFF51CE92CB0B9BA004D9A5C /* ChatBotMessageTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF51CE82CB0B9B9004D9A5C /* ChatBotMessageTemplates.swift */; };
+		BFF51CEC2CB0D881004D9A5C /* ChatBotColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF51CEB2CB0D881004D9A5C /* ChatBotColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,7 +112,6 @@
 		BFD3BD212C9E9C6400E88814 /* MessageSenderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSenderType.swift; sourceTree = "<group>"; };
 		BFD3BD232C9E9CBC00E88814 /* ChatMessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageType.swift; sourceTree = "<group>"; };
 		BFD3BD252C9EEAF300E88814 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
-		BFD3BD2A2C9EF0C100E88814 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		BFD3BD2D2C9FCD7100E88814 /* CharacterImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterImageViewModel.swift; sourceTree = "<group>"; };
 		BFD3BD2F2C9FCD9500E88814 /* CharacterState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterState.swift; sourceTree = "<group>"; };
 		BFD3BD352C9FED8700E88814 /* thinkingBot.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = thinkingBot.gif; sourceTree = "<group>"; };
@@ -122,6 +122,8 @@
 		BFD3BD412CA038BD00E88814 /* ChatBotMessageContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotMessageContentCell.swift; sourceTree = "<group>"; };
 		BFD3BD432CA11F0700E88814 /* answerableBot.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = answerableBot.gif; sourceTree = "<group>"; };
 		BFD3BD452CA1431100E88814 /* welcomeBot.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = welcomeBot.gif; sourceTree = "<group>"; };
+		BFF51CE82CB0B9B9004D9A5C /* ChatBotMessageTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotMessageTemplates.swift; sourceTree = "<group>"; };
+		BFF51CEB2CB0D881004D9A5C /* ChatBotColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,6 +305,7 @@
 				BFC1EE9E2C9C673C007E3A9B /* Views */,
 				BFC1EE9D2C9C6732007E3A9B /* Controllers */,
 				BFD3BD2C2C9EF0E400E88814 /* Extensions */,
+				BFF51CEA2CB0D7E6004D9A5C /* Constants */,
 				BFD3BD472CA14D2B00E88814 /* Resources */,
 				BF2958BC2C94349D00413B2A /* LaunchScreen.storyboard */,
 				BF2958BF2C94349D00413B2A /* Info.plist */,
@@ -348,7 +351,6 @@
 		BFD3BD2C2C9EF0E400E88814 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				BFD3BD2A2C9EF0C100E88814 /* UIColor+Extensions.swift */,
 				BFD3BD3B2CA005B100E88814 /* UIImage+Extensions.swift */,
 				BFD3BD3D2CA037E800E88814 /* MessagesCollectionViewFlowLayout+Extensions.swift */,
 			);
@@ -375,6 +377,15 @@
 				BFD3BD342C9FED6300E88814 /* Gif */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		BFF51CEA2CB0D7E6004D9A5C /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				BFF51CE82CB0B9B9004D9A5C /* ChatBotMessageTemplates.swift */,
+				BFF51CEB2CB0D881004D9A5C /* ChatBotColors.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -482,7 +493,6 @@
 				BFD3BD302C9FCD9500E88814 /* CharacterState.swift in Sources */,
 				BFD3BD222C9E9C6400E88814 /* MessageSenderType.swift in Sources */,
 				34DFEB292CA14E7B00980C20 /* RecommendUseCaseImpl.swift in Sources */,
-				BFD3BD2B2C9EF0C100E88814 /* UIColor+Extensions.swift in Sources */,
 				34E670552C981D7A00BD8DA8 /* LoadFileService.swift in Sources */,
 				34E670272C972EC700BD8DA8 /* GetBotResponseUsecaseImpl.swift in Sources */,
 				34DFEB272CA14E6400980C20 /* RecommendUseCase.swift in Sources */,
@@ -490,10 +500,12 @@
 				346D78382C9E58E1007EDD43 /* AskChatBotUseCase.swift in Sources */,
 				BFD3BD422CA038BD00E88814 /* ChatBotMessageContentCell.swift in Sources */,
 				346D783E2C9E5AED007EDD43 /* LocalRepositoryProviderService.swift in Sources */,
+				BFF51CEC2CB0D881004D9A5C /* ChatBotColors.swift in Sources */,
 				BFC1EE752C96C1D8007E3A9B /* GoodBadButton.swift in Sources */,
 				BF2958AF2C94349B00413B2A /* AppDelegate.swift in Sources */,
 				BFD3BD382C9FEEB400E88814 /* CharacterImageType.swift in Sources */,
 				346D782D2C9E4121007EDD43 /* SQLite3DataFormatter.swift in Sources */,
+				BFF51CE92CB0B9BA004D9A5C /* ChatBotMessageTemplates.swift in Sources */,
 				34E670572C981DF300BD8DA8 /* YamlLoadFileService.swift in Sources */,
 				BF2958B12C94349B00413B2A /* SceneDelegate.swift in Sources */,
 				34E670422C97C66D00BD8DA8 /* LocalQAEntryRepository.swift in Sources */,
