@@ -26,7 +26,6 @@
 		34DFEB2B2CA14E9900980C20 /* RecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DFEB2A2CA14E9900980C20 /* RecommendView.swift */; };
 		34DFEB2E2CA1500E00980C20 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DFEB2D2CA1500E00980C20 /* AppError.swift */; };
 		34DFEB312CA199C200980C20 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = 34DFEB302CA199C200980C20 /* OpenAI */; };
-		34DFEB332CA1BA0600980C20 /* question.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 34DFEB322CA1BA0600980C20 /* question.yaml */; };
 		34E6701C2C97188F00BD8DA8 /* QAEntryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E6701B2C97188F00BD8DA8 /* QAEntryRepository.swift */; };
 		34E6701E2C9718EA00BD8DA8 /* QAEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E6701D2C9718EA00BD8DA8 /* QAEntry.swift */; };
 		34E670222C971A5C00BD8DA8 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E670212C971A5C00BD8DA8 /* Message.swift */; };
@@ -88,7 +87,6 @@
 		34DFEB282CA14E7B00980C20 /* RecommendUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendUseCaseImpl.swift; sourceTree = "<group>"; };
 		34DFEB2A2CA14E9900980C20 /* RecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendView.swift; sourceTree = "<group>"; };
 		34DFEB2D2CA1500E00980C20 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
-		34DFEB322CA1BA0600980C20 /* question.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = question.yaml; sourceTree = "<group>"; };
 		34E6701B2C97188F00BD8DA8 /* QAEntryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAEntryRepository.swift; sourceTree = "<group>"; };
 		34E6701D2C9718EA00BD8DA8 /* QAEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAEntry.swift; sourceTree = "<group>"; };
 		34E670212C971A5C00BD8DA8 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -286,7 +284,6 @@
 		34E6704B2C97FF3200BD8DA8 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
-				34DFEB322CA1BA0600980C20 /* question.yaml */,
 				34E670512C98175600BD8DA8 /* demo.yaml */,
 			);
 			path = Sample;
@@ -486,7 +483,6 @@
 				BF1493312CA1DED700576EFA /* welcomeRareBot.gif in Resources */,
 				34E670522C98175600BD8DA8 /* demo.yaml in Resources */,
 				BF2958BB2C94349D00413B2A /* Assets.xcassets in Resources */,
-				34DFEB332CA1BA0600980C20 /* question.yaml in Resources */,
 				BFD3BD442CA11F0700E88814 /* answerableBot.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
