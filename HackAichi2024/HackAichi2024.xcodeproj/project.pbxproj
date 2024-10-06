@@ -66,6 +66,7 @@
 		BFD3BD462CA1431100E88814 /* welcomeBot.gif in Resources */ = {isa = PBXBuildFile; fileRef = BFD3BD452CA1431100E88814 /* welcomeBot.gif */; };
 		BFF51CE92CB0B9BA004D9A5C /* ChatBotMessageTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF51CE82CB0B9B9004D9A5C /* ChatBotMessageTemplates.swift */; };
 		BFF51CEC2CB0D881004D9A5C /* ChatBotColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF51CEB2CB0D881004D9A5C /* ChatBotColors.swift */; };
+		BFF51CEE2CB24BCA004D9A5C /* ChatBotViewControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF51CED2CB24BCA004D9A5C /* ChatBotViewControllerWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +125,7 @@
 		BFD3BD452CA1431100E88814 /* welcomeBot.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = welcomeBot.gif; sourceTree = "<group>"; };
 		BFF51CE82CB0B9B9004D9A5C /* ChatBotMessageTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotMessageTemplates.swift; sourceTree = "<group>"; };
 		BFF51CEB2CB0D881004D9A5C /* ChatBotColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotColors.swift; sourceTree = "<group>"; };
+		BFF51CED2CB24BCA004D9A5C /* ChatBotViewControllerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotViewControllerWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +320,7 @@
 			isa = PBXGroup;
 			children = (
 				BFC1EEB32C9C7992007E3A9B /* ChatBotViewController.swift */,
+				BFF51CED2CB24BCA004D9A5C /* ChatBotViewControllerWrapper.swift */,
 				BFC1EEC52C9D4383007E3A9B /* ChatMessagesViewController.swift */,
 			);
 			path = Controllers;
@@ -491,6 +494,7 @@
 				BFD3BD402CA0385D00E88814 /* ChatBotMessageLayoutSizeCalculator.swift in Sources */,
 				34DFEB2E2CA1500E00980C20 /* AppError.swift in Sources */,
 				BFD3BD302C9FCD9500E88814 /* CharacterState.swift in Sources */,
+				BFF51CEE2CB24BCA004D9A5C /* ChatBotViewControllerWrapper.swift in Sources */,
 				BFD3BD222C9E9C6400E88814 /* MessageSenderType.swift in Sources */,
 				34DFEB292CA14E7B00980C20 /* RecommendUseCaseImpl.swift in Sources */,
 				34E670552C981D7A00BD8DA8 /* LoadFileService.swift in Sources */,
