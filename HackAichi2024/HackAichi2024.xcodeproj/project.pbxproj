@@ -16,6 +16,8 @@
 		346D783E2C9E5AED007EDD43 /* LocalRepositoryProviderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346D783D2C9E5AED007EDD43 /* LocalRepositoryProviderService.swift */; };
 		346D78402C9E5FAA007EDD43 /* LoadMessageHistoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346D783F2C9E5FAA007EDD43 /* LoadMessageHistoryUseCase.swift */; };
 		346D78422C9E5FF9007EDD43 /* LoadMessageHistoryUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346D78412C9E5FF9007EDD43 /* LoadMessageHistoryUseCaseImpl.swift */; };
+		34BF61CC2CB24D960021D1CE /* LLMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BF61CB2CB24D850021D1CE /* LLMService.swift */; };
+		34BF61CE2CB24E150021D1CE /* OpenAIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BF61CD2CB24E0E0021D1CE /* OpenAIService.swift */; };
 		34BFBDF32C96841900F6B1BA /* CSQLiteVec in Frameworks */ = {isa = PBXBuildFile; productRef = 34BFBDF22C96841900F6B1BA /* CSQLiteVec */; };
 		34BFBDF52C96841900F6B1BA /* SQLiteVec in Frameworks */ = {isa = PBXBuildFile; productRef = 34BFBDF42C96841900F6B1BA /* SQLiteVec */; };
 		34DFEB272CA14E6400980C20 /* RecommendUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DFEB262CA14E6400980C20 /* RecommendUseCase.swift */; };
@@ -78,6 +80,8 @@
 		346D783D2C9E5AED007EDD43 /* LocalRepositoryProviderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepositoryProviderService.swift; sourceTree = "<group>"; };
 		346D783F2C9E5FAA007EDD43 /* LoadMessageHistoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMessageHistoryUseCase.swift; sourceTree = "<group>"; };
 		346D78412C9E5FF9007EDD43 /* LoadMessageHistoryUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMessageHistoryUseCaseImpl.swift; sourceTree = "<group>"; };
+		34BF61CB2CB24D850021D1CE /* LLMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLMService.swift; sourceTree = "<group>"; };
+		34BF61CD2CB24E0E0021D1CE /* OpenAIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIService.swift; sourceTree = "<group>"; };
 		34DFEB262CA14E6400980C20 /* RecommendUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendUseCase.swift; sourceTree = "<group>"; };
 		34DFEB282CA14E7B00980C20 /* RecommendUseCaseImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendUseCaseImpl.swift; sourceTree = "<group>"; };
 		34DFEB2A2CA14E9900980C20 /* RecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendView.swift; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 		34E670122C96DAA900BD8DA8 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				34BF61CD2CB24E0E0021D1CE /* OpenAIService.swift */,
 				34E670472C97CB4500BD8DA8 /* AppleEmbeddingService.swift */,
 				34E670562C981DF300BD8DA8 /* YamlLoadFileService.swift */,
 				346D783D2C9E5AED007EDD43 /* LocalRepositoryProviderService.swift */,
@@ -247,6 +252,7 @@
 		34E670182C96DB1C00BD8DA8 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				34BF61CB2CB24D850021D1CE /* LLMService.swift */,
 				34E670452C97CB2D00BD8DA8 /* EmbeddingService.swift */,
 				34E670542C981D7A00BD8DA8 /* LoadFileService.swift */,
 				346D783B2C9E5A3F007EDD43 /* RepositoryProviderService.swift */,
@@ -484,10 +490,12 @@
 				346D78332C9E4CF0007EDD43 /* LocalMessageLogRepository.swift in Sources */,
 				346D783A2C9E5923007EDD43 /* LoadQAEntriesImpl.swift in Sources */,
 				34E670482C97CB4500BD8DA8 /* AppleEmbeddingService.swift in Sources */,
+				34BF61CC2CB24D960021D1CE /* LLMService.swift in Sources */,
 				34E6701C2C97188F00BD8DA8 /* QAEntryRepository.swift in Sources */,
 				BFD3BD2E2C9FCD7100E88814 /* CharacterImageViewModel.swift in Sources */,
 				BFC1EEB42C9C7992007E3A9B /* ChatBotViewController.swift in Sources */,
 				34E6704A2C97DA2A00BD8DA8 /* LoadQAEntriesUseCase.swift in Sources */,
+				34BF61CE2CB24E150021D1CE /* OpenAIService.swift in Sources */,
 				BFD3BD402CA0385D00E88814 /* ChatBotMessageLayoutSizeCalculator.swift in Sources */,
 				34DFEB2E2CA1500E00980C20 /* AppError.swift in Sources */,
 				BFD3BD302C9FCD9500E88814 /* CharacterState.swift in Sources */,
@@ -669,7 +677,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2PJ54JWDJZ;
+				DEVELOPMENT_TEAM = F6JNWD6HR5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HackAichi2024/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = " ばずぼっと";
@@ -684,7 +692,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = g.exst.aom.j.a.HackAichi2024;
+				PRODUCT_BUNDLE_IDENTIFIER = g.exst.aom.w.tomoshige.HackAichi2024;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -699,7 +707,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2PJ54JWDJZ;
+				DEVELOPMENT_TEAM = F6JNWD6HR5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HackAichi2024/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = " ばずぼっと";
@@ -714,7 +722,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = g.exst.aom.j.a.HackAichi2024;
+				PRODUCT_BUNDLE_IDENTIFIER = g.exst.aom.w.tomoshige.HackAichi2024;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
