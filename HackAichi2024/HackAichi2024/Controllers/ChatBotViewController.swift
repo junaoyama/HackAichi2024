@@ -112,12 +112,14 @@ extension ChatBotViewController: InputBarAccessoryViewDelegate {
     
     func inputBar(_ inputBar: InputBarAccessoryView, textViewTextDidChangeTo text: String) {
         searchTask?.cancel()
+        
+        if text.isEmpty {
+            self.messagesViewController?.recommendView.set(text: "")
+            return
+        }
+        
         searchTask = Task { @MainActor in
             try? await Task.sleep(nanoseconds: 300 * 1_000_000) // 300ms待
-            if text.isEmpty {
-                self.messagesViewController?.recommendView.set(text: "")
-                return
-            }
            
             if Task.isCancelled {
                 return
